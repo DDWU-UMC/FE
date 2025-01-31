@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -16,6 +17,7 @@ const Header = styled.div`
   .logo {
     margin: 0 2rem;
     font-size: 2rem;
+    cursor: pointer; 
   }
 
   .header__menulist {
@@ -39,6 +41,11 @@ const Header = styled.div`
 
   li {
     padding: 0 1rem;
+    transition: color 0.3s ease, transform 0.3s ease; 
+  }
+
+  li:hover {
+    transform: scale(1.1); 
   }
 
   .toggle {
@@ -64,6 +71,11 @@ const Header = styled.div`
       padding: 0;
     }
 
+    .header__menulist li:hover {
+  transform: none; /* 크기 변화 없앰 */
+    font-size: inherit; /* 폰트 크기 기본으로 설정 */
+  }
+
     .toggle {
       display: block;
     }
@@ -71,14 +83,24 @@ const Header = styled.div`
   }
 `;
 
+
 function MainHeader() {
   const [isToggled, setIsToggled] = useState(false);
+  const navigate = useNavigate(); 
+
+  const handleLogoClick = () => {
+    navigate("/");
+  };
+
+const handleProjectPageClick = () => {
+    navigate("/projects");
+  }; 
 
   return (
     <Header isToggled={isToggled} >
       
-      <div className="logo">
-       로고 {/* 추후에 로고 삽입*/}
+      <div className="logo"  onClick={handleLogoClick} >
+       로고  {/* 추후에 로고 삽입*/}
       </div>
       <div
         className="toggle"
@@ -90,8 +112,8 @@ function MainHeader() {
       </div>
       {/* 메뉴 리스트 */}
       <ul className="header__menulist">
-        <li>프로젝트</li>
-        <li>운영진소개</li>
+        <li onClick={handleProjectPageClick}>프로젝트</li>
+        <li>운영진 소개</li>
         <li>커리큘럼</li>
         <li>FAQ</li>
       </ul>

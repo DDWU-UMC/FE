@@ -1,11 +1,16 @@
 import React from "react";
-import MainHeader from './components/header/MainHeader'; 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";  // Router와 Routes, Route를 임포트
+import MainPage from "./pages/MainPage";  
+import ProjectPage from "./pages/ProjectPage";
 
 function App() {
   return (
-    <div>
-      <MainHeader /> {/* MainHeader 컴포넌트 사용 */}
-    </div>
+    <Router> 
+      <Routes>  
+        <Route path="/" element={<MainPage />} />  
+        <Route path="/projects" element={<ProjectPage />} />  
+      </Routes>
+    </Router>
   );
 }
 
