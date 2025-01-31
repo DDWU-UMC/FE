@@ -1,13 +1,17 @@
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";  // Router와 Routes, Route를 임포트
+import MainPage from "./pages/MainPage";  
+import ProjectPage from "./pages/ProjectPage";
 
 function App() {
-
   return (
-    <>
-     <h1>Hello React</h1>
-    </>
-  )
+    <Router> 
+      <Routes>  
+        <Route path="/" element={<MainPage />} />  
+        <Route path="/projects" element={<ProjectPage />} />  
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
-
+export default App;
