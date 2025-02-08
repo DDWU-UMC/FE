@@ -1,13 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 
+const Body = styled.div`
+
+width:100%;
+background-color: black;
+
+`
+
 const Header = styled.div`
-  max-width: 100%;
-  margin: 0 auto;
+
+   max-width: 1200px;
+   margin: 0 auto;
+    padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,7 +81,7 @@ const Header = styled.div`
     }
 
     .header__menulist li:hover {
-  transform: none; /* 크기 변화 없앰 */
+    transform: none; /* 크기 변화 없앰 */
     font-size: inherit; /* 폰트 크기 기본으로 설정 */
   }
 
@@ -83,43 +92,48 @@ const Header = styled.div`
   }
 `;
 
-
 function MainHeader() {
-  const [isToggled, setIsToggled] = useState(false);
-  const navigate = useNavigate(); 
+    const [isToggled, setIsToggled] = useState(false);
+    const navigate = useNavigate();
 
-  const handleLogoClick = () => {
-    navigate("/");
-  };
+    const handleLogoClick = () => {
+        navigate("/");
+    };
 
-const handleProjectPageClick = () => {
-    navigate("/projects");
-  }; 
+    const handleProjectPageClick = () => {
+        navigate("/projects");
+    };
 
-  return (
-    <Header isToggled={isToggled} >
-      
-      <div className="logo"  onClick={handleLogoClick} >
-       로고  {/* 추후에 로고 삽입*/}
-      </div>
-      <div
-        className="toggle"
-        onClick={() => {
-          setIsToggled(!isToggled);
-        }}
-      >
-        <FontAwesomeIcon icon={!isToggled ? faBars : faTimes} />
-      </div>
-      {/* 메뉴 리스트 */}
-      <ul className="header__menulist">
-        <li onClick={handleProjectPageClick}>프로젝트</li>
-        <li>운영진 소개</li>
-        <li>커리큘럼</li>
-        <li>FAQ</li>
-      </ul>
+    const handleManagementPageClick = () => {
+        navigate("/management");
+    };
 
-    </Header>
-  );
+    return (
+        <Body>
+        <Header isToggled={isToggled} >
+
+            <div className="logo" onClick={handleLogoClick} >
+                로고  {/* 추후에 로고 삽입*/}
+            </div>
+            <div
+                className="toggle"
+                onClick={() => {
+                    setIsToggled(!isToggled);
+                }}
+            >
+                <FontAwesomeIcon icon={!isToggled ? faBars : faTimes} />
+            </div>
+            {/* 메뉴 리스트 */}
+            <ul className="header__menulist">
+                <li onClick={handleProjectPageClick}>프로젝트</li>
+                <li onClick={handleManagementPageClick}>운영진 소개</li>
+                <li>커리큘럼</li>
+                <li>FAQ</li>
+            </ul>
+
+        </Header>
+        </Body>
+    );
 }
 
 export default MainHeader;
