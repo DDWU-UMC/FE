@@ -130,7 +130,7 @@ const ManagementContainer = styled.div`
     }
   }
 
-  @media screen and (min-width: 1px) and (max-width: 470px) {
+  @media screen and (max-width: 470px) {
     flex: 0 0 calc(100% - 100px);
     max-width: calc(100% - 100px);
 
