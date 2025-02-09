@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";  // R
 import MainPage from "./pages/MainPage";  
 import ProjectPage from "./pages/ProjectPage";
 import ManagementPage from "./pages/ManagementPage";
+import GlobalStyle from "../src/GlobalStyle";
 
 function App() {
   return (
     <Router> 
+      <GlobalStyle/>
       <Routes>  
         <Route path="/" element={<MainPage />} />  
         <Route path="/projects" element={<ProjectPage />} />
