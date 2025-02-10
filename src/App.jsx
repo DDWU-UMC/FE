@@ -5,6 +5,7 @@ import ProjectPage from "./pages/ProjectPage";
 import ManagementPage from "./pages/ManagementPage";
 import GlobalStyle from "../src/GlobalStyle";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
+import FAQPage from "./pages/FAQPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/projects" element={<ProjectPage />} />
         <Route path="/management" element={<ManagementPage />} />
+        <Route path="/faq" element={<FAQPage />} />
         <Route path="/project/:gen/:id" element={<ProjectDetailPage />} />
       </Routes>
     </Router>

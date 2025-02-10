@@ -1,7 +1,7 @@
 import React from "react";
 import MainHeader from "../components/header/MainHeader";
 import styled from "styled-components";
-import projectData from "../data/projectData";
+import projectData from "../database/projectData";
 import ProjectCard from "../components/project/ProjectPreviewCard2";
 import { useParams, useNavigate } from "react-router-dom";
 
