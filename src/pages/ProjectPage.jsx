@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MainHeader from "../components/header/MainHeader";
 import styled from "styled-components";
 import ProjectList from "../components/project/ProjectList";
-import projectData from "../data/projectData";
+import projectData from "../database/projectData";
 
 const ProjectPageContainer = styled.div`
   margin: 0 auto;
