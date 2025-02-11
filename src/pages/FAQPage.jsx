@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import MainHeader from "../components/header/MainHeader";
 import styled from "styled-components";
-import ProjectList from "../components/project/ProjectList";
-import projectData from "../database/projectData";
+import MainHeader from "../components/header/MainHeader";
+import FAQList from "../components/FAQ/FAQList";
 
-const ProjectPageContainer = styled.div`
+const FAQPageContainer = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   gap: 40px;
@@ -40,49 +39,46 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const GenButton = styled.button`
+const CateButton = styled.button`
   background-color: ${(props) =>
     props.active ? "rgb(105, 9, 38)" : "#602133"};
   color: white;
   font-weight: ${(props) => (props.active ? "800" : "400")};
   border: none;
-  padding: 6px 20px;
+  padding: 5px 17px;
   border-radius: 10px;
   cursor: pointer;
 
   @media screen and (max-width: 430px) {
-    padding: 3px 17px;
+    padding: 5px 14px;
     font-size: 12px;
   }
 `;
 
-function ProjectPage() {
-  const [selectedGen, setSelectedGen] = useState(7);
-  const generations = [7, 6, 5, 4, 3];
+const FAQPage = () => {
+  const [selectedCategory, setSelectedCategory] = useState("동아리 활동");
+  const categories = ["Plan", "Design", "Develop", "동아리 활동"];
 
   return (
     <>
       <MainHeader />
-      <ProjectPageContainer>
-        <SubTitle>이전 기수 프로젝트</SubTitle>
+      <FAQPageContainer>
+        <SubTitle>자주 묻는 질문</SubTitle>
         <ButtonContainer>
-          {generations.map((gen) => (
-            <GenButton
-              key={gen}
-              active={selectedGen === gen}
-              onClick={() => setSelectedGen(gen)}
+          {categories.map((category) => (
+            <CateButton
+              key={category}
+              active={selectedCategory === category}
+              onClick={() => setSelectedCategory(category)}
             >
-              {gen}th
-            </GenButton>
+              {category}
+            </CateButton>
           ))}
         </ButtonContainer>
-        <ProjectList
-          projectData={projectData[selectedGen] || []}
-          gen={selectedGen}
-        />
-      </ProjectPageContainer>
+        <FAQList selectedCategory={selectedCategory} />
+      </FAQPageContainer>
     </>
   );
-}
+};
 
-export default ProjectPage;
+export default FAQPage;
