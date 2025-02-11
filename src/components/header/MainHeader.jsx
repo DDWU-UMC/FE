@@ -138,7 +138,6 @@ function MainHeader() {
     navigate("/faq");
   };
   return (
-    <Body>
       <Header isToggled={isToggled}>
         <div onClick={handleLogoClick}>
           <img className="logo" src={logo} alt="Logo" />
@@ -160,7 +159,6 @@ function MainHeader() {
           <li className="apply">지원하기</li>
         </ul>
       </Header>
-    </Body>
   );
 
 }
