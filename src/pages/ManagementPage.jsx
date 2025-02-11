@@ -1,6 +1,7 @@
 import React from "react";
 import MainHeader from "../components/header/MainHeader"; 
 import styled from "styled-components";
+import Colors from "../constanst/colors";
 
 const ManagementPageContainer = styled.div`
   max-width: 100%
@@ -47,8 +48,8 @@ const ManagementContainer = styled.div`
   max-width: calc((100% - 80px) / 3);
   
   padding: 20px; 
-  background-color: rgba(54, 54, 54, 0.7);
-  border-radius: 18px;
+  background-color: ${Colors.secondary400};
+  border-radius: 8px;
   box-sizing: border-box;
 
   .profile-wrapper {
@@ -57,22 +58,23 @@ const ManagementContainer = styled.div`
   }
 
   .profileImg {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     background-color: #575757;
     border-radius: 100px;
     box-shadow: inset 0px 4px 3px rgba(0, 0, 0, 0.25);
   }
   
   .position {
-    font-size: 18px;
-    margin: 8px 10px;
+    font-size: 16px;
+    margin: 6px 10px;
+    color: ${Colors.primary400};
   }
   
   .name {
-    font-size: 13px;
-    margin: 8px 10px;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 17px;
+    margin: 6px 10px;
+    color: white;
   }
   
   .management-intro {
@@ -82,12 +84,20 @@ const ManagementContainer = styled.div`
   }
   
   .career {
-    padding-left: 12px;
+
     font-size: 13px;
-    margin: 0px 10px 15px;
+    margin: 15px 10px 15px;
     color: rgba(255, 255, 255, 0.6);
   }
+ul {
+  list-style-type: none; /* 기본 점 제거 */
+  padding-left: 0; /* 기본 들여쓰기 제거 */
+}
 
+ul li::before {
+  content: " - "; /* 항목 앞에 대시 추가 */
+  margin-right: 8px; /* 대시와 텍스트 간격 조정 */
+}
   @media screen and (max-width: 768px) {
     flex: 0 0 calc((100% - 120px) / 2);
     max-width: calc((100% - 120px) / 2);
@@ -98,34 +108,31 @@ const ManagementContainer = styled.div`
     max-width: calc((100% - 100px) / 2);
 
     .profileImg {
-      width: 120px;
-      height: 120px;
-      background-color: #575757;
-      border-radius: 100px;
-      box-shadow: inset 0px 4px 3px rgba(0, 0, 0, 0.25);
+      width: 165px;
+      height: 165px;
     }
     
     .position {
-      font-size: 12px;
+      font-size: 13px;
       margin: 8px 10px;
     }
     
     .name {
-      font-size: 10px;
+      font-size: 14px;
       margin: 8px 10px;
-      color: rgba(255, 255, 255, 0.6);
+ 
     }
     
     .management-intro {
-      font-size: 10px;
+      font-size: 11px;
       margin: 8px 10px;
       color: rgba(255, 255, 255, 0.6);
     }
     
     .career {
       padding-left: 10px;
-      font-size: 10px;
-      margin: 0px 10px 15px;
+      font-size: 11px;
+      margin: 4px 10px 15px;
       color: rgba(255, 255, 255, 0.6);
     }
   }
@@ -136,11 +143,9 @@ const ManagementContainer = styled.div`
 
      
     .profileImg {
-      width: 130px;
-      height: 130px;
-      background-color: #575757;
-      border-radius: 100px;
-      box-shadow: inset 0px 4px 3px rgba(0, 0, 0, 0.25);
+      width: 160px;
+      height: 160px;
+  
     }
     
     .position {
@@ -149,27 +154,39 @@ const ManagementContainer = styled.div`
     }
     
     .name {
-      font-size: 10px;
+      font-size: 13px;
       margin: 8px 10px;
-      color: rgba(255, 255, 255, 0.6);
+     
     }
     
     .management-intro {
-      font-size: 10px;
+      font-size: 11px;
       margin: 8px 10px;
-      color: rgba(255, 255, 255, 0.6);
+    
     }
     
     .career {
-      padding-left: 12px;
+      padding-left: 11px;
       font-size: 10px;
       margin: 0px 10px 15px;
-      color: rgba(255, 255, 255, 0.6);
     }
   }
      @media screen and (max-width: 460px) {
   flex: 0 0 70%;
     max-width: 70%;
+    .profileImg {
+      width: 150px;
+      height: 150px;
+  
+    }
+       @media screen and (max-width: 350px) {
+  flex: 0 0 70%;
+    max-width: 70%;
+    .profileImg {
+      width: 140px;
+      height: 140px;
+  
+    }
   }
 }
 `
@@ -179,10 +196,11 @@ const Managements = () => {
       <div className="profile-wrapper">
         <div className="profileImg"></div>
       </div>
+      <div className="text-wrapper">
       <div className="position">직책</div>
       <div className="name">
         <span>닉네임</span>
-        <span>/</span>
+        <span> · </span>
         <span>이름</span>
       </div>
       <div className="management-intro">끝까지 해내는 용기, 함께합시다!</div>
@@ -192,6 +210,7 @@ const Managements = () => {
         <li>DDUMC 7th 회장</li>
         <li>DDUMC 8th 부회장</li>
       </ul>
+      </div>
     </ManagementContainer>
   );
 };
