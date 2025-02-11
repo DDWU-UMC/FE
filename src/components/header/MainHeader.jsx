@@ -5,11 +5,6 @@ import logo from "../../assets/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const Body = styled.div`
-  width: 100%;
-  background-color: black;
-`;
-
 const Header = styled.div`
   max-width: 1400px;
   margin: 0 auto;
@@ -18,7 +13,7 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   color: white;
-  background-color: black;
+
 
   .logo {
     margin: 0 2rem;
@@ -134,11 +129,15 @@ function MainHeader() {
     navigate("/management");
   };
 
+
+  const handleCurriculumPageClick = () => {
+        navigate("/curriculum");
+   };
+
   const handleFAQPageClick = () => {
     navigate("/faq");
   };
   return (
-    <Body>
       <Header isToggled={isToggled}>
         <div onClick={handleLogoClick}>
           <img className="logo" src={logo} alt="Logo" />
@@ -155,13 +154,13 @@ function MainHeader() {
         <ul className="header__menulist">
           <li onClick={handleProjectPageClick}>프로젝트</li>
           <li onClick={handleManagementPageClick}>운영진 소개</li>
-          <li>커리큘럼</li>
+          <li onClick={handleCurriculumPageClick}>커리큘럼</li>
           <li onClick={handleFAQPageClick}>FAQ</li>
           <li className="apply">지원하기</li>
         </ul>
       </Header>
-    </Body>
   );
+
 }
 
 export default MainHeader;

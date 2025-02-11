@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Ro
 import MainPage from "./pages/MainPage";
 import ProjectPage from "./pages/ProjectPage";
 import ManagementPage from "./pages/ManagementPage";
+import CurriculumPage from "./pages/CurriculumPage";
 import GlobalStyle from "../src/GlobalStyle";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import FAQPage from "./pages/FAQPage";
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/projects" element={<ProjectPage />} />
+        <Route path="/curriculum" element={<CurriculumPage />} />
         <Route path="/management" element={<ManagementPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/project/:gen/:id" element={<ProjectDetailPage />} />
