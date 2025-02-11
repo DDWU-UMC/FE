@@ -84,7 +84,6 @@ const ManagementContainer = styled.div`
   }
   
   .career {
-
     font-size: 13px;
     margin: 15px 10px 15px;
     color: rgba(255, 255, 255, 0.6);
@@ -130,7 +129,7 @@ ul li::before {
     }
     
     .career {
-      padding-left: 10px;
+     
       font-size: 11px;
       margin: 4px 10px 15px;
       color: rgba(255, 255, 255, 0.6);
@@ -166,7 +165,7 @@ ul li::before {
     }
     
     .career {
-      padding-left: 11px;
+  
       font-size: 10px;
       margin: 0px 10px 15px;
     }
