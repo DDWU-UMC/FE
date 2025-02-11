@@ -9,13 +9,13 @@ const ManagementPageContainer = styled.div`
   gap: 40px; 
   font-size: 20px;
   color: white;
-  background-color: black;
   display: flex; 
   flex-direction: column;
   align-items: center; 
 
   .sub-tile{
   margin-top: 20px;
+  font-size: 23px;
   }
   @media screen and (max-width: 630px) {
     font-size: 15px;
@@ -32,7 +32,7 @@ const ManagementListContainer = styled.div`
   justify-content: flex-start; /* 기본적으로 왼쪽 정렬 */
   gap: 40px; /* gap 값을 40px로 설정 */
   color: white;
-  background-color: black;
+
 
   @media screen and (max-width: 768px) {
       justify-content: space-evenly; /* 작은 화면에서는 왼쪽 정렬 */
@@ -203,7 +203,7 @@ function ManagementPage() {
     <>
       <MainHeader /> 
       <ManagementPageContainer>
-      <div className="sub-tile">DDWU UMC 운영진들을 소개합니다</div>
+      <div className="sub-tile">DDWU UMC 운영진</div>
       <ManagementListContainer>
       <Managements></Managements>
       <Managements></Managements>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";  // R
 import MainPage from "./pages/MainPage";  
 import ProjectPage from "./pages/ProjectPage";
 import ManagementPage from "./pages/ManagementPage";
+import CurriculumPage from "./pages/CurriculumPage";
 import GlobalStyle from "../src/GlobalStyle";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<MainPage />} />  
         <Route path="/projects" element={<ProjectPage />} />
         <Route path="/management" element={<ManagementPage />} />  
+        <Route path="/curriculum" element={<CurriculumPage />} />  
       </Routes>
     </Router>
   );
