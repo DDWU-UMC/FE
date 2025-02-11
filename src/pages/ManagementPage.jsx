@@ -130,14 +130,14 @@ const ManagementContainer = styled.div`
     }
   }
 
-  @media screen and (max-width: 470px) {
-    flex: 0 0 calc(100% - 100px);
-    max-width: calc(100% - 100px);
+  @media screen and (max-width: 560px) {
+    flex: 0 0 60%;
+    max-width: 60%;
 
      
     .profileImg {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       background-color: #575757;
       border-radius: 100px;
       box-shadow: inset 0px 4px 3px rgba(0, 0, 0, 0.25);
@@ -167,9 +167,9 @@ const ManagementContainer = styled.div`
       color: rgba(255, 255, 255, 0.6);
     }
   }
-     @media screen and (max-width: 350px) {
-    flex: 0 0 100%; /* 한 줄에 1개씩 */
-    max-width: 100%;  /* 한 줄에 1개씩 */
+     @media screen and (max-width: 460px) {
+  flex: 0 0 70%;
+    max-width: 70%;
   }
 }
 `

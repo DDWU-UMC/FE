@@ -2,45 +2,36 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../assets/logo.svg";
+import symbol from "../../assets/symbol.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Header = styled.div`
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
 
-
   .logo {
-    margin: 0 2rem;
+    margin-left: 1rem;
     font-size: 2rem;
     cursor: pointer;
     margin-top: 8px;
-    width: 250px;
+    width: 200px;
+    padding: 0px;
   }
-
+ .symbol {
+    display:none;
+  }
   .header__menulist {
     margin-right: 1rem;
     list-style: none;
     display: flex;
   }
 
-  .header__left {
-    display: flex;
-  }
-
-  .header__right {
-    list-style: none;
-    display: flex;
-  }
-
-  .header__right div {
-    margin: 0 1rem;
-  }
 
   li {
     padding: 0.5rem 1.5rem;
@@ -61,57 +52,84 @@ const Header = styled.div`
     transform: none;
     cursor: pointer;
   }
-  .toggle {
-    display: none;
-    font-size: 1.5rem;
-    padding: 1rem 1rem;
+   .apply-mobile {
+    display:none;
   }
 
-  @media screen and (max-width: 768px) {
-    flex-wrap: wrap;
+ @media screen and (max-width: 920px) {
+
+ font-size: 14px;
+ li {
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+}
+
+
+  
+
+  @media screen and (max-width: 690px) {
+   font-size: 12px;
+    flex-direction: column;
+
+  .header-mobile {
+    display: flex;
+    width: 100%;
     justify-content: space-between;
-
-    .header__menulist {
-      display: ${(props) => (props.isToggled ? "flex" : "none")};
-      flex-direction: column;
-      width: 100%;
-      background-color: black;
-    }
-
-    .header__menulist li,
-    .header__right li {
-      margin: 1rem 0;
-      padding: 0;
-    }
-
-    .header__menulist li:hover {
-      transform: none; /* 크기 변화 없앰 */
-      font-size: inherit; /* 폰트 크기 기본으로 설정 */
-    }
-
-    .apply {
-      background-color: black;
-      border: none;
-    }
-    .toggle {
-      display: block;
-    }
+    align-items: flex-start;
   }
-  @media screen and (max-width: 470px) {
-    .logo {
-      margin: 0 2rem;
-      font-size: 2rem;
-      cursor: pointer;
-      margin-top: 10px;
-      width: 180px;
-    }
+
+  .header__menulist {
+    display: flex;
+    width: 90%;
+justify-content: space-between;
+    margin: 0 0rem;
+    padding:0px;
   }
+
+  .header__menulist li {
+    margin: 2rem 0;
+    padding: 0;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .symbol {
+    display: block;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 40px;
+  }
+
+  .header__menulist li:hover {
+    transform: none; /* 크기 변화 없앰 */
+    font-size: inherit; /* 폰트 크기 기본으로 설정 */
+  }
+
+  .apply {
+    display: none;
+  }
+    .apply-mobile{
+    padding: 7px;
+    display: block;
+      margin-right: 10px;
+    margin-top: 20px;
+     background-color: #941b3d;
+    border-radius: 3px;
+    border: 1px solid #ba224d;
+    }
+
+  .apply-mobile:hover {
+    transform: none;
+    cursor: pointer;
+  }
+}
+   
 `;
 
-const Logo = styled.div`
-  width: 100px;
-  height: 20px;
-`;
 
 function MainHeader() {
   const [isToggled, setIsToggled] = useState(false);
@@ -139,18 +157,13 @@ function MainHeader() {
   };
   return (
       <Header isToggled={isToggled}>
+        <div className="header-mobile">
         <div onClick={handleLogoClick}>
           <img className="logo" src={logo} alt="Logo" />
+          <img className="symbol" src={symbol} alt="Logo" />
         </div>
-        <div
-          className="toggle"
-          onClick={() => {
-            setIsToggled(!isToggled);
-          }}
-        >
-          <FontAwesomeIcon icon={!isToggled ? faBars : faTimes} />
+        <div className="apply-mobile">지원하기</div>
         </div>
-        {/* 메뉴 리스트 */}
         <ul className="header__menulist">
           <li onClick={handleProjectPageClick}>프로젝트</li>
           <li onClick={handleManagementPageClick}>운영진 소개</li>
