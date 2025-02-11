@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../assets/logo.svg";
-import symbol from "../../assets/symbol.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import symbol from "../../../public/symbol.svg";
 import Colors from "../../constanst/colors";
 
 const Header = styled.div`
@@ -49,11 +47,15 @@ const Header = styled.div`
     background-color: #941b3d;
     border-radius: 3px;
     border: 1px solid #ba224d;
+    color: white;
+
   }
 
   .apply:hover {
     transform: none;
     cursor: pointer;
+    transform: none;
+    color: white;
   }
    .apply-mobile {
     display:none;
