@@ -92,7 +92,8 @@ const Header = styled.div`
       font-size: 13px;
       width: 100%;
       margin: 2rem 0.3rem;
-      padding: 15px;
+      padding: 15px 0px;
+      padding-top:0px;
     }
 
     li:hover {
