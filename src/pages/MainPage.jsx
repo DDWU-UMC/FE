@@ -3,11 +3,15 @@ import styled from "styled-components";
 import MainHeader from "../components/header/MainHeader";
 import backGroundImg from "../assets/main-background.svg";
 import btrImg from "../assets/BreakTheRules.svg";
+import otImg from "../assets/ot.jpeg";
+import netWorkingImg from "../assets/networking.jpeg"
+import mtImg from "../assets/MT.png"
+import hackathonImg from "../assets/hackathon.png"
 
 const IntroContaioner = styled.div`
-  font-size: 110px;
+  font-size: 9vw;;
   font-weight: 800;
-  margin: 4rem 5rem;
+  margin: 7rem 5rem;
 
   /* 텍스트 전체에 그라디언트 적용 */
   background-clip: text;
@@ -52,21 +56,20 @@ const IntroContaioner = styled.div`
   }
 
   @media screen and (max-width: 920px) {
-    font-size: 100px;
      margin: 4rem 5rem;
   }
 
   @media screen and (max-width: 690px) {
-    font-size: 80px;
+
      margin: 3rem 2.5rem;
   }
      @media screen and (max-width: 530px) {
-    font-size: 65px;
+
      margin: 2.5rem 2.rem;
   }
 
     @media screen and (max-width: 430px) {
-    font-size: 50px;
+
      margin: 6rem 1.8rem;
   }
 `;
@@ -110,17 +113,97 @@ const BreakTheRules = () => {
   );
 };
 
+const FixedImgOT = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-220%, -510%);
+  width: 15vw;
+  max-width: 300px;
+  text-align: center;
+
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 
+    0px 4px 10px rgba(255, 255, 255, 0.2),
+    0px -4px 10px rgba(255, 255, 255, 0.1),
+    4px 0px 10px rgba(255, 255, 255, 0.1),
+    -4px 0px 10px rgba(255, 255, 255, 0.1);
+
+  transform-origin: center;
+
+  &:hover {
+    transform: translate(-220%, -510%) scale(1.08);
+    box-shadow: 
+      0px 6px 15px rgba(255, 255, 255, 0.3),
+      0px -6px 15px rgba(255, 255, 255, 0.15),
+      6px 0px 15px rgba(255, 255, 255, 0.15),
+      -6px 0px 15px rgba(255, 255, 255, 0.15);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 3px;
+    transition: transform 0.4s ease-in-out;
+  }
+`;
+
+const FixedImgNetWorking = styled(FixedImgOT)`
+  transform: translate(-120%, -390%);
+
+  &:hover {
+    transform: translate(-120%, -390%) scale(1.08);
+  }
+`;
+
+const FixedImgMT = styled(FixedImgOT)`
+  transform: translate(90%, -490%);
+
+  &:hover {
+    transform: translate(90%, -490%) scale(1.08);
+  }
+`;
+
+const FixedImgHackathon = styled(FixedImgOT)`
+
+ transform: translate(70%, -10%);
+
+ &:hover {
+    transform: translate(70%, -10%) scale(1.08); /* ✅ 위치 고정 + 크기 확대 */
+}
+`;
+
 function MainPage() {
-  return (
-    <>
-      <MainHeader />
-      <Intro />
-      <BreakTheRules />
-      <ImageContainer>
-        <Img src={backGroundImg} alt="background" />
-      </ImageContainer>
-    </>
-  );
+return (
+  <>
+    <MainHeader /> 
+    <Intro />
+    <BreakTheRules />
+    <ImageContainer>
+      <Img src={backGroundImg} alt="background" />
+      <FixedImgOT>
+        <img src={otImg} alt="OT Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+      </FixedImgOT>
+      <FixedImgNetWorking>
+        <img src={netWorkingImg} alt="netWorking Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+      </FixedImgNetWorking>
+      <FixedImgMT>
+        <img src={mtImg} alt="mt Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+      </FixedImgMT>
+      <FixedImgHackathon>
+        <img src={hackathonImg} alt=" Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+      </FixedImgHackathon>
+    </ImageContainer>
+  </>
+);
 }
 
 export default MainPage;
