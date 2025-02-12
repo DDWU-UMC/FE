@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Colors from "../constanst/colors";
 
 const ManagementPageContainer = styled.div`
-  max-width: 100%
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 20px; 
   gap: 40px; 
