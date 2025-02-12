@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  background-color: rgba(36, 36, 36, 0.8);
-  border-radius: 15px;
+  background-color: #282828;
+  border-radius: 8px;
   cursor: pointer;
 
   &:hover {
@@ -23,7 +23,7 @@ const ProjectImage = styled.div`
   width: 160px;
   height: 160px;
   background-color: rgba(57, 57, 57, 0.8);
-  border-radius: 15px;
+  border-radius: 4px;
 `;
 
 const ProjectInfo = styled.div`
@@ -37,7 +37,7 @@ const Title = styled.h2`
 
 const Type = styled.span`
   font-size: 15px;
-  color: rgba(81, 81, 81, 0.8);
+  color: #ba224d;
 `;
 
 const ProjectCard = ({ title, type, onClick }) => {

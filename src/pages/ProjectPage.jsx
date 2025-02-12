@@ -7,10 +7,9 @@ import projectData from "../database/projectData";
 const ProjectPageContainer = styled.div`
   margin: 0 auto;
   padding: 0 20px;
-  gap: 40px;
+  gap: 35px;
   font-size: 20px;
   color: white;
-  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,33 +25,31 @@ const SubTitle = styled.div`
   font-weight: bold;
 
   @media screen and (max-width: 430px) {
-    font-size: 23px;
+    font-size: 20px;
   }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 12px;
   margin-bottom: 20px;
 
   @media screen and (max-width: 430px) {
-    gap: 14px;
+    gap: 10px;
   }
 `;
 
 const GenButton = styled.button`
-  background-color: ${(props) =>
-    props.active ? "rgb(105, 9, 38)" : "#602133"};
+  background-color: ${(props) => (props.active ? "#ba224d" : "#4a0d1e")};
   color: white;
-  font-weight: ${(props) => (props.active ? "800" : "400")};
-  border: none;
-  padding: 6px 20px;
-  border-radius: 10px;
+  border: 2px solid ${(props) => (props.active ? "#ba224d" : "#370a17")};
+  padding: 5px 20px;
+  border-radius: 4px;
   cursor: pointer;
 
   @media screen and (max-width: 430px) {
-    padding: 3px 17px;
-    font-size: 12px;
+    padding: 3px 15px;
+    font-size: 10px;
   }
 `;
 
@@ -64,7 +61,7 @@ function ProjectPage() {
     <>
       <MainHeader />
       <ProjectPageContainer>
-        <SubTitle>이전 기수 프로젝트</SubTitle>
+        <SubTitle>DDWU UMC 이전 기수 프로젝트</SubTitle>
         <ButtonContainer>
           {generations.map((gen) => (
             <GenButton
