@@ -16,8 +16,6 @@ const IntroContaioner = styled.div`
   background-image: linear-gradient(
     180deg,
 
-
-
     #C74E70,  /* primary400 */
     #D57A94,  /* primary300 */
     #E3A6B7,  /* primary200 */
@@ -25,6 +23,12 @@ const IntroContaioner = styled.div`
     #E3A6B7,  /* primary200 */
     #D57A94,  /* primary300 */
     #C74E70,  /* primary400 */
+    #C74E70,  /* primary400 */
+    #D57A94,  /* primary300 */
+    #E3A6B7,  /* primary200 */
+    #F1D2DB,  /* primary100 */
+    #E3A6B7,  /* primary200 */
+    #D57A94,  /* primary300 */
     #C74E70,  /* primary400 */
     #D57A94,  /* primary300 */
     #E3A6B7,  /* primary200 */
@@ -34,7 +38,7 @@ const IntroContaioner = styled.div`
     #C74E70  /* primary400 */
 
   );
-  background-size: 100% 500%;
+  background-size: 100% 350%;
   background-position-y: 0%;
   animation: gradient 15s ease-in-out forwards;
 
