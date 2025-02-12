@@ -4,11 +4,11 @@ import styled from "styled-components";
 const CardContainer = styled.div`
   width: 100%;
   padding: 35px;
-  background-color: rgba(36, 36, 36, 0.8);
-  border-radius: 15px;
+  background-color: #282828;
+  border-radius: 8px;
   display: flex;
   align-items: center;
-  gap: 70px;
+  gap: 50px;
   cursor: pointer;
 
   &:hover {
@@ -30,65 +30,84 @@ const CardContainer = styled.div`
 `;
 
 const ProjectImage = styled.div`
-  width: 200px;
+  width: 320px;
   height: 200px;
   background-color: rgba(57, 57, 57, 0.8);
-  border-radius: 15px;
+  border-radius: 4px;
 
   @media screen and (max-width: 960px) {
-    width: 180px;
+    width: 250px;
     height: 180px;
     gap: 45px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: auto;
+    width: 100%;
+    height: 180px;
   }
 `;
 
 const ProjectInfo = styled.div`
   flex: 1;
+  margin-top: 7px;
 `;
 
 const Title = styled.h2`
-  font-size: 23px;
+  font-size: 21px;
   font-weight: bold;
-
-  @media screen and (max-width: 960px) {
-    font-size: 20px;
-  }
-`;
-
-const Type = styled.span`
-  font-size: 20px;
-  color: rgba(81, 81, 81, 0.8);
+  margin-top: 7px;
 
   @media screen and (max-width: 960px) {
     font-size: 18px;
   }
 `;
 
+const Type = styled.span`
+  font-size: 18px;
+  font-weight: 800;
+  color: #ba224d;
+
+  @media screen and (max-width: 960px) {
+    font-size: 16px;
+  }
+`;
+
 const Details = styled.p`
   font-size: 13px;
-  color: rgba(255, 255, 255, 1);
+  color: #b7b7b7;
 
   @media screen and (max-width: 960px) {
     font-size: 11px;
   }
 `;
 
-const ProjectCard = ({ title, type, pm, frontend, backend, onClick }) => {
+const ProjectCard = ({
+  title,
+  type,
+  pm,
+  frontend,
+  backend,
+  design,
+  onClick,
+}) => {
   return (
     <CardContainer onClick={onClick}>
       <ProjectImage />
       <ProjectInfo>
-        <Title>
-          {title} <Type>{type}</Type>
-        </Title>
+        <Type>{type}</Type>
+        <Title>{title}</Title>
         <Details>
-          <strong>PM</strong> {pm}
+          <strong>PM&nbsp;</strong> {pm}
         </Details>
         <Details>
-          <strong>Front-end</strong> {frontend.join(", ")}
+          <strong>Front-end&nbsp;</strong> {frontend.join(", ")}
         </Details>
         <Details>
-          <strong>Back-end</strong> {backend.join(", ")}
+          <strong>Back-end&nbsp;</strong> {backend.join(", ")}
+        </Details>
+        <Details>
+          <strong>Design&nbsp;</strong> {design}
         </Details>
       </ProjectInfo>
     </CardContainer>

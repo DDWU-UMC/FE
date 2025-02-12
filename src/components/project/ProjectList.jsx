@@ -10,7 +10,7 @@ const ProjectListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
 
   @media screen and (max-width: 430px) {
     gap: 35px;
