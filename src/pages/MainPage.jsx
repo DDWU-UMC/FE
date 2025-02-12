@@ -5,7 +5,7 @@ import backGroundImg from "../assets/main-background.svg";
 import btrImg from "../assets/BreakTheRules.svg";
 
 const IntroContaioner = styled.div`
-  font-size: 130px;
+  font-size: 110px;
   font-weight: 800;
   margin: 4rem 5rem;
 
@@ -16,8 +16,8 @@ const IntroContaioner = styled.div`
   background-image: linear-gradient(
     180deg,
 
-    #941B3D,  /* primary600 */
-    #BA224D,
+
+
     #C74E70,  /* primary400 */
     #D57A94,  /* primary300 */
     #E3A6B7,  /* primary200 */
@@ -25,22 +25,18 @@ const IntroContaioner = styled.div`
     #E3A6B7,  /* primary200 */
     #D57A94,  /* primary300 */
     #C74E70,  /* primary400 */
-    #BA224D,
-    #941B3D,
-    #941B3D,  /* primary600 */
-    #BA224D,
     #C74E70,  /* primary400 */
     #D57A94,  /* primary300 */
     #E3A6B7,  /* primary200 */
     #F1D2DB,  /* primary100 */
     #E3A6B7,  /* primary200 */
     #D57A94,  /* primary300 */
-    #C74E70,  /* primary400 */
-    #BA224D
+    #C74E70  /* primary400 */
+
   );
   background-size: 100% 500%;
   background-position-y: 0%;
-  animation: gradient 7s ease-in-out forwards;
+  animation: gradient 15s ease-in-out forwards;
 
   @keyframes gradient {
     from {
