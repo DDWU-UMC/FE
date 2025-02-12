@@ -9,7 +9,6 @@ const FAQPageContainer = styled.div`
   gap: 40px;
   font-size: 20px;
   color: white;
-  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
