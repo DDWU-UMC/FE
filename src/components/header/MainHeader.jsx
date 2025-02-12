@@ -38,8 +38,11 @@ const Header = styled.div`
     cursor: pointer;
   }
 
-  li:hover,
-  .active {
+  li:hover {
+    transform: scale(1.1);
+
+  }
+    .active {
     transform: scale(1.1);
     color: ${Colors.primary};
   }
