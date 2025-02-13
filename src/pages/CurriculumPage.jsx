@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import MainHeader from "../components/header/MainHeader"; 
+import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
+import MainHeader from "../components/header/MainHeader";
 import styled from "styled-components";
 import Colors from "../constanst/colors";
 import CurriculumData from "../database/curriculumData.json"
 
 const CurriculumsPageContainer = styled.div`
-width: 90%;
+  width: 90%;
   margin: 0 auto;
   padding: 0 20px; 
   gap: 40px; 
@@ -15,16 +16,17 @@ width: 90%;
   align-items: center; 
 
   .sub-tile{
-  margin-top: 20px;
-  font-size: 23px;
-  }
+    margin-top: 100px;
+    font-size: 23px;
+    }
+    @media screen and (max-width: 690px) {
+      font-size: 15px;
+  
+      .sub-tile{
+    margin-top: 130px;
+    font-size: 20px;
+    }
 
- @media screen and (max-width: 430px) {
-    .sub-tile{
-
-  font-size: 20px;
-  }
-  }
 
 `;
 
@@ -41,7 +43,7 @@ const PartInfo = styled.div`
   gap: 20px;
 
  .name-english{
- width: fit-content; 
+  width: fit-content; 
   font-size: 20px;
   border: 1px solid white;
   padding: 5px 10px; 
@@ -51,48 +53,42 @@ const PartInfo = styled.div`
   .name-korean{
   margin-left: 3px;
   font-size: 25px;
-
   }
-.part-icon{
-margin-left: 5px;
-width: 23px;
-height: 23px;
-}
+  .part-icon{
+  margin-left: 5px;
+  width: 23px;
+  height: 23px;
+  }
   .part-info{
-margin-left: 3px;
-    font-size: 15px;
+   margin-left: 3px;
+  font-size: 15px;
   }
 
    @media screen and (max-width: 430px) {
     .name-english{
-
-  font-size: 15px;
-
-  padding: 5px 10px; 
-
+    font-size: 15px;
+    padding: 5px 10px; 
   }
   .name-korean{
   font-size: 20px;
-
   }
-.part-icon{
-margin-left: 5px;
-width: 18px;
-height: 18px;
-}
+  .part-icon{
+  margin-left: 5px;
+  width: 18px;
+  height: 18px;
+  }
   .part-info{
     font-size: 13px;
   }
-  }
+ }
     
 `;
 
 const PartCurriculum = styled.div`
-background-color: rgba(54, 54, 54, 0.7);
+ background-color: rgba(54, 54, 54, 0.7);
   padding: 30px;
   color: white;
   border-radius: 10px;
-
   margin-top: 20px;
   max-width: 900px;
   display: flex;
@@ -111,11 +107,10 @@ const ButtonContainer = styled.div`
 
   }
 `;
-const CateButton = styled.button`
-  background-color: ${(props) =>
-    props.active ? Colors.primary : Colors.btn};
+const PartButton = styled.button`
+  background-color: ${(props) => (props.$active === "true"? Colors.primary : Colors.btn)};
   color: white;
-  border: 1px solid ${(props) => (props.active ? Colors.primary: Colors.primary900)};
+  border: 1px solid ${(props) => (props.$active === "true" ? Colors.primary : Colors.primary900)};
   padding: 7px 17px;
   border-radius: 5px;
   cursor: pointer;
@@ -127,69 +122,77 @@ const CateButton = styled.button`
   }
 `;
 
-  const Parts = ({ selectedPart }) => {
+const Parts = ({ selectedPart }) => {
     const filteredData = CurriculumData.filter((part) => part.part === selectedPart);
+
+    return (
+        <>
+            {filteredData.map((part) => (
+                <div key={part.part}>
+                    <PartInfo>
+                        <div className="name-english">{part.part}</div>
+
+                        <div>
+                            <span className="name-korean">{part.partKorean}</span>
+                            <span>
+                                <img className="part-icon" src={part.icon} alt="icon" /> {/* icon을 part에서 가져오도록 수정 */}
+                            </span>
+                        </div>
+
+                        <div className="part-info">
+                            {part.info}
+                        </div>
+                    </PartInfo>
+
+                    <PartCurriculum>
+                        {Array.from({ length: 13 }, (_, i) => part[`week${i}`])
+                            .filter(Boolean)
+                            .map((week, i) => (
+                                <div key={i}>{week}</div>
+                            ))}
+
+                    </PartCurriculum>
+                </div>
+            ))}
+        </>
+    );
+};
+
+
+
+const CurriculumPage = () => {
+    const { part } = useParams();  // URL 파라미터에서 part 값을 추출
+    const [selectedPart, setSelectedPart] = useState(part || "Plan");  // 초기값은 파라미터 값으로 설정
+  
+    const parts = ["Plan", "Design", "Android", "Web", "Spring Boot"];
+  
+    useEffect(() => {
+      if (part) {
+        setSelectedPart(part);  // 파라미터 값에 따라 selectedPart 상태 변경
+      }
+    }, [part]);
   
     return (
       <>
-        {filteredData.map((part) => (
-          <div key={part.part}> 
-            <PartInfo>
-              <div className="name-english">{part.part}</div>
+        <MainHeader />
+        <CurriculumsPageContainer>
+          <div className="sub-tile">파트별 커리큘럼</div>
+          <ButtonContainer>
+            {parts.map((part) => (
+              <PartButton
+                key={part}
+                $active={selectedPart === part ? "true" : "false"} 
+                onClick={() => setSelectedPart(part)}
+              >
+                {part}
+              </PartButton>
+            ))}
+          </ButtonContainer>
   
-              <div>
-                <span className="name-korean">{part.partKorean}</span>
-                <span>
-                  <img className="part-icon" src={part.icon} alt="icon" /> {/* icon을 part에서 가져오도록 수정 */}
-                </span>
-              </div>
-  
-              <div className="part-info">
-                {part.info}
-              </div>
-            </PartInfo>
-  
-            <PartCurriculum>
-            {Array.from({ length: 13 }, (_, i) => part[`week${i}`])
-  .filter(Boolean) 
-  .map((week, i) => (
-    <div key={i}>{week}</div>
-))}
-
-            </PartCurriculum>
-          </div>
-        ))}
+          <Parts selectedPart={selectedPart} />
+        </CurriculumsPageContainer>
+        <div></div>
       </>
     );
   };
-
-  
-
-const CurriculumPage = () =>  {
-    const [selectedPart, setSelectedPart] = useState("Plan");
-    const parts = ["Plan", "Design", "Spring Boot", "Web", "Android"];
-  return (
-    <>
-      <MainHeader />
-      <CurriculumsPageContainer>
-      <div className="sub-tile">파트별 커리큘럼</div>
-      <ButtonContainer>
-          {parts.map((part) => (
-            <CateButton
-              key={part}
-              active={selectedPart === part}
-              onClick={() => setSelectedPart(part)}
-            >
-              {part}
-            </CateButton>
-          ))}
-        </ButtonContainer>
-
-      <Parts selectedPart={selectedPart} />
-      </CurriculumsPageContainer> 
-      <div></div> 
-    </>
-  );
-}
-
 export default CurriculumPage;

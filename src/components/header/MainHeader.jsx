@@ -5,6 +5,19 @@ import logo from "../../assets/logo.svg";
 import symbol from "../../../public/symbol.svg";
 import Colors from "../../constanst/colors";
 
+const StyledHeader = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 배경을 약간 투명하게 */
+  z-index: 1000; /* 다른 요소들보다 위에 위치하도록 설정 */
+   @media screen and (max-width: 690px) {
+   
+   }
+`
+
+
 const Header = styled.div`
   max-width: 1400px;
   margin: 0 auto;
@@ -94,8 +107,10 @@ const Header = styled.div`
       text-align: center;
       font-size: 13px;
       width: 100%;
-      margin: 2rem 0.3rem;
+      margin: 1rem 0.3rem;
+      margin-bottom: 0px;
       padding: 15px 0px;
+
       padding-top:0px;
     }
 
@@ -143,6 +158,7 @@ function MainHeader() {
   const location = useLocation();
 
   return (
+    <StyledHeader>
     <Header>
       <div className="header-mobile">
         <div onClick={() => navigate("/")}>
@@ -165,8 +181,8 @@ function MainHeader() {
           운영진 소개
         </li>
         <li
-          className={location.pathname === "/curriculum" ? "active" : ""}
-          onClick={() => navigate("/curriculum")}
+          className={location.pathname.startsWith("/curriculum") ? "active" : ""}
+          onClick={() => navigate("/curriculum/Plan")}
         >
           커리큘럼
         </li>
@@ -179,6 +195,7 @@ function MainHeader() {
         <li className="apply">지원하기</li>
       </ul>
     </Header>
+    </StyledHeader>
   );
 }
 
