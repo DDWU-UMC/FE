@@ -15,11 +15,16 @@ const ManagementPageContainer = styled.div`
   align-items: center; 
 
   .sub-tile{
-  margin-top: 20px;
+  margin-top: 100px;
   font-size: 23px;
   }
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 690px) {
     font-size: 15px;
+
+    .sub-tile{
+  margin-top: 130px;
+  font-size: 20px;
+  }
   }
 
 `;

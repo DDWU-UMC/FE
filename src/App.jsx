@@ -15,10 +15,11 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/projects" element={<ProjectPage />} />
-        <Route path="/curriculum" element={<CurriculumPage />} />
+        <Route path="/curriculum/:part" element={<CurriculumPage />} />  
         <Route path="/management" element={<ManagementPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/project/:gen/:id" element={<ProjectDetailPage />} />
+        
       </Routes>
     </Router>
   );

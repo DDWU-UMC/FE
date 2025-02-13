@@ -9,12 +9,14 @@ const Colors ={
     primary700: "#6F142E",
     primary800: "#4A0D1E",
     primary900: "#370A17",
-    secondary25: "#F3F3F3",
-    secondary50: "#E7E7E7",
-    secondary100: "#B7B7B7",
-    secondary200: "#888888",
-    secondary300: "#585858",
-    secondary400: "#282828",
+
+    secondary25: "#E7E7E7",
+    secondary50: "#B7B7B7",
+    secondary100: "#888888",
+    secondary200: "#585858",
+    secondary300: "#282828",
+    secondary400: "#191919",
+    secondary500: "#111111",
 
     btn:"#4A0D1E"
 }
