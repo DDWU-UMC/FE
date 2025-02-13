@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import MainHeader from "../components/header/MainHeader"; 
 import styled from "styled-components";
 import Colors from "../constanst/colors";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const ManagementPageContainer = styled.div`
   max-width: 100%;
@@ -46,8 +48,8 @@ gap: 40px 0px;
     align-items: flex-start; /* 요소들이 왼쪽부터 차례로 배치되게 */
   }
 
+;
 `;
-
 const ManagementContainer = styled.div`
   flex: 0 0 calc((100% - 80px) / 3);
   max-width: calc((100% - 80px) / 3);
@@ -71,20 +73,21 @@ const ManagementContainer = styled.div`
   }
   
   .position {
-    font-size: 16px;
-    margin: 6px 10px;
+    font-size: 15px;
+    margin: 8px 10px;
     color: ${Colors.primary400};
   }
   
   .name {
     font-size: 17px;
-    margin: 6px 10px;
+    font-weight:600;
+    margin: 10px 10px;
     color: white;
   }
   
   .management-intro {
     font-size: 13px;
-    margin: 8px 10px;
+    margin: 12px 10px;
     color: rgba(255, 255, 255, 0.6);
   }
   
@@ -101,6 +104,9 @@ ul {
 ul li::before {
   content: " - "; /* 항목 앞에 대시 추가 */
   margin-right: 8px; /* 대시와 텍스트 간격 조정 */
+}
+ul li {
+  margin-bottom: 3px; /* 항목들 사이 간격 추가 */
 }
   @media screen and (max-width: 768px) {
     flex: 0 0 calc((100% - 120px) / 2);
@@ -123,6 +129,7 @@ ul li::before {
     
     .name {
       font-size: 14px;
+      font-weight: 500;
       margin: 8px 10px;
  
     }
@@ -193,51 +200,56 @@ ul li::before {
     }
   }
 }
-`
-const Managements = () => {
+`;
+const Managements = ({ admin }) => {
   return (
-    <ManagementContainer>
+    <ManagementContainer key={admin.clubAdminId}>
       <div className="profile-wrapper">
-        <div className="profileImg"></div>
+        <img className="profileImg" src={admin.image.fileUrl} alt={admin.name} />
       </div>
       <div className="text-wrapper">
-      <div className="position">직책</div>
-      <div className="name">
-        <span>닉네임</span>
-        <span> · </span>
-        <span>이름</span>
-      </div>
-      <div className="management-intro">끝까지 해내는 용기, 함께합시다!</div>
-      <ul className="career">
-        <li>DDUMC 5th WEB 챌린저</li>
-        <li>DDUMC 6th ANDROID 파트장</li>
-        <li>DDUMC 7th 회장</li>
-        <li>DDUMC 8th 부회장</li>
-      </ul>
+        <div className="position">{admin.role}</div>
+        <div className="name">
+          <span>{admin.nickname}</span>
+          <span> · </span>
+          <span>{admin.name}</span>
+        </div>
+        <div className="management-intro">{admin.commitment}</div>
+        <ul className="career">
+          {admin.roleHistories.map((history) => (
+            <li key={history.id}>{history.content}</li>
+          ))}
+        </ul>
       </div>
     </ManagementContainer>
   );
 };
 
 
-
 function ManagementPage() {
+  const [admins, setAdmins] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${apiUrl}/club-admins`)
+      .then((response) => {
+        setAdmins(response.data.result);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
   return (
     <>
-      <MainHeader /> 
+      <MainHeader />
       <ManagementPageContainer>
-      <div className="sub-tile">DDWU UMC 운영진</div>
-      <ManagementListContainer>
-      <Managements></Managements>
-      <Managements></Managements>
-      <Managements></Managements>
-      <Managements></Managements>
-      <Managements></Managements>
-      <Managements></Managements>
-
-      </ManagementListContainer>
+        <div className="sub-tile">DDWU UMC 운영진</div>
+        <ManagementListContainer>
+          {admins.map((admin) => (
+            <Managements key={admin.clubAdminId} admin={admin} />
+          ))}
+        </ManagementListContainer>
       </ManagementPageContainer>
-     
     </>
   );
 }
