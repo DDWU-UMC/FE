@@ -64,7 +64,7 @@ const IntroContaioner = styled.div`
   }
 
   @media screen and (max-width: 920px) {
-     margin: 6rem 3.5rem  ;
+     margin: 6rem 3.5rem ;
   }
 
   @media screen and (max-width: 690px) {
