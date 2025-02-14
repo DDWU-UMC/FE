@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  background-color: #282828;
+  background-color: #191919;
   border-radius: 8px;
   cursor: pointer;
 
@@ -12,18 +12,18 @@ const CardContainer = styled.div`
 `;
 
 const CardInnerContainer = styled.div`
-  border-radius: 15px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  margin: 20px 20px 5px 20px;
-  gap: 10px;
+  margin: 10px 20px 5px 20px;
 `;
 
 const ProjectImage = styled.div`
-  width: 160px;
-  height: 160px;
+  width: 230px;
+  height: 150px;
   background-color: rgba(57, 57, 57, 0.8);
   border-radius: 4px;
+  margin-bottom: 10px;
 `;
 
 const ProjectInfo = styled.div`
@@ -32,6 +32,7 @@ const ProjectInfo = styled.div`
 
 const Title = styled.h2`
   font-size: 15px;
+  margin: 5px 0;
   font-weight: bold;
 `;
 
@@ -40,15 +41,14 @@ const Type = styled.span`
   color: #ba224d;
 `;
 
-const ProjectCard = ({ title, platform, onClick }) => {
+const ProjectCard = ({ title, serviceType, image, onClick }) => {
   return (
     <CardContainer onClick={onClick}>
       <CardInnerContainer>
-        <ProjectImage />
         <ProjectInfo>
-          <Title>
-            {title} <Type>{platform}</Type>
-          </Title>
+          <Type>{serviceType}</Type>
+          <Title>{title}</Title>
+          <ProjectImage imageUrl={image.fileUrl} />
         </ProjectInfo>
       </CardInnerContainer>
     </CardContainer>

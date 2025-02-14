@@ -42,14 +42,14 @@ const Type = styled.span`
   color: #ba224d;
 `;
 
-const ProjectCard = ({ title, platform, onClick }) => {
+const ProjectCard = ({ title, serviceType, image, onClick }) => {
   return (
     <CardContainer onClick={onClick}>
       <CardInnerContainer>
-        <ProjectImage />
+        <ProjectImage imageUrl={image.fileUrl} />
         <ProjectInfo>
           <Title>{title}</Title>
-          <Type>{platform}</Type>
+          <Type>{serviceType}</Type>
         </ProjectInfo>
       </CardInnerContainer>
     </CardContainer>

@@ -5,7 +5,7 @@ import ProjectPreviewCard from "./ProjectPreviewCard";
 import styled from "styled-components";
 
 const ProjectListContainer = styled.div`
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -31,8 +31,8 @@ const ProjectList = ({ projectData, gen }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleProjectClick = (id) => {
-    navigate(`/project/${gen}/${id}`);
+  const handleProjectClick = (projectId) => {
+    navigate(`/project/${gen}/${projectId}`);
   };
 
   return (
@@ -42,13 +42,13 @@ const ProjectList = ({ projectData, gen }) => {
           <ProjectPreviewCard
             key={index}
             {...project}
-            onClick={() => handleProjectClick(project.id)}
+            onClick={() => handleProjectClick(project.projectId)}
           />
         ) : (
           <ProjectCard
             key={index}
             {...project}
-            onClick={() => handleProjectClick(project.id)}
+            onClick={() => handleProjectClick(project.projectId)}
           />
         )
       )}

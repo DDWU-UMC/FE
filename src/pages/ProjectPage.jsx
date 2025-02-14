@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import MainHeader from "../components/header/MainHeader";
 import styled from "styled-components";
 import ProjectList from "../components/project/ProjectList";
-import projectData from "../database/projectData";
+
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const ProjectPageContainer = styled.div`
   margin: 0 auto;
@@ -64,6 +66,10 @@ const SearchInput = styled.input`
   color: white;
   width: 100%;
 
+  &:focus::placeholder {
+    color: transparent;
+  }
+
   @media screen and (max-width: 550px) {
     font-size: 12px;
   }
@@ -92,22 +98,62 @@ const Dropdown = styled.select`
 `;
 
 function ProjectPage() {
-  const [selectedGen, setSelectedGen] = useState("");
+  const [projectData, setProjectData] = useState([]);
   const [selectedPlatform, setSelectedPlatform] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [cohortId, setCohortId] = useState([]);
+  const [selectedGen, setSelectedGen] = useState("");
+  const [selectedParseIntGen, setSelectedParseIntGen] = useState();
+  const platforms = { 전체: "ALL", iOS: "IOS", Android: "ANDROID", Web: "WEB" };
 
-  const generations = ["전체", "7기", "6기", "5기", "4기", "3기"];
-  const platforms = ["전체", "iOS", "Android", "Web"];
+  // 필터링된 프로젝트 데이터를 가져오는 api 호출 함수
+  const fetchProjects = () => {
+    axios
+      .get(`${apiUrl}/projects`, {
+        params: {
+          cohortId: selectedParseIntGen ? selectedParseIntGen : undefined,
+          type:
+            selectedPlatform && selectedPlatform !== "전체"
+              ? selectedPlatform
+              : undefined,
+          keyword: searchTerm ? searchTerm : undefined,
+        },
+      })
+      .then((response) => {
+        setProjectData(response.data.result);
+      })
+      .catch((error) => {
+        console.error("Error fetching projects:", error);
+      });
+  };
 
-  const allProjects = Object.values(projectData).flat(); // 모든 프로젝트 배열로 변환
+  useEffect(() => {
+    const cohort = axios.get(`${apiUrl}/projects/cohort`);
+    const projects = axios.get(`${apiUrl}/projects`);
 
-  const filteredProjects = allProjects.filter((project) => {
-    return (
-      (selectedGen === "전체" || project.gen == selectedGen) &&
-      (selectedPlatform === "전체" || project.platform === selectedPlatform) &&
-      project.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
+    axios
+      .all([cohort, projects])
+      .then(
+        axios.spread((responseOne, responseTwo) => {
+          const cohortData = responseOne.data.result;
+
+          const cohortMap = cohortData.reduce((acc, item) => {
+            acc[item.name] = item.cohortId;
+            return acc;
+          }, {});
+          setCohortId(cohortMap);
+
+          setProjectData(responseTwo.data.result);
+        })
+      )
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetchProjects();
+  }, [selectedParseIntGen, selectedPlatform, searchTerm]);
 
   return (
     <>
@@ -117,20 +163,27 @@ function ProjectPage() {
         <SearchFilterContainer>
           <SearchInput
             type="text"
-            placeholder="프로젝트명을 검색하세요."
+            placeholder="🔍&nbsp;프로젝트명을 검색하세요." //🔍&nbsp;
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <Dropdown
             value={selectedGen}
-            onChange={(e) => setSelectedGen(e.target.value)}
+            onChange={(e) => {
+              const selectedValue = e.target.value;
+              setSelectedGen(selectedValue);
+              setSelectedParseIntGen(cohortId[selectedValue]);
+            }}
           >
             <option value="" disabled hidden>
               기수
             </option>
-            {generations.map((gen) => (
-              <option key={gen} value={gen}>
-                {gen}
+            <option key="All" value="All">
+              전체
+            </option>
+            {Object.entries(cohortId).map(([key, value]) => (
+              <option key={key} value={key}>
+                {key} {/* 기수 이름 표시 */}
               </option>
             ))}
           </Dropdown>
@@ -142,17 +195,14 @@ function ProjectPage() {
             <option value="" disabled hidden>
               플랫폼
             </option>
-            {platforms.map((platform) => (
-              <option key={platform} value={platform}>
-                {platform}
+            {Object.entries(platforms).map(([key, value]) => (
+              <option key={key} value={value}>
+                {key}
               </option>
             ))}
           </Dropdown>
         </SearchFilterContainer>
-        <ProjectList
-          projectData={projectData[selectedGen] || []}
-          gen={selectedGen}
-        />
+        <ProjectList projectData={projectData} gen={selectedGen} />
       </ProjectPageContainer>
     </>
   );

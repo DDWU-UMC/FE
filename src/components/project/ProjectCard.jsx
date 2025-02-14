@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  width: 100%;
-  padding: 35px;
+  width: 90%;
+  padding: 25px;
   background-color: #191919;
   border-radius: 8px;
   display: flex;
@@ -84,30 +84,31 @@ const Details = styled.p`
 
 const ProjectCard = ({
   title,
-  platform,
+  serviceType,
   pm,
-  frontend,
-  backend,
+  frontEnd,
+  backEnd,
   design,
+  image,
   onClick,
 }) => {
   return (
     <CardContainer onClick={onClick}>
-      <ProjectImage />
+      <ProjectImage imageUrl={image.fileUrl} />
       <ProjectInfo>
-        <Type>{platform}</Type>
+        <Type>{serviceType}</Type>
         <Title>{title}</Title>
         <Details>
           <strong>PM&nbsp;</strong> {pm}
         </Details>
         <Details>
-          <strong>Front-end&nbsp;</strong> {frontend.join(", ")}
-        </Details>
-        <Details>
-          <strong>Back-end&nbsp;</strong> {backend.join(", ")}
-        </Details>
-        <Details>
           <strong>Design&nbsp;</strong> {design}
+        </Details>
+        <Details>
+          <strong>Front-end&nbsp;</strong> {frontEnd}
+        </Details>
+        <Details>
+          <strong>Back-end&nbsp;</strong> {backEnd}
         </Details>
       </ProjectInfo>
     </CardContainer>
