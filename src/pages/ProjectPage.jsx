@@ -26,13 +26,34 @@ const SubTitle = styled.div`
   @media screen and (max-width: 430px) {
     font-size: 20px;
   }
+
+  @media screen and (max-width: 690px) {
+    margin-top: 130px;
+    font-size: 20px;
+  }
 `;
 
 const SearchFilterContainer = styled.div`
-  width: 40%;
+  width: 45%;
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media screen and (max-width: 960px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 690px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 430px) {
+    width: 100%;
+  }
 `;
 
 const SearchInput = styled.input`
@@ -42,6 +63,10 @@ const SearchInput = styled.input`
   border: 1px solid #585858;
   color: white;
   width: 100%;
+
+  @media screen and (max-width: 550px) {
+    font-size: 12px;
+  }
 `;
 
 const Dropdown = styled.select`
@@ -56,29 +81,13 @@ const Dropdown = styled.select`
   &:hover {
     border: 1px solid #ba224d;
   }
-`;
 
-const ButtonContainer = styled.div`
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-
-  @media screen and (max-width: 430px) {
-    gap: 10px;
+  @media screen and (max-width: 550px) {
+    font-size: 12px;
   }
-`;
-
-const GenButton = styled.button`
-  background-color: ${(props) => (props.active ? "#ba224d" : "#4a0d1e")};
-  color: white;
-  border: 2px solid ${(props) => (props.active ? "#ba224d" : "#370a17")};
-  padding: 5px 20px;
-  border-radius: 4px;
-  cursor: pointer;
 
   @media screen and (max-width: 430px) {
-    padding: 3px 15px;
-    font-size: 10px;
+    font-size: 11px;
   }
 `;
 
