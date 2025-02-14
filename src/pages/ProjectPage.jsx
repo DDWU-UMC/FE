@@ -202,7 +202,7 @@ function ProjectPage() {
             ))}
           </Dropdown>
         </SearchFilterContainer>
-        <ProjectList projectData={projectData} gen={selectedGen} />
+        <ProjectList projectData={projectData} gen={selectedParseIntGen} />
       </ProjectPageContainer>
     </>
   );

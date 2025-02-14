@@ -32,7 +32,7 @@ const ProjectList = ({ projectData, gen }) => {
   }, []);
 
   const handleProjectClick = (projectId) => {
-    navigate(`/project/${gen}/${projectId}`);
+    navigate(`/project/${projectId}`);
   };
 
   return (

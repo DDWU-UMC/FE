@@ -32,13 +32,14 @@ const ProjectInfo = styled.div`
 
 const Title = styled.h2`
   font-size: 15px;
-  margin: 5px 0;
+  margin: 8px 0;
   font-weight: bold;
 `;
 
 const Type = styled.span`
   font-size: 15px;
   color: #ba224d;
+  font-weight: bold;
 `;
 
 const ProjectCard = ({ title, serviceType, image, onClick }) => {

@@ -1,52 +1,67 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import MainHeader from "../components/header/MainHeader";
+import ProjectPreviewCard from "../components/project/ProjectPreviewCard";
 import styled from "styled-components";
-import projectData from "../database/projectData.json";
-import ProjectCard from "../components/project/ProjectPreviewCard2";
 import { useParams, useNavigate } from "react-router-dom";
 
-const Back = styled.div`
-  background-color: black;
-`;
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const ProjectDetailPageContainer = styled.div`
-  width: 60%;
-  margin: 50px auto;
-  padding: 70px;
-  border-radius: 15px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 50px;
   font-size: 20px;
   color: white;
-  background-color: rgb(36, 36, 36, 0.7);
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  align-items: center;
+
+  @media screen and (max-width: 430px) {
+    gap: 30px;
+  }
+`;
+
+const SubTitle1 = styled.div`
+  margin-top: 100px;
+  font-size: 23px;
+
+  @media screen and (max-width: 430px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 690px) {
+    margin-top: 130px;
+    font-size: 20px;
+  }
 `;
 
 const Project = styled.div`
   display: flex;
-  gap: 100px;
-`;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+  margin-bottom: 30px;
 
-const ProjectImage = styled.div`
-  width: 250px;
-  height: 250px;
-  background-color: rgba(57, 57, 57, 0.8);
-  border-radius: 15px;
-
-  @media screen and (max-width: 960px) {
-    width: 180px;
-    height: 180px;
-    gap: 45px;
+  @media screen and (max-width: 430px) {
+    width: 80%;
   }
 `;
 
-const ProjectInfo = styled.div`
-  flex: 1;
+const ProjectIntro = styled.div`
+  padding: 15px 40px;
+  border-radius: 8px;
+  background-color: #191919;
+
+  @media screen and (max-width: 430px) {
+    padding: 15px 20px;
+  }
 `;
 
 const Title = styled.h2`
-  font-size: 23px;
+  font-size: 20px;
   font-weight: bold;
+  margin: 5px 0;
 
   @media screen and (max-width: 960px) {
     font-size: 20px;
@@ -54,8 +69,8 @@ const Title = styled.h2`
 `;
 
 const Type = styled.span`
-  font-size: 20px;
-  color: #885564;
+  font-size: 18px;
+  color: #ba224d;
 
   @media screen and (max-width: 960px) {
     font-size: 18px;
@@ -64,121 +79,161 @@ const Type = styled.span`
 
 const Details = styled.p`
   font-size: 12px;
+  color: #b7b7b7;
+  margin: 5px 0;
 
   @media screen and (max-width: 960px) {
     font-size: 11px;
   }
 `;
 
-const Description = styled.p`
-  font-size: 13px;
-  margin-top: 40px;
+const ProjectDetail = styled.div`
+  flex: 1;
+  padding: 15px 40px;
+  border-radius: 8px;
+  background-color: #191919;
 
-  @media screen and (max-width: 960px) {
-    font-size: 11px;
+  @media screen and (max-width: 430px) {
+    padding: 15px 20px;
   }
 `;
 
-const Feature = styled.ul``;
-const FeatureLi = styled.li`
-  font-size: 12px;
+const ProjectImage = styled.div`
+  height: 100px;
+  padding: 100px;
+  margin-top: 20px;
+  background-color: #585858;
+  border-radius: 4px;
+
+  @media screen and (max-width: 690px) {
+    height: 30px;
+    padding: 50px 60px;
+  }
+`;
+
+const ProjectSubTitle = styled.p`
+  font-size: 15px;
+  font-weight: bold;
+`;
+
+const Line = styled.div`
+  width: 5%;
+  border: 1px solid #585858;
+`;
+
+const SubTitle2 = styled.div`
+  margin-top: 20px;
+  font-size: 23px;
+
+  @media screen and (max-width: 430px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 690px) {
+    margin-top: 130px;
+    font-size: 20px;
+  }
 `;
 
 const OtherProjects = styled.div`
+  width: 80%;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
-const SubTitle = styled.div`
-  margin-top: 20px;
-  font-size: 25px;
-  font-weight: bold;
-
-  @media screen and (max-width: 430px) {
-    font-size: 23px;
-  }
-`;
-
-const CardContainer = styled.div`
-  display: flex;
-  gap: 50px;
-  margin-top: 20px;
-`;
-
-const NoProjectsMessage = styled.p`
-  font-size: 16px;
-  color: gray;
-  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 `;
 
 const ProjectDetailPage = () => {
   const navigate = useNavigate();
-  const { gen, id } = useParams();
-  const selectedGen = Number(gen); // 현재 기수
-  const currentProject = projectData[selectedGen]?.find(
-    (p) => p.id === Number(id)
-  ); // 현재 보고 있는 프로젝트
+  const [projectDetailData, setProjectDetailData] = useState([]);
+  const [projectData, setProjectData] = useState([]);
+  const projectId = useParams();
 
-  const otherProjects =
-    projectData[selectedGen].filter(
-      (project) => project.id !== currentProject.id
-    ) || []; // 현재 프로젝트 제외한 7기 프로젝트
+  // 새로고침 후 맨 위로 스크롤
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const projectDetailData = axios.get(`${apiUrl}/projects/${projectId.id}`);
+    const projects = axios.get(`${apiUrl}/projects/${projectId.id}/others`);
+
+    axios
+      .all([projectDetailData, projects])
+      .then(
+        axios.spread((responseOne, responseTwo) => {
+          setProjectDetailData(responseOne.data.result);
+          setProjectData(responseTwo.data.result);
+        })
+      )
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
+  console.log("projectDetailData: ", projectDetailData);
+  console.log("projectData: ", projectData);
+
+  const handleProjectClick = (projectId) => {
+    navigate(`/project/${projectId}`);
+    window.location.reload();
+  };
 
   return (
-    <Back>
+    <>
       <MainHeader />
       <ProjectDetailPageContainer>
-        {/* 메인 프로젝트 상세 정보 */}
+        <SubTitle1>프로젝트 살펴보기</SubTitle1>
         <Project>
-          <ProjectImage />
-          <ProjectInfo>
+          <ProjectIntro>
             <Title>
-              {currentProject.title} <Type>{currentProject.type}</Type>
+              {projectDetailData.title}{" "}
+              <Type>{projectDetailData.serviceType}</Type>
             </Title>
+            <Details>{projectDetailData.description}</Details>
+          </ProjectIntro>
+          <ProjectDetail>
+            <ProjectImage />
+            <ProjectSubTitle>프로젝트 팀원</ProjectSubTitle>
             <Details>
-              <strong>PM</strong> {currentProject.pm}
+              <strong>PM&nbsp;</strong> {projectDetailData.pm}
             </Details>
             <Details>
-              <strong>Front-end</strong> {currentProject.frontend.join(", ")}
+              <strong>Design&nbsp;</strong> {projectDetailData.design}
             </Details>
             <Details>
-              <strong>Back-end</strong> {currentProject.backend.join(", ")}
+              <strong>Front-end&nbsp;</strong> {projectDetailData.frontEnd}
             </Details>
-            <Description>
-              프로젝트 설명 프로젝트 설명 프로젝트 설명 프로젝트 설명 프로젝트
-              설명
-            </Description>
-            <Feature>
-              <FeatureLi>핵심기능</FeatureLi>
-              <FeatureLi>핵심기능</FeatureLi>
-              <FeatureLi>핵심기능</FeatureLi>
-            </Feature>
-          </ProjectInfo>
+            <Details>
+              <strong>Back-end&nbsp;</strong> {projectDetailData.backEnd}
+            </Details>
+            <ProjectSubTitle>프로젝트 설명</ProjectSubTitle>
+            <Details>{projectDetailData.description}</Details>
+            <ProjectSubTitle>서비스 핵심 기능</ProjectSubTitle>
+            {Array.isArray(projectDetailData.features) &&
+            projectDetailData.features.length > 0 ? (
+              projectDetailData.features.map((feature, index) => (
+                <Details key={index}>- {feature.content}</Details>
+              ))
+            ) : (
+              <Details>핵심 기능이 없습니다.</Details>
+            )}
+          </ProjectDetail>
         </Project>
-
+        <Line />
+        <SubTitle2>다른 프로젝트 둘러보기</SubTitle2>
         {/* 다른 프로젝트 미리보기 카드 */}
         <OtherProjects>
-          <SubTitle>{selectedGen}기 다른 프로젝트 보기</SubTitle>
-          {otherProjects.length > 0 ? (
-            <CardContainer>
-              {otherProjects.slice(0, 3).map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  type={project.type}
-                  onClick={() =>
-                    navigate(`/project/${selectedGen}/${project.id}`)
-                  }
-                />
-              ))}
-            </CardContainer>
-          ) : (
-            <NoProjectsMessage>다른 프로젝트가 없습니다.</NoProjectsMessage>
-          )}
+          {projectData.map((project, index) => (
+            <ProjectPreviewCard
+              key={index}
+              {...project}
+              onClick={() => handleProjectClick(project.projectId)}
+            />
+          ))}
         </OtherProjects>
       </ProjectDetailPageContainer>
-    </Back>
+    </>
   );
 };
 

@@ -56,7 +56,7 @@ const ProjectInfo = styled.div`
 const Title = styled.h2`
   font-size: 21px;
   font-weight: bold;
-  margin-top: 7px;
+  margin: 10px 0px;
 
   @media screen and (max-width: 960px) {
     font-size: 18px;
