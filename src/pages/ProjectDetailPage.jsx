@@ -104,6 +104,10 @@ const ProjectImage = styled.div`
   margin-top: 20px;
   background-color: #585858;
   border-radius: 4px;
+  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* 이미지를 반복하지 않도록 설정 */
 
   @media screen and (max-width: 690px) {
     height: 30px;
@@ -194,7 +198,7 @@ const ProjectDetailPage = () => {
             <Details>{projectDetailData.description}</Details>
           </ProjectIntro>
           <ProjectDetail>
-            <ProjectImage />
+            <ProjectImage imageUrl={projectDetailData.image?.fileUrl} />
             <ProjectSubTitle>프로젝트 팀원</ProjectSubTitle>
             <Details>
               <strong>PM&nbsp;</strong> {projectDetailData.pm}

@@ -24,6 +24,10 @@ const ProjectImage = styled.div`
   background-color: rgba(57, 57, 57, 0.8);
   border-radius: 4px;
   margin-bottom: 10px;
+  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* 이미지를 반복하지 않도록 설정 */
 `;
 
 const ProjectInfo = styled.div`
@@ -49,7 +53,7 @@ const ProjectCard = ({ title, serviceType, image, onClick }) => {
         <ProjectInfo>
           <Type>{serviceType}</Type>
           <Title>{title}</Title>
-          <ProjectImage imageUrl={image.fileUrl} />
+          <ProjectImage imageUrl={image?.fileUrl} />
         </ProjectInfo>
       </CardInnerContainer>
     </CardContainer>
