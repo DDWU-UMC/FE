@@ -14,55 +14,59 @@ const FAQPageContainer = styled.div`
   align-items: center;
 
   @media screen and (max-width: 430px) {
-    gap: 30px;
+    gap: 20px;
   }
 `;
 
 const SubTitle = styled.div`
-  margin-top: 20px;
-  font-size: 25px;
-  font-weight: bold;
+  margin-top: 100px;
+  font-size: 23px;
 
-  @media screen and (max-width: 430px) {
-    font-size: 23px;
+  @media screen and (max-width: 690px) {
+    margin-top: 130px;
+    font-size: 20px;
   }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 12px;
   margin-bottom: 20px;
 
   @media screen and (max-width: 430px) {
-    gap: 14px;
+    gap: 10px;
   }
 `;
 
 const CateButton = styled.button`
-  background-color: ${(props) =>
-    props.active ? "rgb(105, 9, 38)" : "#602133"};
-  color: white;
-  font-weight: ${(props) => (props.active ? "800" : "400")};
-  border: none;
-  padding: 5px 17px;
-  border-radius: 10px;
+  background-color: ${(props) => (props.active ? "#ba224d" : "#4a0d1e")};
+  color: ${(props) => (props.active ? "#ffffff" : "#B7B7B7")};
+  border: 2px solid ${(props) => (props.active ? "#ba224d" : "#370a17")};
+  padding: 3px 20px;
+  border-radius: 4px;
+  font-size: 16px;
   cursor: pointer;
 
-  @media screen and (max-width: 430px) {
-    padding: 5px 14px;
+  @media screen and (max-width: 768px) {
+    padding: 3px 15px;
     font-size: 12px;
+  }
+
+  @media screen and (max-width: 430px) {
+    padding: 3px 15px;
+    font-size: 10px;
   }
 `;
 
 const FAQPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState("동아리 활동");
+  const [selectedCategory, setSelectedCategory] = useState("Plan");
   const categories = ["Plan", "Design", "Develop", "동아리 활동"];
 
   return (
     <>
       <MainHeader />
       <FAQPageContainer>
-        <SubTitle>자주 묻는 질문</SubTitle>
+        <SubTitle>FAQ 자주 묻는 질문</SubTitle>
         <ButtonContainer>
           {categories.map((category) => (
             <CateButton

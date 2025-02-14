@@ -7,7 +7,7 @@ const FQAContainer = styled.div`
   width: 60%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 
   @media screen and (max-width: 960px) {
     width: 80%;
@@ -32,6 +32,7 @@ const FAQList = ({ selectedCategory }) => {
       {filteredData.map((faq) => (
         <FAQItem
           key={faq.id}
+          category={faq.category}
           question={faq.Q}
           answer={faq.A}
           additional={faq["+"]}
