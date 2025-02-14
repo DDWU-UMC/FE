@@ -4,7 +4,7 @@ import styled from "styled-components";
 const CardContainer = styled.div`
   width: 100%;
   padding: 35px;
-  background-color: #282828;
+  background-color: #191919;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -32,7 +32,7 @@ const CardContainer = styled.div`
 const ProjectImage = styled.div`
   width: 320px;
   height: 200px;
-  background-color: rgba(57, 57, 57, 0.8);
+  background-color: #585858;
   border-radius: 4px;
 
   @media screen and (max-width: 960px) {
@@ -84,7 +84,7 @@ const Details = styled.p`
 
 const ProjectCard = ({
   title,
-  type,
+  platform,
   pm,
   frontend,
   backend,
@@ -95,7 +95,7 @@ const ProjectCard = ({
     <CardContainer onClick={onClick}>
       <ProjectImage />
       <ProjectInfo>
-        <Type>{type}</Type>
+        <Type>{platform}</Type>
         <Title>{title}</Title>
         <Details>
           <strong>PM&nbsp;</strong> {pm}
