@@ -4,9 +4,11 @@ import MainHeader from "../components/header/MainHeader";
 import MainFooter from "../components/footer/MainFooter";
 import styled from "styled-components";
 import Colors from "../constanst/colors";
+import headerImg from "../assets/underheaderImg.svg";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const ManagementPageContainer = styled.div`
+  width:80%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px; 
@@ -18,17 +20,41 @@ const ManagementPageContainer = styled.div`
   align-items: center; 
   margin-bottom: 50px;
 
-  .sub-tile{
-  margin-top: 100px;
+  .sub-tile-container {
+ 
+  margin: 9rem 0rem 2rem 0rem;
+  position: relative; /* 부모 요소 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.sub-tile-bg {
+  position: absolute; /* 절대 위치 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%); /* 정중앙 배치 */
+  width: 100%; /* 원하는 크기로 조정 */
+  height: auto;
+  z-index: -1;
+}
+
+.sub-tile {
+  position: relative; 
   font-size: 23px;
-  }
+  font-weight: bold;
+  z-index: 1;
+}
+ 
   @media screen and (max-width: 690px) {
     font-size: 15px;
 
-    .sub-tile{
-  margin-top: 130px;
-  font-size: 20px;
-  }
+  .sub-tile-container {
+ 
+  margin: 8.5rem 0rem 0rem 0rem;
+
+}
   }
 
 `;
@@ -155,8 +181,11 @@ function ManagementPage() {
   return (
     <>
       <MainHeader />
-      <ManagementPageContainer>
-        <div className="sub-tile">DDWU UMC 운영진</div>
+      <ManagementPageContainer >
+      <div className="sub-tile-container">
+  <img className="sub-tile-bg" src={headerImg} alt="배경 이미지" />
+  <div className="sub-tile">DDWU UMC 운영진</div>
+</div>
         <ManagementListContainer>
           {admins.map((admin) => (
             <Managements key={admin.clubAdminId} admin={admin} />
