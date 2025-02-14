@@ -75,6 +75,8 @@ const ManagementContainer = styled.div`
   .position {
     font-size: 15px;
     margin: 8px 10px;
+    margin-top: 15px;
+    font-weight: 500;
     color: ${Colors.primary400};
   }
   
