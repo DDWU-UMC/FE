@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import MainHeader from "../components/header/MainHeader"; 
+import MainFooter from "../components/footer/MainFooter";
 import styled from "styled-components";
 import Colors from "../constanst/colors";
 const apiUrl = import.meta.env.VITE_API_URL;
@@ -15,6 +16,7 @@ const ManagementPageContainer = styled.div`
   display: flex; 
   flex-direction: column;
   align-items: center; 
+  margin-bottom: 50px;
 
   .sub-tile{
   margin-top: 100px;
@@ -32,27 +34,27 @@ const ManagementPageContainer = styled.div`
 `;
 
 const ManagementListContainer = styled.div`
-  max-width: 900px;
+  width: 90%; /* 화면 크기에 맞춰 조정 */
+  max-width: 1200px; /* 최대 크기 제한 */
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start; /* 기본적으로 왼쪽 정렬 */
-  gap: 40px; /* gap 값을 40px로 설정 */
-  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr)); 
+  gap: 40px;
+  justify-content: center;
 
-
-  @media screen and (max-width: 768px) {
-      justify-content: space-evenly; /* 작은 화면에서는 왼쪽 정렬 */
-gap: 40px 0px;
-    align-items: flex-start; /* 요소들이 왼쪽부터 차례로 배치되게 */
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
 
-;
+  @media (max-width: 600px) {
+  
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
 `;
 const ManagementContainer = styled.div`
-  flex: 0 0 calc((100% - 80px) / 3);
-  max-width: calc((100% - 80px) / 3);
+
+  max-width: 100%;
   
   padding: 20px; 
   background-color: ${Colors.secondary400};
@@ -110,98 +112,7 @@ ul li::before {
 ul li {
   margin-bottom: 3px; /* 항목들 사이 간격 추가 */
 }
-  @media screen and (max-width: 768px) {
-    flex: 0 0 calc((100% - 120px) / 2);
-    max-width: calc((100% - 120px) / 2);
-  }
-  
-  @media screen and (max-width: 630px) {
-    flex: 0 0 calc((100% - 100px) / 2);
-    max-width: calc((100% - 100px) / 2);
 
-    .profileImg {
-      width: 165px;
-      height: 165px;
-    }
-    
-    .position {
-      font-size: 13px;
-      margin: 8px 10px;
-    }
-    
-    .name {
-      font-size: 14px;
-      font-weight: 500;
-      margin: 8px 10px;
- 
-    }
-    
-    .management-intro {
-      font-size: 11px;
-      margin: 8px 10px;
-      color: rgba(255, 255, 255, 0.6);
-    }
-    
-    .career {
-     
-      font-size: 11px;
-      margin: 4px 10px 15px;
-      color: rgba(255, 255, 255, 0.6);
-    }
-  }
-
-  @media screen and (max-width: 560px) {
-    flex: 0 0 60%;
-    max-width: 60%;
-
-     
-    .profileImg {
-      width: 160px;
-      height: 160px;
-  
-    }
-    
-    .position {
-      font-size: 12px;
-      margin: 8px 10px;
-    }
-    
-    .name {
-      font-size: 13px;
-      margin: 8px 10px;
-     
-    }
-    
-    .management-intro {
-      font-size: 11px;
-      margin: 8px 10px;
-    
-    }
-    
-    .career {
-  
-      font-size: 10px;
-      margin: 0px 10px 15px;
-    }
-  }
-     @media screen and (max-width: 460px) {
-  flex: 0 0 70%;
-    max-width: 70%;
-    .profileImg {
-      width: 150px;
-      height: 150px;
-  
-    }
-       @media screen and (max-width: 350px) {
-  flex: 0 0 70%;
-    max-width: 70%;
-    .profileImg {
-      width: 140px;
-      height: 140px;
-  
-    }
-  }
-}
 `;
 const Managements = ({ admin }) => {
   return (
@@ -252,6 +163,7 @@ function ManagementPage() {
           ))}
         </ManagementListContainer>
       </ManagementPageContainer>
+      <MainFooter/>
     </>
   );
 }

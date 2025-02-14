@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import MainHeader from "../components/header/MainHeader";
+import MainFooter from "../components/footer/MainFooter";
 import styled from "styled-components";
 import Colors from "../constanst/colors";
 import CurriculumData from "../database/curriculumData.json"
@@ -14,6 +15,7 @@ const CurriculumsPageContainer = styled.div`
   display: flex; 
   flex-direction: column;
   align-items: center; 
+  margin-bottom: 50px;
 
   .sub-tile{
     margin-top: 100px;
@@ -266,7 +268,8 @@ const CurriculumPage = () => {
   
           <Parts selectedPart={selectedPart} />
         </CurriculumsPageContainer>
-        <div></div>
+        <MainFooter/>
+     
       </>
     );
   };
