@@ -1,31 +1,61 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import MainHeader from "../components/header/MainHeader";
+import MainFooter from "../components/footer/MainFooter";
 import styled from "styled-components";
 import Colors from "../constanst/colors";
+import headerImg from "../assets/underheaderImg.svg"
 import CurriculumData from "../database/curriculumData.json"
 
 const CurriculumsPageContainer = styled.div`
   width: 80%;
+   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px; 
   gap: 40px; 
   color: white;
+  font-size: 20px;
   display: flex; 
   flex-direction: column;
   align-items: center; 
+  margin-bottom: 50px;
 
-  .sub-tile{
-    margin-top: 100px;
-    font-size: 23px;
-    }
-    @media screen and (max-width: 690px) {
-      font-size: 15px;
-  
-      .sub-tile{
-    margin-top: 130px;
-    font-size: 20px;
-    }
+.sub-tile-container {
+ 
+  margin: 9rem 0rem 2rem 0rem;
+  position: relative; /* 부모 요소 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.sub-tile-bg {
+  position: absolute; /* 절대 위치 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%); /* 정중앙 배치 */
+  width: 100%; /* 원하는 크기로 조정 */
+  height: auto;
+  z-index: -1;
+}
+
+.sub-tile {
+  position: relative; 
+  font-size: 23px;
+  font-weight: bold;
+  z-index: 1;
+}
+ 
+  @media screen and (max-width: 690px) {
+    font-size: 15px;
+
+  .sub-tile-container {
+ 
+  margin: 8.5rem 0rem 0rem 0rem;
+
+}
+  }
 
 
 `;
@@ -251,7 +281,10 @@ const CurriculumPage = () => {
       <>
         <MainHeader />
         <CurriculumsPageContainer>
-          <div className="sub-tile">파트별 커리큘럼</div>
+            <div className="sub-tile-container">
+              <img className="sub-tile-bg" src={headerImg} alt="배경 이미지" />
+              <div className="sub-tile">파트별 커리큘럼</div>
+            </div>
           <ButtonContainer>
             {parts.map((part) => (
               <PartButton
@@ -266,7 +299,8 @@ const CurriculumPage = () => {
   
           <Parts selectedPart={selectedPart} />
         </CurriculumsPageContainer>
-        <div></div>
+        <MainFooter/>
+     
       </>
     );
   };
