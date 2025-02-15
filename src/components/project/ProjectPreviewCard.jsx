@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  background-color: #282828;
+  background-color: #191919;
   border-radius: 8px;
   cursor: pointer;
 
@@ -12,18 +12,22 @@ const CardContainer = styled.div`
 `;
 
 const CardInnerContainer = styled.div`
-  border-radius: 15px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  margin: 20px 20px 5px 20px;
-  gap: 10px;
+  margin: 10px 20px 5px 20px;
 `;
 
 const ProjectImage = styled.div`
-  width: 160px;
-  height: 160px;
+  width: 230px;
+  height: 150px;
   background-color: rgba(57, 57, 57, 0.8);
   border-radius: 4px;
+  margin-bottom: 10px;
+  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* 이미지를 반복하지 않도록 설정 */
 `;
 
 const ProjectInfo = styled.div`
@@ -32,23 +36,24 @@ const ProjectInfo = styled.div`
 
 const Title = styled.h2`
   font-size: 15px;
+  margin: 8px 0;
   font-weight: bold;
 `;
 
 const Type = styled.span`
   font-size: 15px;
   color: #ba224d;
+  font-weight: bold;
 `;
 
-const ProjectCard = ({ title, type, onClick }) => {
+const ProjectCard = ({ title, serviceType, image, onClick }) => {
   return (
     <CardContainer onClick={onClick}>
       <CardInnerContainer>
-        <ProjectImage />
         <ProjectInfo>
-          <Title>
-            {title} <Type>{type}</Type>
-          </Title>
+          <Type>{serviceType}</Type>
+          <Title>{title}</Title>
+          <ProjectImage imageUrl={image?.fileUrl} />
         </ProjectInfo>
       </CardInnerContainer>
     </CardContainer>
