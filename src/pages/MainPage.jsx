@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import MainHeader from "../components/header/MainHeader";
-import MainFooter from "../components/footer/MainFooter";
 import backGroundImg from "../assets/main-background.svg";
 import backGroundImgMobile from "../assets/background-mobile.svg";
 import btrImg from "../assets/BreakTheRules.svg";
 import infoImg from "../assets/info.svg";
+import coreDayImg from "../assets/coreday.jpg";
 import otImg from "../assets/ot.jpeg";
 import netWorkingImg from "../assets/networking.jpeg"
 import mtImg from "../assets/MT.png"
@@ -20,8 +19,9 @@ import springIcon from "../assets/springBoot-icon.svg"
 
 const IntroContaioner = styled.div`
   font-size: 9vw;;
-  font-weight: 800;
+  font-weight: 12000;
   margin: 7rem 5rem;
+  font-family: 'Pretendard-ExtraBold';
 
   /* 텍스트 전체에 그라디언트 적용 */
   background-clip: text;
@@ -70,8 +70,8 @@ const IntroContaioner = styled.div`
   }
 
   @media screen and (max-width: 690px) {
-
-     margin: 7rem 2.5rem;
+     font-size: 11vw;
+     margin: 8rem 2rem;
   }
 
 
@@ -131,11 +131,12 @@ const Img = styled.img`
   left: 0;
 `;
 
+
 const FixedImgOT = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-220%, -380%);
+  transform: translate(90%, -350%);
   width: 15vw;
   max-width: 300px;
   text-align: center;
@@ -157,7 +158,7 @@ const FixedImgOT = styled.div`
   transform-origin: center;
 
   &:hover {
-    transform: translate(-220%, -380%) scale(1.08);
+    transform: translate(90%, -350%) scale(1.08);
     box-shadow: 
       0px 6px 15px rgba(255, 255, 255, 0.3),
       0px -6px 15px rgba(255, 255, 255, 0.15),
@@ -175,9 +176,9 @@ const FixedImgOT = styled.div`
 
     @media screen and (max-width: 500px) {
       width: 27vw;
-       transform: translate(-140%, -560%);
+       transform: translate(50%, -370%);
        &:hover {
-       transform: translate(-140%, -560%);
+       transform: translate(50%, -370%);
        0px 4px 10px rgba(255, 255, 255, 0.2),
     0px -4px 10px rgba(255, 255, 255, 0.1),
     4px 0px 10px rgba(255, 255, 255, 0.1),
@@ -185,6 +186,24 @@ const FixedImgOT = styled.div`
 
        
        }
+    }
+`;
+
+const FixedImgCoreDay = styled(FixedImgOT)`
+ transform: translate(-220%, -380%);
+
+  &:hover {
+    transform: translate(-220%, -380%) scale(1.08);
+  }
+
+   @media screen and (max-width: 500px) {
+     
+      transform: translate(-140%, -450%);
+
+       &:hover {
+      transform: translate(-140%, -450%) ;
+      }
+     
     }
 `;
 
@@ -197,28 +216,28 @@ const FixedImgNetWorking = styled(FixedImgOT)`
 
    @media screen and (max-width: 500px) {
      
-      transform: translate(-80%, -340%);
+      transform: translate(-80%, -240%);
 
        &:hover {
-      transform: translate(-80%, -340%) ;
+      transform: translate(-80%, -240%) ;
       }
      
     }
 `;
 
 const FixedImgMT = styled(FixedImgOT)`
-  transform: translate(90%, -350%);
+  transform: translate(-220%, -40%);
 
   &:hover {
-    transform: translate(90%, -350%) scale(1.08);
+    transform: translate(-220%, -40%) scale(1.08);
   }
 
    @media screen and (max-width: 500px) {
      
-       transform: translate(50%, -450%);
+       transform: translate(-160%, -20%);
 
       &:hover {
-     transform: translate(50%, -450%);
+     transform: translate(50%, -370%);
       }
     }
 `;
@@ -228,8 +247,16 @@ const FixedImgHackathon = styled(FixedImgOT)`
  transform: translate(60%, 170%);
 
  &:hover {
-    transform: translate(60%, 170%) scale(1.08); /* ✅ 위치 고정 + 크기 확대 */
+    transform: translate(60%, 170%) scale(1.08);
 }
+    @media screen and (max-width: 500px) {
+     
+       transform: translate(-120%, 200%);
+
+      &:hover {
+     transform: translate(-120%, 200%);
+      }
+    }
 `;
 
 const PartIconsContainer = styled.div`
@@ -264,21 +291,7 @@ width: 100%;
     gap:10px;
 
   }
-  .plan-mobile{
-  margin-top:30px;
-  }
 
-   .spring-mobile{
-  margin-top:50px;
-  }
-
-  .design-mobile{
-
-  }
-
-  .web-mobile{
-    margin-top:20px;
-  }
 
   @keyframes hoverBounce {
   0% { transform: translateY(0); }
@@ -461,6 +474,7 @@ justify-content: center;
 margin-bottom: 150px;
 
 .recruiting-text{
+  font-family: 'Pretendard-Bold';
 font-size: 50px;
 color:white;
 font-weight: 900;
@@ -474,7 +488,7 @@ font-weight: 600;
 color: ${Colors.primary};
 border: 2.5px solid ${Colors.primary};
 border-radius: 30px;
-margin: 1rem;
+margin: 2rem;
 
 }
 .disabled-button{
@@ -485,7 +499,7 @@ font-weight: 600;
 color: white;
 border: 2.5px solid ${Colors.secondary200};
 border-radius: 30px;
-margin: 1rem;
+margin: 2rem;
 background-color:${Colors.secondary200};
 }
 
@@ -545,31 +559,31 @@ const PartIcons = () => {
   return (
     <PartIconsContainer>
       <div className="partcontainer-web">
-      <PartContainer className="linefirst" onClick={() => handlePartClick("Plan")}>
+      <PartContainer className="linefirst" onClick={() => handlePartClick("plan")}>
         <IconContainer>
           <img src={planIcon} alt="planIcon" />
         </IconContainer>
         <div className="partBtn">Plan</div>
       </PartContainer>
-      <PartContainer className="linesecond" onClick={() => handlePartClick("Design")}>
+      <PartContainer className="linesecond" onClick={() => handlePartClick("design")}>
         <IconContainer>
           <img src={designIcon} alt="designIcon"/>
         </IconContainer>
         <div className="partBtn">Design</div>
       </PartContainer>
-      <PartContainer className="linefirst" onClick={() => handlePartClick("Android")}>
+      <PartContainer className="linefirst" onClick={() => handlePartClick("android")}>
         <IconContainer>
           <img src={androidIcon} alt="androidIcon"/>
         </IconContainer>
         <div className="partBtn">Android</div>
       </PartContainer>
-      <PartContainer className="linesecond" onClick={() => handlePartClick("Web")}>
+      <PartContainer className="linesecond" onClick={() => handlePartClick("web")}>
         <IconContainer>
           <img src={webIcon} alt="webIcon" />
         </IconContainer>
         <div className="partBtn">Web</div>
       </PartContainer>
-      <PartContainer className="linefirst" onClick={() => handlePartClick("Spring Boot")}>
+      <PartContainer className="linefirst" onClick={() => handlePartClick("springboot")}>
         <IconContainer>
           <img src={springIcon} alt="springIcon"/>
         </IconContainer>
@@ -579,19 +593,19 @@ const PartIcons = () => {
 
       <div className="partcontainer-mobile">
       <div className="linefirst-container">
-      <PartContainerMibile className="plan-mobile" onClick={() => handlePartClick("Plan")}>
+      <PartContainerMibile className="plan-mobile" onClick={() => handlePartClick("PLAN")}>
         <IconContainerMobile>
           <img src={planIcon} alt="planIcon" />
         </IconContainerMobile>
         <div className="partBtn">Plan</div>
       </PartContainerMibile>
-      <PartContainerMibile className="and-mobile" onClick={() => handlePartClick("Android")}>
+      <PartContainerMibile className="and-mobile" onClick={() => handlePartClick("ANDROID")}>
         <IconContainerMobile>
           <img src={androidIcon} alt="androidIcon"/>
         </IconContainerMobile>
         <div className="partBtn">Android</div>
       </PartContainerMibile>
-      <PartContainerMibile className="spring-mobile" onClick={() => handlePartClick("Spring Boot")}>
+      <PartContainerMibile className="spring-mobile" onClick={() => handlePartClick("SPRING_BOOT")}>
         <IconContainerMobile>
           <img src={springIcon} alt="springIcon"/>
         </IconContainerMobile>
@@ -599,13 +613,13 @@ const PartIcons = () => {
       </PartContainerMibile>
       </div>
       <div className="linesecond-container">
-      <PartContainerMibile className="design-mobile" onClick={() => handlePartClick("Design")}>
+      <PartContainerMibile className="design-mobile" onClick={() => handlePartClick("DESIGN")}>
         <IconContainerMobile>
           <img src={designIcon} alt="designIcon"/>
         </IconContainerMobile>
         <div className="partBtn">Design</div>
       </PartContainerMibile>
-      <PartContainerMibile className="web-mobile" onClick={() => handlePartClick("Web")}>
+      <PartContainerMibile className="web-mobile" onClick={() => handlePartClick("WEB")}>
         <IconContainerMobile>
           <img src={webIcon} alt="webIcon" />
         </IconContainerMobile>
@@ -618,10 +632,12 @@ const PartIcons = () => {
 };
 
 
-function MainPage() {
+const MainPage= () => {
+  
+
+
 return (
   <>
-    <MainHeader /> 
     <Intro />
     <BreakTheRules />
     <Info/>
@@ -632,6 +648,9 @@ return (
       <FixedImgOT>
         <img src={otImg} alt="OT Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
       </FixedImgOT>
+      <FixedImgCoreDay>
+        <img src={coreDayImg} alt="CoreDay Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+      </FixedImgCoreDay>
       <FixedImgNetWorking>
         <img src={netWorkingImg} alt="netWorking Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
       </FixedImgNetWorking>
@@ -648,7 +667,6 @@ return (
       <div className="active-button">지원하기</div>
       <div className="disabled-button">8기 모집이 완료되었습니다.</div>
     </RecruitingContainer>
-    <MainFooter/>
   </>
 );
 }

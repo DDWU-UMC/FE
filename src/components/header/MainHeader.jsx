@@ -182,7 +182,7 @@ function MainHeader() {
         </li>
         <li
           className={location.pathname.startsWith("/curriculum") ? "active" : ""}
-          onClick={() => navigate("/curriculum/Plan")}
+          onClick={() => navigate("/curriculum/plan")}
         >
           커리큘럼
         </li>
