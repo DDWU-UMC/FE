@@ -4,6 +4,7 @@ import styled from "styled-components";
 import MainHeader from "../components/header/MainHeader";
 import MainFooter from "../components/footer/MainFooter";
 import backGroundImg from "../assets/main-background.svg";
+import backGroundImgMobile from "../assets/background-mobile.svg";
 import btrImg from "../assets/BreakTheRules.svg";
 import infoImg from "../assets/info.svg";
 import otImg from "../assets/ot.jpeg";
@@ -101,8 +102,25 @@ const InfoContainer = styled.div`
 const ImageContainer = styled.div`
   width: 100%;
   height: 0%;
-  padding-bottom: calc(1000 / 1920 * 100%);
+
   position: relative;
+
+  .background-mobile{
+  display: none;
+  
+  }
+
+  @media screen and (max-width: 500px) {
+    .background-web{
+  display: none;
+  
+  }
+     .background-mobile{
+  display: block;
+  padding
+  
+  }
+  }
 `;
 
 const Img = styled.img`
@@ -117,7 +135,7 @@ const FixedImgOT = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-220%, -510%);
+  transform: translate(-220%, -380%);
   width: 15vw;
   max-width: 300px;
   text-align: center;
@@ -139,7 +157,7 @@ const FixedImgOT = styled.div`
   transform-origin: center;
 
   &:hover {
-    transform: translate(-220%, -510%) scale(1.08);
+    transform: translate(-220%, -380%) scale(1.08);
     box-shadow: 
       0px 6px 15px rgba(255, 255, 255, 0.3),
       0px -6px 15px rgba(255, 255, 255, 0.15),
@@ -154,63 +172,156 @@ const FixedImgOT = styled.div`
     border-radius: 3px;
     transition: transform 0.4s ease-in-out;
   }
+
+    @media screen and (max-width: 500px) {
+      width: 27vw;
+       transform: translate(-140%, -560%);
+       &:hover {
+       transform: translate(-140%, -560%);
+       0px 4px 10px rgba(255, 255, 255, 0.2),
+    0px -4px 10px rgba(255, 255, 255, 0.1),
+    4px 0px 10px rgba(255, 255, 255, 0.1),
+    -4px 0px 10px rgba(255, 255, 255, 0.1);
+
+       
+       }
+    }
 `;
 
 const FixedImgNetWorking = styled(FixedImgOT)`
-  transform: translate(-120%, -390%);
+  transform: translate(-120%, -250%);
 
   &:hover {
-    transform: translate(-120%, -390%) scale(1.08);
+    transform: translate(-120%, -250%) scale(1.08);
   }
+
+   @media screen and (max-width: 500px) {
+     
+      transform: translate(-80%, -340%);
+
+       &:hover {
+      transform: translate(-80%, -340%) ;
+      }
+     
+    }
 `;
 
 const FixedImgMT = styled(FixedImgOT)`
-  transform: translate(90%, -490%);
+  transform: translate(90%, -350%);
 
   &:hover {
-    transform: translate(90%, -490%) scale(1.08);
+    transform: translate(90%, -350%) scale(1.08);
   }
+
+   @media screen and (max-width: 500px) {
+     
+       transform: translate(50%, -450%);
+
+      &:hover {
+     transform: translate(50%, -450%);
+      }
+    }
 `;
 
 const FixedImgHackathon = styled(FixedImgOT)`
 
- transform: translate(70%, -10%);
+ transform: translate(60%, 170%);
 
  &:hover {
-    transform: translate(70%, -10%) scale(1.08); /* ✅ 위치 고정 + 크기 확대 */
+    transform: translate(60%, 170%) scale(1.08); /* ✅ 위치 고정 + 크기 확대 */
 }
 `;
 
 const PartIconsContainer = styled.div`
 width: 100%;
+
+  margin: 17rem 0rem 12rem 0rem; /* PartIconsContainer에 마진을 바로 적용 */
+
+ 
+.partcontainer-web{
+
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
-  margin: 17rem 0rem 12rem 0rem; /* PartIconsContainer에 마진을 바로 적용 */
 
 
+ 
+}
   .linesecond {
-  margin-top: 100px;
+  margin-top: 90px;
   align-self: flex-start; 
+}
+
+  .linefirst-container{
+   display: flex;
+  justify-content: center;
+  gap:10px;
+ 
+  }
+   .linesecond-container{
+   display: flex;
+  justify-content: center;
+    gap:10px;
+
+  }
+  .plan-mobile{
+  margin-top:30px;
+  }
+
+   .spring-mobile{
+  margin-top:50px;
+  }
+
+  .design-mobile{
+
+  }
+
+  .web-mobile{
+    margin-top:20px;
+  }
+
+  @keyframes hoverBounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); } /* 위로 살짝 */
+  100% { transform: translateY(0); }
+}
+
+@keyframes hoverDownBounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(20px); } /* 위로 살짝 */
+  100% { transform: translateY(0); }
+}
+
+@keyframes Bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); } /* 위로 살짝 */
+  100% { transform: translateY(0); }
+}
+
+@keyframes DownBounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(10px); } /* 위로 살짝 */
+  100% { transform: translateY(0); }
 }
 
 @media screen and (max-width: 1024px) {
   
      .linefirst{
-  animation: hoverDownBounce 5s ease-in-out infinite;
+  animation: hoverBounce 5s ease-in-out infinite;
 
 }
      
 .linesecond {
 animation: hoverBounce 5s ease-in-out infinite; 
+animation-delay: 2.5s;
 }
 
 
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 500px) {
   
     
-margin: 8rem 0rem; 
+margin: 0rem; 
 
 }
 
@@ -236,19 +347,6 @@ const PartContainer = styled.div`
   font-size: 17px;
   }
 
-
-  @keyframes hoverBounce {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); } /* 위로 살짝 */
-  100% { transform: translateY(0); }
-}
-
-@keyframes hoverDownBounce {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(20px); } /* 위로 살짝 */
-  100% { transform: translateY(0); }
-}
-
  &:hover {
 
     animation: hoverBounce 2s ease-in-out infinite; 
@@ -272,12 +370,42 @@ const PartContainer = styled.div`
       max-width: calc((100% - 100px) / 5);
     }
 
-    @media screen and (max-width: 430px) {
+    @media screen and (max-width: 500px) {
   
-      flex: 0 0 calc((100% - 20px) / 5);
-      max-width: calc((100% - 20px) / 5);
-     .partBtn {
+    display:none;
+    
+}
+  
+`;
 
+const PartContainerMibile = styled.div`
+  display: none;
+  
+  .partBtn{
+  background-color:${Colors.primary};
+  margin-top: 14px;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  }
+
+
+    @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc((100% - 80px) / 3);
+    max-width: calc((100% - 80px) / 3);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+   &:hover {
+
+    animation: none;
+}
+ 
+     .partBtn {
+    
         margin-top: 11px;
         padding: 3px 5px;
 
@@ -287,7 +415,6 @@ const PartContainer = styled.div`
 }
   
 `;
-
 
 const IconContainer = styled.div`
 
@@ -307,6 +434,82 @@ const IconContainer = styled.div`
 
 
 `;
+
+
+const IconContainerMobile = styled.div`
+
+  display: flex;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 정사각형 유지 */
+  border-radius:10px;
+  background-color: ${Colors.secondary400};
+
+  img{
+  width: 100%;
+  }
+
+
+
+`;
+const RecruitingContainer = styled.div`
+
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-bottom: 150px;
+
+.recruiting-text{
+font-size: 50px;
+color:white;
+font-weight: 900;
+}
+
+.active-button{
+display:flex;
+padding: 10px 25px;
+font-size: 20px;
+font-weight: 600;
+color: ${Colors.primary};
+border: 2.5px solid ${Colors.primary};
+border-radius: 30px;
+margin: 1rem;
+
+}
+.disabled-button{
+display:none;
+padding: 10px 25px;
+font-size: 20px;
+font-weight: 600;
+color: white;
+border: 2.5px solid ${Colors.secondary200};
+border-radius: 30px;
+margin: 1rem;
+background-color:${Colors.secondary200};
+}
+
+
+  @media screen and (max-width: 500px) {
+  
+.recruiting-text{
+font-size: 30px;
+
+}
+
+.active-button{
+font-size: 15px;
+
+}
+.disabled-button{
+font-size: 15px;
+
+}
+    
+}
+  
+`;
+
 const Intro = () => {
   return (
     <IntroContaioner>
@@ -341,6 +544,7 @@ const PartIcons = () => {
 
   return (
     <PartIconsContainer>
+      <div className="partcontainer-web">
       <PartContainer className="linefirst" onClick={() => handlePartClick("Plan")}>
         <IconContainer>
           <img src={planIcon} alt="planIcon" />
@@ -371,6 +575,44 @@ const PartIcons = () => {
         </IconContainer>
         <div className="partBtn">SpringBoot</div>
       </PartContainer>
+      </div>
+
+      <div className="partcontainer-mobile">
+      <div className="linefirst-container">
+      <PartContainerMibile className="plan-mobile" onClick={() => handlePartClick("Plan")}>
+        <IconContainerMobile>
+          <img src={planIcon} alt="planIcon" />
+        </IconContainerMobile>
+        <div className="partBtn">Plan</div>
+      </PartContainerMibile>
+      <PartContainerMibile className="and-mobile" onClick={() => handlePartClick("Android")}>
+        <IconContainerMobile>
+          <img src={androidIcon} alt="androidIcon"/>
+        </IconContainerMobile>
+        <div className="partBtn">Android</div>
+      </PartContainerMibile>
+      <PartContainerMibile className="spring-mobile" onClick={() => handlePartClick("Spring Boot")}>
+        <IconContainerMobile>
+          <img src={springIcon} alt="springIcon"/>
+        </IconContainerMobile>
+        <div className="partBtn">SpringBoot</div>
+      </PartContainerMibile>
+      </div>
+      <div className="linesecond-container">
+      <PartContainerMibile className="design-mobile" onClick={() => handlePartClick("Design")}>
+        <IconContainerMobile>
+          <img src={designIcon} alt="designIcon"/>
+        </IconContainerMobile>
+        <div className="partBtn">Design</div>
+      </PartContainerMibile>
+      <PartContainerMibile className="web-mobile" onClick={() => handlePartClick("Web")}>
+        <IconContainerMobile>
+          <img src={webIcon} alt="webIcon" />
+        </IconContainerMobile>
+        <div className="partBtn">Web</div>
+      </PartContainerMibile>
+      </div>
+      </div>
     </PartIconsContainer>
   );
 };
@@ -385,7 +627,8 @@ return (
     <Info/>
     <PartIcons/>
     <ImageContainer>
-      <Img src={backGroundImg} alt="background" />
+      <Img src={backGroundImg} alt="background" className="background-web"/>
+      <Img src={backGroundImgMobile} alt="background" className="background-mobile"/>
       <FixedImgOT>
         <img src={otImg} alt="OT Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
       </FixedImgOT>
@@ -399,6 +642,12 @@ return (
         <img src={hackathonImg} alt=" Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
       </FixedImgHackathon>
     </ImageContainer>
+    <RecruitingContainer> 
+      <div className="recruiting-text">RECRUITING</div>
+      <div className="recruiting-text">START ! </div>
+      <div className="active-button">지원하기</div>
+      <div className="disabled-button">8기 모집이 완료되었습니다.</div>
+    </RecruitingContainer>
     <MainFooter/>
   </>
 );
