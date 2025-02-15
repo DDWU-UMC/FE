@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  width: 100%;
-  padding: 35px;
-  background-color: #282828;
+  width: 90%;
+  padding: 25px;
+  background-color: #191919;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -32,11 +32,15 @@ const CardContainer = styled.div`
 const ProjectImage = styled.div`
   width: 320px;
   height: 200px;
-  background-color: rgba(57, 57, 57, 0.8);
+  background-color: #585858;
   border-radius: 4px;
+  background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* 이미지를 반복하지 않도록 설정 */
 
   @media screen and (max-width: 960px) {
-    width: 250px;
+    width: 270px;
     height: 180px;
     gap: 45px;
   }
@@ -56,7 +60,7 @@ const ProjectInfo = styled.div`
 const Title = styled.h2`
   font-size: 21px;
   font-weight: bold;
-  margin-top: 7px;
+  margin: 10px 0px;
 
   @media screen and (max-width: 960px) {
     font-size: 18px;
@@ -84,30 +88,31 @@ const Details = styled.p`
 
 const ProjectCard = ({
   title,
-  type,
+  serviceType,
   pm,
-  frontend,
-  backend,
+  frontEnd,
+  backEnd,
   design,
+  image,
   onClick,
 }) => {
   return (
     <CardContainer onClick={onClick}>
-      <ProjectImage />
+      <ProjectImage imageUrl={image?.fileUrl} />
       <ProjectInfo>
-        <Type>{type}</Type>
+        <Type>{serviceType}</Type>
         <Title>{title}</Title>
         <Details>
           <strong>PM&nbsp;</strong> {pm}
         </Details>
         <Details>
-          <strong>Front-end&nbsp;</strong> {frontend.join(", ")}
-        </Details>
-        <Details>
-          <strong>Back-end&nbsp;</strong> {backend.join(", ")}
-        </Details>
-        <Details>
           <strong>Design&nbsp;</strong> {design}
+        </Details>
+        <Details>
+          <strong>Front-end&nbsp;</strong> {frontEnd}
+        </Details>
+        <Details>
+          <strong>Back-end&nbsp;</strong> {backEnd}
         </Details>
       </ProjectInfo>
     </CardContainer>
