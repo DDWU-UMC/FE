@@ -237,7 +237,7 @@ const FixedImgMT = styled(FixedImgOT)`
        transform: translate(-160%, -20%);
 
       &:hover {
-     transform: translate(50%, -370%);
+     transform: translate(-160%, -20%);
       }
     }
 `;
@@ -282,13 +282,14 @@ width: 100%;
   .linefirst-container{
    display: flex;
   justify-content: center;
-  gap:10px;
+  margin-bottom:15px;
+  gap:12px;
  
   }
    .linesecond-container{
    display: flex;
   justify-content: center;
-    gap:10px;
+    gap:12px;
 
   }
 
@@ -421,7 +422,7 @@ const PartContainerMibile = styled.div`
     
         margin-top: 11px;
         padding: 3px 5px;
-
+        border-radius: 3px;
         font-size: 8px;
   
       }
@@ -437,7 +438,7 @@ const IconContainer = styled.div`
 
   width: 100%;
   aspect-ratio: 1 / 1; /* 정사각형 유지 */
-  border-radius:10px;
+  border-radius:5px;
   background-color: ${Colors.secondary400};
 
   img{
@@ -454,7 +455,7 @@ const IconContainerMobile = styled.div`
   display: flex;
   width: 100%;
   aspect-ratio: 1 / 1; /* 정사각형 유지 */
-  border-radius:10px;
+  border-radius: 5px;
   background-color: ${Colors.secondary400};
 
   img{

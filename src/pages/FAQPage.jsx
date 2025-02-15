@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import MainHeader from "../components/header/MainHeader";
 import FAQList from "../components/FAQ/FAQList";
+import headerImg from "../assets/underheaderImg.svg";
 
 const FAQPageContainer = styled.div`
+  width:80%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   gap: 40px;
@@ -14,18 +16,54 @@ const FAQPageContainer = styled.div`
   align-items: center;
   margin-bottom: 50px;
 
+  .sub-tile-container {
+ 
+  margin: 9rem 0rem 2rem 0rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  }
+
+.sub-tile-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%); 
+  width: 100%; 
+  height: auto;
+  z-index: -1;
+  }
+
+.sub-tile {
+  position: relative; 
+  font-size: 23px;
+  font-weight: bold;
+  z-index: 1;
+  }
+
+ 
+  @media screen and (max-width: 690px) {
+    font-size: 15px;
+
+  .sub-tile-container {
+ 
+  margin: 8.5rem 0rem 0rem 0rem;
+
+}
+  @media screen and (max-width: 500px) {
+  
+  .sub-tile {
+  font-size: 18px;
+  }
+  
+  }
+
+  }
   @media screen and (max-width: 430px) {
     gap: 20px;
-  }
-`;
-
-const SubTitle = styled.div`
-  margin-top: 100px;
-  font-size: 23px;
-
-  @media screen and (max-width: 690px) {
-    margin-top: 130px;
-    font-size: 20px;
   }
 `;
 
@@ -39,11 +77,12 @@ const ButtonContainer = styled.div`
   }
 `;
 
+
 const CateButton = styled.button`
   background-color: ${(props) => (props.active ? "#ba224d" : "#4a0d1e")};
   color: ${(props) => (props.active ? "#ffffff" : "#B7B7B7")};
   border: 2px solid ${(props) => (props.active ? "#ba224d" : "#370a17")};
-  padding: 3px 20px;
+  padding: 3px 10px;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
@@ -66,7 +105,10 @@ const FAQPage = () => {
   return (
     <>
       <FAQPageContainer>
-        <SubTitle>FAQ 자주 묻는 질문</SubTitle>
+         <div className="sub-tile-container">
+            <img className="sub-tile-bg" src={headerImg} alt="배경 이미지" />
+            <div className="sub-tile">FAQ 자주 묻는 질문</div>
+          </div>
         <ButtonContainer>
           {categories.map((category) => (
             <CateButton
