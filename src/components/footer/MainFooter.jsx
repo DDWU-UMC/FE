@@ -86,7 +86,6 @@ const FooterContainer = styled.div`
 
   }
   .instargram, .kakao, .mail{
-  margin-top:6px;
     width: 30px;
 
   }
@@ -169,7 +168,7 @@ function MainFooter() {
                 <a href="https://www.instagram.com/ddwu_makeus_challenge?igsh=dmd5dGpidHo5angy&utm_source=qr">
                 <img src={instargram} className="instargram"/>
                 </a>
-                <a href="">
+                <a href="https://open.kakao.com/o/s3Okjggh">
                 <img src={kako} className="kakao"/>
                 </a>
                <a href="mailto:ddwu0umc@gmail.com">
