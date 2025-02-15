@@ -116,6 +116,7 @@ const ProjectImage = styled.div`
 `;
 
 const ProjectSubTitle = styled.p`
+  margin-top: 30px;
   font-size: 15px;
   font-weight: bold;
 `;
@@ -195,7 +196,7 @@ const ProjectDetailPage = () => {
               {projectDetailData.title}{" "}
               <Type>{projectDetailData.serviceType}</Type>
             </Title>
-            <Details>{projectDetailData.description}</Details>
+            <Details>{projectDetailData.introduction}</Details>
           </ProjectIntro>
           <ProjectDetail>
             <ProjectImage imageUrl={projectDetailData.image?.fileUrl} />
