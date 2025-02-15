@@ -22,7 +22,7 @@ const CurriculumsPageContainer = styled.div`
 
 .sub-tile-container {
  
-  margin: 9rem 0rem 2rem 0rem;
+  margin: 9rem 0rem 0rem 0rem;
   position: relative; /* 부모 요소 설정 */
   display: flex;
   justify-content: center;
@@ -51,10 +51,13 @@ const CurriculumsPageContainer = styled.div`
     font-size: 15px;
 
   .sub-tile-container {
- 
   margin: 8.5rem 0rem 0rem 0rem;
-
+  }
 }
+@media screen and (max-width: 500px) {
+  
+  .sub-tile {
+  font-size: 18px;
   }
 
 
@@ -100,11 +103,11 @@ const PartInfo = styled.div`
 
    @media screen and (max-width: 430px) {
     .name-english{
-    font-size: 15px;
-    padding: 5px 10px; 
+    font-size: 11px;
+    padding: 3px 8px; 
   }
   .name-korean{
-  font-size: 20px;
+  font-size: 22px;
   }
   .part-icon{
   margin-left: 5px;
@@ -315,8 +318,8 @@ const Parts = ({ selectedPart }) => {
 
 
 const CurriculumPage = () => {
-    const { part } = useParams();  // URL 파라미터에서 part 값을 추출
-    const [selectedPart, setSelectedPart] = useState(part || "PLAN");  // 초기값은 파라미터 값으로 설정
+    const { part } = useParams(); 
+    const [selectedPart, setSelectedPart] = useState(part || "PLAN"); 
   
     const parts = ["plan", "design", "android", "web", "springboot"];
 
@@ -339,7 +342,7 @@ const CurriculumPage = () => {
         <CurriculumsPageContainer>
             <div className="sub-tile-container">
               <img className="sub-tile-bg" src={headerImg} alt="배경 이미지" />
-              <div className="sub-tile">파트별 커리큘럼</div>
+              <div className="sub-tile">DDWU UMC 파트 커리큘럼</div>
             </div>
           <ButtonContainer>
             {parts.map((part) => (

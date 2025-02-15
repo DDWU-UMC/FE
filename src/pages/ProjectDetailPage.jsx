@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import MainHeader from "../components/header/MainHeader";
+import headerImg from "../assets/underheaderImg.svg";
 import ProjectPreviewCard from "../components/project/ProjectPreviewCard";
 import styled from "styled-components";
 import { useParams, useNavigate } from "react-router-dom";
@@ -8,6 +8,8 @@ import { useParams, useNavigate } from "react-router-dom";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const ProjectDetailPageContainer = styled.div`
+   width:80%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   gap: 50px;
@@ -17,23 +19,49 @@ const ProjectDetailPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  .sub-tile-container {
+ 
+  margin: 9rem 0rem 2rem 0rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
+  }
+
+.sub-tile-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%); 
+  width: 100%; 
+  height: auto;
+  z-index: -1;
+  }
+
+.sub-tile {
+  position: relative; 
+  font-size: 23px;
+  font-weight: bold;
+  z-index: 1;
+  }
+ 
+  @media screen and (max-width: 690px) {
+  
+  .sub-tile-container {
+  margin: 8.5rem 0rem 0rem 0rem;
+  }
+
+  }
+
+  @media screen and (max-width: 500px) {
+  
+  .sub-tile {
+  font-size: 18px;
+  }
   @media screen and (max-width: 430px) {
     gap: 30px;
-  }
-`;
-
-const SubTitle1 = styled.div`
-  margin-top: 100px;
-  font-size: 23px;
-
-  @media screen and (max-width: 430px) {
-    font-size: 20px;
-  }
-
-  @media screen and (max-width: 690px) {
-    margin-top: 130px;
-    font-size: 20px;
   }
 `;
 
@@ -41,11 +69,15 @@ const Project = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 70%;
+  width: 90%;
   margin-bottom: 30px;
 
+  @media screen and (max-width: 600px) {
+   width: 100%;
+  }
+
   @media screen and (max-width: 430px) {
-    width: 80%;
+    width: 100%;
   }
 `;
 
@@ -100,7 +132,7 @@ const ProjectDetail = styled.div`
 `;
 
 const ProjectImage = styled.div`
-  height: 100px;
+  height: 200px;
   padding: 100px;
   margin-top: 20px;
   background-color: #585858;
@@ -110,9 +142,14 @@ const ProjectImage = styled.div`
   background-position: center;
   background-repeat: no-repeat; /* 이미지를 반복하지 않도록 설정 */
 
-  @media screen and (max-width: 690px) {
-    height: 30px;
+  @media screen and (max-width: 800px) {
+    height: 120px;
     padding: 50px 60px;
+  }
+
+   @media screen and (max-width: 800px) {
+    height: 50px;
+    padding: 50px 5px;
   }
 `;
 
@@ -189,7 +226,10 @@ const ProjectDetailPage = () => {
   return (
     <>
       <ProjectDetailPageContainer>
-        <SubTitle1>프로젝트 살펴보기</SubTitle1>
+        <div className="sub-tile-container">
+          <img className="sub-tile-bg" src={headerImg} alt="배경 이미지" />
+          <div className="sub-tile">프로젝트 살펴보기</div>
+        </div>
         <Project>
           <ProjectIntro>
             <Title>

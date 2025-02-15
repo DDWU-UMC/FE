@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import MainHeader from "../components/header/MainHeader"; 
-import MainFooter from "../components/footer/MainFooter";
 import styled from "styled-components";
 import Colors from "../constanst/colors";
 import headerImg from "../assets/underheaderImg.svg";
@@ -48,11 +46,15 @@ const ManagementPageContainer = styled.div`
 }
  
   @media screen and (max-width: 690px) {
-    font-size: 15px;
+  
 
   .sub-tile-container {
- 
   margin: 8.5rem 0rem 0rem 0rem;
+
+}
+  .sub-tile {
+  font-size: 18px;
+  font-weight: bold;
 
 }
   }

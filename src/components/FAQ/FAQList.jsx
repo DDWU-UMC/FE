@@ -4,13 +4,13 @@ import FAQData from "../../database/fqaData.json";
 import styled from "styled-components";
 
 const FQAContainer = styled.div`
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 15px;
 
   @media screen and (max-width: 960px) {
-    width: 80%;
+    width: 100%;
   }
 
   @media screen and (max-width: 768px) {
