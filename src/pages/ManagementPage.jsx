@@ -180,7 +180,6 @@ function ManagementPage() {
 
   return (
     <>
-      <MainHeader />
       <ManagementPageContainer >
       <div className="sub-tile-container">
   <img className="sub-tile-bg" src={headerImg} alt="배경 이미지" />
@@ -192,7 +191,6 @@ function ManagementPage() {
           ))}
         </ManagementListContainer>
       </ManagementPageContainer>
-      <MainFooter/>
     </>
   );
 }

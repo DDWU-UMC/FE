@@ -15,6 +15,7 @@ const ProjectPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom:50px;
 
   @media screen and (max-width: 430px) {
     gap: 30px;
@@ -157,7 +158,6 @@ function ProjectPage() {
 
   return (
     <>
-      <MainHeader />
       <ProjectPageContainer>
         <SubTitle>DDWU UMC 이전 기수 프로젝트</SubTitle>
         <SearchFilterContainer>

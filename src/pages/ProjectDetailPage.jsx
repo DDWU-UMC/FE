@@ -16,6 +16,7 @@ const ProjectDetailPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 50px;
 
   @media screen and (max-width: 430px) {
     gap: 30px;
@@ -187,7 +188,6 @@ const ProjectDetailPage = () => {
 
   return (
     <>
-      <MainHeader />
       <ProjectDetailPageContainer>
         <SubTitle1>프로젝트 살펴보기</SubTitle1>
         <Project>

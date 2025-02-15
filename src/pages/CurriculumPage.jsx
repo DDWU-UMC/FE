@@ -279,7 +279,6 @@ const CurriculumPage = () => {
   
     return (
       <>
-        <MainHeader />
         <CurriculumsPageContainer>
             <div className="sub-tile-container">
               <img className="sub-tile-bg" src={headerImg} alt="배경 이미지" />
