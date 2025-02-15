@@ -7,10 +7,13 @@ import CurriculumPage from "./pages/CurriculumPage";
 import GlobalStyle from "../src/GlobalStyle";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import FAQPage from "./pages/FAQPage";
+import MainHeader from "./components/header/MainHeader";
+import MainFooter from "./components/footer/MainFooter";
 
 function App() {
   return (
     <Router>
+      <MainHeader/>
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -19,7 +22,8 @@ function App() {
         <Route path="/management" element={<ManagementPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/project/:id" element={<ProjectDetailPage />} />
-      </Routes>
+      </Routes>    
+      <MainFooter/>
     </Router>
   );
 }

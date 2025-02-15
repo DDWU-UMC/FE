@@ -12,6 +12,7 @@ const FAQPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 50px;
 
   @media screen and (max-width: 430px) {
     gap: 20px;
@@ -64,7 +65,6 @@ const FAQPage = () => {
 
   return (
     <>
-      <MainHeader />
       <FAQPageContainer>
         <SubTitle>FAQ 자주 묻는 질문</SubTitle>
         <ButtonContainer>
