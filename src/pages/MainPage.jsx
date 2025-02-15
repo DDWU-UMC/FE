@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import MainHeader from "../components/header/MainHeader";
+import MainFooter from "../components/footer/MainFooter";
 import backGroundImg from "../assets/main-background.svg";
 import btrImg from "../assets/BreakTheRules.svg";
 import infoImg from "../assets/info.svg";
@@ -64,7 +65,7 @@ const IntroContaioner = styled.div`
   }
 
   @media screen and (max-width: 920px) {
-     margin: 6rem 3.5rem  ;
+     margin: 6rem 3.5rem ;
   }
 
   @media screen and (max-width: 690px) {
@@ -398,6 +399,7 @@ return (
         <img src={hackathonImg} alt=" Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
       </FixedImgHackathon>
     </ImageContainer>
+    <MainFooter/>
   </>
 );
 }
