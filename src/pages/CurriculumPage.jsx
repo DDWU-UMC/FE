@@ -109,7 +109,7 @@ const PartInfo = styled.div`
     }
     .part-icon {
       margin-left: 5px;
-      margin-top: 2px;
+      margin-top: 2.5px;
       width: 18px;
       height: 18px;
     }
