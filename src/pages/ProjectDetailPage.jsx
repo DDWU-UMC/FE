@@ -72,6 +72,10 @@ const Project = styled.div`
     width: 100%;
   }
 
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+
   @media screen and (max-width: 430px) {
     width: 100%;
   }
@@ -130,7 +134,8 @@ const ImageDiv = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
+  margin-top: 20px;
 
   @media screen and (max-width: 880px) {
     padding-bottom: 20px;
@@ -142,35 +147,14 @@ const ImageDiv = styled.div`
 `;
 
 const ProjectImage = styled.div`
-  width: 750px;
-  height: 420px;
-  margin-top: 20px;
-  background-color: #585858;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: auto;
   border-radius: 4px;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
-  background-size: cover;
+  background-size: contain; /* 원본 크기 유지 */
   background-position: center;
-  background-repeat: no-repeat; /* 이미지를 반복하지 않도록 설정 */
-
-  @media screen and (max-width: 1150px) {
-    width: 550px;
-    height: 310px;
-  }
-
-  @media screen and (max-width: 880px) {
-    width: 400px;
-    height: 230px;
-  }
-
-  @media screen and (max-width: 675px) {
-    width: 280px;
-    height: 160px;
-  }
-
-  @media screen and (max-width: 450px) {
-    width: 260px;
-    height: 145px;
-  }
+  background-repeat: no-repeat;
 `;
 
 const ProjectSubTitle = styled.p`
@@ -234,9 +218,6 @@ const ProjectDetailPage = () => {
         console.error("Error fetching data:", error);
       });
   }, []);
-
-  console.log("projectDetailData: ", projectDetailData);
-  console.log("projectData: ", projectData);
 
   const handleProjectClick = (projectId) => {
     navigate(`/project/${projectId}`);

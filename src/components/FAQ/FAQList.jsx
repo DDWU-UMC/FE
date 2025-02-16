@@ -4,7 +4,7 @@ import FAQData from "../../database/fqaData.json";
 import styled from "styled-components";
 
 const FQAContainer = styled.div`
-  width: 100%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   gap: 15px;
