@@ -20,7 +20,7 @@ const CardInnerContainer = styled.div`
 
 const ProjectImage = styled.div`
   width: 230px;
-  height: 150px;
+  height: 130px;
   background-color: rgba(57, 57, 57, 0.8);
   border-radius: 4px;
   margin-bottom: 10px;

@@ -25,7 +25,7 @@ const CardContainer = styled.div`
     flex-direction: column;
     align-items: baseline;
     padding: 35px;
-    gap: 25px;
+    gap: 30px;
   }
 
   @media screen and (max-width: 430px) {
@@ -35,7 +35,7 @@ const CardContainer = styled.div`
 `;
 
 const ProjectImage = styled.div`
-  width: 320px;
+  width: 350px;
   height: 200px;
   background-color: #585858;
   border-radius: 4px;
@@ -46,18 +46,22 @@ const ProjectImage = styled.div`
 
   @media screen and (max-width: 960px) {
     width: 270px;
-    height: 180px;
-    gap: 45px;
+    height: 150px;
   }
 
   @media screen and (max-width: 768px) {
-    width: 100%;
+    width: 320px;
     height: 180px;
   }
 
-  @media screen and (max-width: 430px) {
-    width: 100%;
-    height: 150px;
+  @media screen and (max-width: 585px) {
+    width: 250px;
+    height: 140px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 200px;
+    height: 115px;
   }
 `;
 

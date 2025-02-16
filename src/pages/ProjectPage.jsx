@@ -105,7 +105,7 @@ const SearchInput = styled.input`
   background-color: #282828;
   border: 1px solid #585858;
   color: white;
-  width: 100%;
+  width: 90%;
 
   &:focus::placeholder {
     color: transparent;
