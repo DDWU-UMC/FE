@@ -7,6 +7,8 @@ const FQAContainer = styled.div`
   width: 70%;
   display: flex;
   flex-direction: column;
+  margin-bottom:100px;
+
   gap: 15px;
 
   @media screen and (max-width: 1440px) {

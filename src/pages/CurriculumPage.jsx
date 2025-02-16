@@ -5,6 +5,8 @@ import Colors from "../constanst/colors";
 import headerImg from "../assets/underheaderImg.svg";
 import axios from "axios";
 import CurriculumData from "../database/curriculumData.json";
+import MainFooter from "../components/footer/MainFooter";
+
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const CurriculumsPageContainer = styled.div`
@@ -356,6 +358,7 @@ const CurriculumPage = () => {
 
         <Parts selectedPart={selectedPart} />
       </CurriculumsPageContainer>
+      <MainFooter/>
     </>
   );
 };

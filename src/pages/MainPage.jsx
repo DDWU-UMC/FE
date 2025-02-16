@@ -10,6 +10,7 @@ import otImg from "../assets/ot.jpeg";
 import netWorkingImg from "../assets/networking.jpeg"
 import mtImg from "../assets/MT.png"
 import pmdayImg from "../assets/Pmday.jpg"
+import studyImg from "../assets/study.jpg"
 import hackathonImg from "../assets/hackathon.png"
 import Colors from "../constanst/colors";
 import planIcon from "../assets/plan-icon.svg"
@@ -17,6 +18,7 @@ import designIcon from "../assets/design-icon.svg"
 import androidIcon from "../assets/android-icon.svg"
 import webIcon from "../assets/web-icon.svg"
 import springIcon from "../assets/springBoot-icon.svg"
+import MainFooter from "../components/footer/MainFooter";
 
 const IntroContaioner = styled.div`
   font-size: 9vw;;
@@ -223,6 +225,23 @@ const FixedImgNetWorking = styled(FixedImgOT)`
       transform: translate(-80%, -240%) ;
       }
      
+    }
+`;
+
+const FixedImgStudy = styled(FixedImgOT)`
+  transform: translate(130%, -160%);
+
+  &:hover {
+    transform: translate(130%, -160%) scale(1.08);
+  }
+
+   @media screen and (max-width: 500px) {
+     
+       transform: translate(60%, -120%);
+
+      &:hover {
+     transform: translate(60%, -120%);
+      }
     }
 `;
 
@@ -652,7 +671,7 @@ const PartIcons = () => {
 
 
 const MainPage= () => {
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -675,6 +694,9 @@ return (
       <FixedImgNetWorking>
         <img src={netWorkingImg} alt="netWorking Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
       </FixedImgNetWorking>
+      <FixedImgStudy>
+        <img src={studyImg} alt="netWorking Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+      </FixedImgStudy>
       <FixedImgMT>
         <img src={mtImg} alt="mt Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
       </FixedImgMT>
@@ -688,9 +710,12 @@ return (
     <RecruitingContainer> 
       <div className="recruiting-text">RECRUITING</div>
       <div className="recruiting-text">START ! </div>
+      <a href="https://forms.gle/4c356ToYRBTctdUH7" style={{ all: "unset", cursor: "pointer" }}>
       <div className="active-button">지원하기</div>
+      </a>
       <div className="disabled-button">8기 모집이 완료되었습니다.</div>
     </RecruitingContainer>
+    <MainFooter/>
   </>
 );
 }
