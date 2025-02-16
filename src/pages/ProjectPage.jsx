@@ -3,6 +3,8 @@ import axios from "axios";
 import headerImg from "../assets/underheaderImg.svg";
 import styled from "styled-components";
 import ProjectList from "../components/project/ProjectList";
+import MainFooter from "../components/footer/MainFooter";
+import Colors from "../constanst/colors";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -18,6 +20,7 @@ const ProjectPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  min-height: 65vh;
 
   .sub-tile-container {
     margin: 9rem 0rem 2rem 0rem;
@@ -43,6 +46,14 @@ const ProjectPageContainer = styled.div`
     font-size: 23px;
     font-weight: bold;
     z-index: 1;
+  }
+
+  @media screen and (max-width: 530px) {
+    min-height: 73vh;
+  }
+
+  @media screen and (max-width: 430px) {
+    min-height: 76vh;
   }
 
   @media screen and (max-width: 690px) {
@@ -140,6 +151,11 @@ const Dropdown = styled.select`
   @media screen and (max-width: 430px) {
     font-size: 11px;
   }
+`;
+
+const FooterContainer = styled.div`
+  width: 100%;
+  background-color: ${Colors.secondary400};
 `;
 
 function ProjectPage() {
@@ -251,6 +267,9 @@ function ProjectPage() {
         </SearchFilterContainer>
         <ProjectList projectData={projectData} gen={selectedParseIntGen} />
       </ProjectPageContainer>
+      <FooterContainer>
+        <MainFooter />
+      </FooterContainer>
     </>
   );
 }
