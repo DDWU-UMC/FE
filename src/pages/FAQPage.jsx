@@ -4,7 +4,7 @@ import FAQList from "../components/FAQ/FAQList";
 import headerImg from "../assets/underheaderImg.svg";
 
 const FAQPageContainer = styled.div`
-  width: 80%;
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
