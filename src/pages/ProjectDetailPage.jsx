@@ -4,6 +4,7 @@ import headerImg from "../assets/underheaderImg.svg";
 import ProjectPreviewCard from "../components/project/ProjectPreviewCard";
 import styled from "styled-components";
 import { useParams, useNavigate } from "react-router-dom";
+import MainFooter from "../components/footer/MainFooter";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -286,6 +287,7 @@ const ProjectDetailPage = () => {
           ))}
         </OtherProjects>
       </ProjectDetailPageContainer>
+      <MainFooter />
     </>
   );
 };
