@@ -16,7 +16,7 @@ const FAQPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 90vh; /* 페이지 최소 높이 100% 설정 */
+  min-height: 85vh; /* 페이지 최소 높이 100% 설정 */
 
   .sub-tile-container {
     margin: 9rem 0rem 0rem 0rem;
@@ -42,6 +42,18 @@ const FAQPageContainer = styled.div`
     font-size: 23px;
     font-weight: bold;
     z-index: 1;
+  }
+
+  @media screen and (max-width: 1440px) {
+    min-height: 80vh;
+  }
+
+  @media screen and (max-width: 530px) {
+    min-height: 77vh;
+  }
+
+  @media screen and (max-width: 430px) {
+    min-height: 80vh;
   }
 
   @media screen and (max-width: 690px) {
@@ -87,7 +99,7 @@ const CateButton = styled.button`
   }
 
   @media screen and (max-width: 430px) {
-    padding: 3px 15px;
+    padding: 3px 14px;
     font-size: 10px;
   }
 `;
