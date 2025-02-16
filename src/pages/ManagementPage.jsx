@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import Colors from "../constanst/colors";
+import Colors from "../constanst/colors.mjs";
 import headerImg from "../assets/underheaderImg.svg";
 import MainFooter from "../components/footer/MainFooter";
 
