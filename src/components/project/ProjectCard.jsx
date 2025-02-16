@@ -27,6 +27,11 @@ const CardContainer = styled.div`
     padding: 35px;
     gap: 25px;
   }
+
+  @media screen and (max-width: 430px) {
+    padding: 25px;
+    gap: 10px;
+  }
 `;
 
 const ProjectImage = styled.div`
@@ -46,9 +51,13 @@ const ProjectImage = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    margin: auto;
     width: 100%;
     height: 180px;
+  }
+
+  @media screen and (max-width: 430px) {
+    width: 100%;
+    height: 150px;
   }
 `;
 
@@ -65,6 +74,10 @@ const Title = styled.h2`
   @media screen and (max-width: 960px) {
     font-size: 18px;
   }
+
+  @media screen and (max-width: 430px) {
+    font-size: 16px;
+  }
 `;
 
 const Type = styled.span`
@@ -75,6 +88,10 @@ const Type = styled.span`
   @media screen and (max-width: 960px) {
     font-size: 16px;
   }
+
+  @media screen and (max-width: 430px) {
+    font-size: 14px;
+  }
 `;
 
 const Details = styled.p`
@@ -83,6 +100,10 @@ const Details = styled.p`
 
   @media screen and (max-width: 960px) {
     font-size: 11px;
+  }
+
+  @media screen and (max-width: 430px) {
+    font-size: 10px;
   }
 `;
 
