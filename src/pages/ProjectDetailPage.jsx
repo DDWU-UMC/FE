@@ -72,6 +72,10 @@ const Project = styled.div`
     width: 100%;
   }
 
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+
   @media screen and (max-width: 430px) {
     width: 100%;
   }
@@ -126,27 +130,31 @@ const ProjectDetail = styled.div`
     padding: 15px 20px;
   }
 `;
+const ImageDiv = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+  margin-top: 20px;
+
+  @media screen and (max-width: 880px) {
+    padding-bottom: 20px;
+  }
+
+  @media screen and (max-width: 675px) {
+    padding-bottom: 10px;
+  }
+`;
 
 const ProjectImage = styled.div`
-  height: 200px;
-  padding: 100px;
-  margin-top: 20px;
-  background-color: #585858;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: auto;
   border-radius: 4px;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
-  background-size: cover;
+  background-size: contain; /* 원본 크기 유지 */
   background-position: center;
-  background-repeat: no-repeat; /* 이미지를 반복하지 않도록 설정 */
-
-  @media screen and (max-width: 800px) {
-    height: 120px;
-    padding: 50px 60px;
-  }
-
-  @media screen and (max-width: 800px) {
-    height: 50px;
-    padding: 50px 60px;
-  }
+  background-repeat: no-repeat;
 `;
 
 const ProjectSubTitle = styled.p`
@@ -211,9 +219,6 @@ const ProjectDetailPage = () => {
       });
   }, []);
 
-  console.log("projectDetailData: ", projectDetailData);
-  console.log("projectData: ", projectData);
-
   const handleProjectClick = (projectId) => {
     navigate(`/project/${projectId}`);
     window.location.reload();
@@ -235,7 +240,9 @@ const ProjectDetailPage = () => {
             <Details>{projectDetailData.introduction}</Details>
           </ProjectIntro>
           <ProjectDetail>
-            <ProjectImage imageUrl={projectDetailData.image?.fileUrl} />
+            <ImageDiv>
+              <ProjectImage imageUrl={projectDetailData.image?.fileUrl} />
+            </ImageDiv>
             <ProjectSubTitle>프로젝트 팀원</ProjectSubTitle>
             <Details>
               <strong>PM&nbsp;</strong> {projectDetailData.pm}
@@ -249,8 +256,12 @@ const ProjectDetailPage = () => {
             <Details>
               <strong>Back-end&nbsp;</strong> {projectDetailData.backEnd}
             </Details>
-            <ProjectSubTitle>프로젝트 설명</ProjectSubTitle>
-            <Details>{projectDetailData.description}</Details>
+            {projectDetailData.description && (
+              <>
+                <ProjectSubTitle>프로젝트 설명</ProjectSubTitle>
+                <Details>{projectDetailData.description}</Details>
+              </>
+            )}
             <ProjectSubTitle>서비스 핵심 기능</ProjectSubTitle>
             {Array.isArray(projectDetailData.features) &&
             projectDetailData.features.length > 0 ? (
