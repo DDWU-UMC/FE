@@ -275,8 +275,12 @@ const ProjectDetailPage = () => {
             <Details>
               <strong>Back-end&nbsp;</strong> {projectDetailData.backEnd}
             </Details>
-            <ProjectSubTitle>프로젝트 설명</ProjectSubTitle>
-            <Details>{projectDetailData.description}</Details>
+            {projectDetailData.description && (
+              <>
+                <ProjectSubTitle>프로젝트 설명</ProjectSubTitle>
+                <Details>{projectDetailData.description}</Details>
+              </>
+            )}
             <ProjectSubTitle>서비스 핵심 기능</ProjectSubTitle>
             {Array.isArray(projectDetailData.features) &&
             projectDetailData.features.length > 0 ? (
