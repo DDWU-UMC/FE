@@ -8,7 +8,7 @@ import { useParams, useNavigate } from "react-router-dom";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const ProjectDetailPageContainer = styled.div`
-   width:80%;
+  width: 80%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -20,48 +20,44 @@ const ProjectDetailPageContainer = styled.div`
   align-items: center;
   margin-bottom: 50px;
   .sub-tile-container {
- 
-  margin: 9rem 0rem 2rem 0rem;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
+    margin: 9rem 0rem 2rem 0rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
-.sub-tile-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -30%); 
-  width: 100%; 
-  height: auto;
-  z-index: -1;
+  .sub-tile-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 100%;
+    height: auto;
+    z-index: -1;
   }
 
-.sub-tile {
-  position: relative; 
-  font-size: 23px;
-  font-weight: bold;
-  z-index: 1;
+  .sub-tile {
+    position: relative;
+    font-size: 23px;
+    font-weight: bold;
+    z-index: 1;
   }
- 
+
   @media screen and (max-width: 690px) {
-  
-  .sub-tile-container {
-  margin: 8.5rem 0rem 0rem 0rem;
-  }
-
+    .sub-tile-container {
+      margin: 8.5rem 0rem 0rem 0rem;
+    }
   }
 
   @media screen and (max-width: 500px) {
-  
-  .sub-tile {
-  font-size: 18px;
-  }
-  @media screen and (max-width: 430px) {
-    gap: 30px;
+    .sub-tile {
+      font-size: 18px;
+    }
+    @media screen and (max-width: 430px) {
+      gap: 30px;
+    }
   }
 `;
 
@@ -73,7 +69,7 @@ const Project = styled.div`
   margin-bottom: 30px;
 
   @media screen and (max-width: 600px) {
-   width: 100%;
+    width: 100%;
   }
 
   @media screen and (max-width: 430px) {
@@ -147,7 +143,7 @@ const ProjectImage = styled.div`
     padding: 50px 60px;
   }
 
-   @media screen and (max-width: 800px) {
+  @media screen and (max-width: 800px) {
     height: 50px;
     padding: 50px 60px;
   }

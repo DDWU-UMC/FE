@@ -9,21 +9,26 @@ import ProjectDetailPage from "./pages/ProjectDetailPage";
 import FAQPage from "./pages/FAQPage";
 import MainHeader from "./components/header/MainHeader";
 import MainFooter from "./components/footer/MainFooter";
+import "./App.css"; // 추가
 
 function App() {
   return (
     <Router>
-      <MainHeader/>
-      <GlobalStyle />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/projects" element={<ProjectPage />} />
-        <Route path="/curriculum/:part" element={<CurriculumPage />} />
-        <Route path="/management" element={<ManagementPage />} />
-        <Route path="/faq" element={<FAQPage />} />
-        <Route path="/project/:id" element={<ProjectDetailPage />} />
-      </Routes>    
-      <MainFooter/>
+      <div className="wrapper">
+        <MainHeader />
+        <div className="contentWrapper">
+          <GlobalStyle />
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/projects" element={<ProjectPage />} />
+            <Route path="/curriculum/:part" element={<CurriculumPage />} />
+            <Route path="/management" element={<ManagementPage />} />
+            <Route path="/faq" element={<FAQPage />} />
+            <Route path="/project/:id" element={<ProjectDetailPage />} />
+          </Routes>
+        </div>
+        <MainFooter />
+      </div>
     </Router>
   );
 }
