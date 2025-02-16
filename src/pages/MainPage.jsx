@@ -12,7 +12,7 @@ import mtImg from "../assets/MT.png"
 import pmdayImg from "../assets/Pmday.jpg"
 import studyImg from "../assets/study.jpg"
 import hackathonImg from "../assets/hackathon.png"
-import Colors from "../constanst/colors";
+import Colors from "../constanst/colors.mjs";
 import planIcon from "../assets/plan-icon.svg"
 import designIcon from "../assets/design-icon.svg"
 import androidIcon from "../assets/android-icon.svg"

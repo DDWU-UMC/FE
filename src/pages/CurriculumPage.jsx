@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import Colors from "../constanst/colors";
+import Colors from "../constanst/colors.mjs";
 import headerImg from "../assets/underheaderImg.svg";
 import axios from "axios";
 import CurriculumData from "../database/curriculumData.json";

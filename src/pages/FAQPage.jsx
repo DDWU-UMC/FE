@@ -3,7 +3,7 @@ import styled from "styled-components";
 import FAQList from "../components/FAQ/FAQList";
 import headerImg from "../assets/underheaderImg.svg";
 import MainFooter from "../components/footer/MainFooter";
-import Colors from "../constanst/colors";
+import Colors from "../constanst/colors.mjs";
 
 const FAQPageContainer = styled.div`
   width: 80%;
