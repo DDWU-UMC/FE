@@ -165,10 +165,15 @@ const PartCurriculum = styled.div`
   left: 0;
   width: 5px;
   height: 5px;
-  background-color: ${Colors.secondary200};
-  border: 3px solid ${Colors.secondary200};
+  background-color: white;
+  border: 3px solid white;
   border-radius: 50%;
   transform: translateY(-50%);
+  box-shadow: 
+    0px 6px 15px rgba(255, 255, 255, 0.25), 
+    0px -6px 15px rgba(255, 255, 255, 0.12), 
+    6px 0px 15px rgba(255, 255, 255, 0.12),
+    -6px 0px 15px rgba(255, 255, 255, 0.12);
 }
 
 .ordered-nav--link:first-child{
