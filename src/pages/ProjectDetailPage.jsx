@@ -126,10 +126,24 @@ const ProjectDetail = styled.div`
     padding: 15px 20px;
   }
 `;
+const ImageDiv = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+
+  @media screen and (max-width: 880px) {
+    padding-bottom: 20px;
+  }
+
+  @media screen and (max-width: 675px) {
+    padding-bottom: 10px;
+  }
+`;
 
 const ProjectImage = styled.div`
-  height: 200px;
-  padding: 100px;
+  width: 750px;
+  height: 420px;
   margin-top: 20px;
   background-color: #585858;
   border-radius: 4px;
@@ -138,14 +152,24 @@ const ProjectImage = styled.div`
   background-position: center;
   background-repeat: no-repeat; /* 이미지를 반복하지 않도록 설정 */
 
-  @media screen and (max-width: 800px) {
-    height: 120px;
-    padding: 50px 60px;
+  @media screen and (max-width: 1150px) {
+    width: 550px;
+    height: 310px;
   }
 
-  @media screen and (max-width: 800px) {
-    height: 50px;
-    padding: 50px 60px;
+  @media screen and (max-width: 880px) {
+    width: 400px;
+    height: 230px;
+  }
+
+  @media screen and (max-width: 675px) {
+    width: 280px;
+    height: 160px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 260px;
+    height: 145px;
   }
 `;
 
@@ -235,7 +259,9 @@ const ProjectDetailPage = () => {
             <Details>{projectDetailData.introduction}</Details>
           </ProjectIntro>
           <ProjectDetail>
-            <ProjectImage imageUrl={projectDetailData.image?.fileUrl} />
+            <ImageDiv>
+              <ProjectImage imageUrl={projectDetailData.image?.fileUrl} />
+            </ImageDiv>
             <ProjectSubTitle>프로젝트 팀원</ProjectSubTitle>
             <Details>
               <strong>PM&nbsp;</strong> {projectDetailData.pm}
