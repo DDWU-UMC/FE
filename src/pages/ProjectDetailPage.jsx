@@ -149,7 +149,7 @@ const ProjectImage = styled.div`
 
    @media screen and (max-width: 800px) {
     height: 50px;
-    padding: 50px 5px;
+    padding: 50px 60px;
   }
 `;
 

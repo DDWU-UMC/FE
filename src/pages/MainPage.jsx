@@ -9,6 +9,7 @@ import coreDayImg from "../assets/coreday.jpg";
 import otImg from "../assets/ot.jpeg";
 import netWorkingImg from "../assets/networking.jpeg"
 import mtImg from "../assets/MT.png"
+import pmdayImg from "../assets/Pmday.jpg"
 import hackathonImg from "../assets/hackathon.png"
 import Colors from "../constanst/colors";
 import planIcon from "../assets/plan-icon.svg"
@@ -238,6 +239,23 @@ const FixedImgMT = styled(FixedImgOT)`
 
       &:hover {
      transform: translate(-160%, -20%);
+      }
+    }
+`;
+
+const FixedImgPmday = styled(FixedImgOT)`
+
+ transform: translate(0%, -20%);
+
+ &:hover {
+    transform: translate(0%, -20%) scale(1.08);
+}
+    @media screen and (max-width: 500px) {
+     
+       transform: translate(10%, 85%);
+
+      &:hover {
+     transform: translate(10%, 85%);
       }
     }
 `;
@@ -635,7 +653,9 @@ const PartIcons = () => {
 
 const MainPage= () => {
   
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 return (
   <>
@@ -658,6 +678,9 @@ return (
       <FixedImgMT>
         <img src={mtImg} alt="mt Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
       </FixedImgMT>
+      <FixedImgPmday>
+        <img src={pmdayImg} alt=" Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+      </FixedImgPmday>
       <FixedImgHackathon>
         <img src={hackathonImg} alt=" Image" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
       </FixedImgHackathon>
