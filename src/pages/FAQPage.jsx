@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import FAQList from "../components/FAQ/FAQList";
 import headerImg from "../assets/underheaderImg.svg";
+import MainFooter from "../components/footer/MainFooter";
+import Colors from "../constanst/colors";
 
 const FAQPageContainer = styled.div`
-  width: 100%;
+  width: 80%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -14,7 +16,7 @@ const FAQPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  min-height: 85vh; /* 페이지 최소 높이 100% 설정 */
 
   .sub-tile-container {
     margin: 9rem 0rem 0rem 0rem;
@@ -42,9 +44,20 @@ const FAQPageContainer = styled.div`
     z-index: 1;
   }
 
+  @media screen and (max-width: 1440px) {
+    min-height: 80vh;
+  }
+
+  @media screen and (max-width: 530px) {
+    min-height: 77vh;
+  }
+
+  @media screen and (max-width: 430px) {
+    min-height: 80vh;
+  }
+
   @media screen and (max-width: 690px) {
     font-size: 15px;
-
     .sub-tile-container {
       margin: 8.5rem 0rem 0rem 0rem;
     }
@@ -55,37 +68,45 @@ const FAQPageContainer = styled.div`
       font-size: 18px;
     }
   }
+
+  @media screen and (max-width: 430px) {
+    gap: 20px;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
-  gap: 14px;
+  gap: 12px;
   margin-bottom: 20px;
 
   @media screen and (max-width: 430px) {
     gap: 10px;
-    margin-bottom: 0px;
   }
 `;
 
 const CateButton = styled.button`
   background-color: ${(props) => (props.active ? "#ba224d" : "#4a0d1e")};
   color: ${(props) => (props.active ? "#ffffff" : "#B7B7B7")};
-  border: 1px solid ${(props) => (props.active ? "#ba224d" : "#370a17")};
-  padding: 5px 17px;
-  border-radius: 5px;
-  font-size: 15px;
+  border: 2px solid ${(props) => (props.active ? "#ba224d" : "#370a17")};
+  padding: 3px 20px;
+  border-radius: 4px;
+  font-size: 16px;
   cursor: pointer;
 
-  @media screen and (max-width: 600px) {
-    padding: 6px 8px;
-    font-size: 13px;
+  @media screen and (max-width: 768px) {
+    padding: 3px 15px;
+    font-size: 12px;
   }
 
   @media screen and (max-width: 430px) {
-    padding: 5px 7px;
+    padding: 3px 14px;
     font-size: 10px;
   }
+`;
+
+const FooterContainer = styled.div`
+  width: 100%;
+  background-color: ${Colors.secondary400};
 `;
 
 const FAQPage = () => {
@@ -112,6 +133,9 @@ const FAQPage = () => {
         </ButtonContainer>
         <FAQList selectedCategory={selectedCategory} />
       </FAQPageContainer>
+      <FooterContainer>
+        <MainFooter />
+      </FooterContainer>
     </>
   );
 };
