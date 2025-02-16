@@ -128,68 +128,74 @@ const PartCurriculum = styled.div`
   gap: 20px;
 
   .ordered-nav {
-    position: relative;
-    list-style: none; /* 기본 리스트 스타일 제거 */
-    margin: 0;
-    padding: 0;
-    display: block;
-  }
+  position: relative;
+  list-style: none; /* 기본 리스트 스타일 제거 */
+  margin: 0;
+  padding: 0;
+  display: block;
+}
 
-  .ordered-nav::before {
-    /* 세로선 */
-    content: "";
-    height: 95%;
-    position: absolute;
-    left: 5px;
-    top: 0;
-    width: 1px;
-    background-color: ${Colors.secondary200};
-  }
+.ordered-nav::before {
+  /* 세로선 */
+  content: '';
+  height: 95%;
+  position: absolute;
+  left: 5px;
+  top: 0;
+  width: 1px;
+  background-color: ${Colors.secondary200};
+}
 
-  .ordered-nav--link {
-    padding-left: 1.5rem;
-    margin: 1rem 0;
-    position: relative;
-  }
+.ordered-nav--link {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+  position: relative;
+}
 
-  .ordered-nav--link::before {
-    /* 각 항목의 원형 아이콘 */
-    content: "";
-    position: absolute;
-    top: 20%;
-    left: 0;
-    width: 5px;
-    height: 5px;
-    background-color: ${Colors.secondary200};
-    border: 3px solid ${Colors.secondary200};
-    border-radius: 50%;
-    transform: translateY(-50%);
-  }
+.ordered-nav--link::before {
+  /* 각 항목의 원형 아이콘 */
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border: 3px solid white;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 
+    0px 6px 15px rgba(255, 255, 255, 0.25), 
+    0px -6px 15px rgba(255, 255, 255, 0.12), 
+    6px 0px 15px rgba(255, 255, 255, 0.12),
+    -6px 0px 15px rgba(255, 255, 255, 0.12);
+}
 
-  .ordered-nav--link:first-child {
-    margin-top: 0;
-  }
-  /* 첫 번째 요소 조정 */
-  .ordered-nav--link:first-child::before {
-    top: 0;
-    transform: none;
-  }
+.ordered-nav--link:first-child{
+margin-top:0;
+}
+/* 첫 번째 요소 조정 */
+.ordered-nav--link:first-child::before {
+  top: 0;
+  transform: none;
+}
 
-  /* 마지막 요소 조정 */
-  .ordered-nav--link:last-child {
-    margin-bottom: 0;
-  }
-  .week {
-    font-weight: 600;
-    font-size: 16px;
-    margin-left: 8px;
-  }
-  .content {
-    font-weight: 300;
-    font-size: 13px;
-    margin-left: 8px;
-    margin-top: 8px;
-  }
+/* 마지막 요소 조정 */
+.ordered-nav--link:last-child {
+  margin-bottom: 0;
+}
+ .week{
+ font-weight: 600;
+ font-size: 16px;
+margin-left: 8px;
+ }
+ .content{
+ font-weight: 300;
+ font-size: 13px;
+ margin-left: 8px;
+ margin-top: 8px;
+
+ }
 `;
 
 const ButtonContainer = styled.div`
