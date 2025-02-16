@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../assets/logo.svg";
-import symbol from "../../../public/symbol.svg";
+import symbol from '../../assets/symbol.svg';
 import Colors from "../../constanst/colors";
 
 const StyledHeader = styled.div`
