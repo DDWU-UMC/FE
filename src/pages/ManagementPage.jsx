@@ -3,6 +3,8 @@ import axios from "axios";
 import styled from "styled-components";
 import Colors from "../constanst/colors";
 import headerImg from "../assets/underheaderImg.svg";
+import MainFooter from "../components/footer/MainFooter";
+
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const ManagementPageContainer = styled.div`
@@ -193,6 +195,7 @@ function ManagementPage() {
           ))}
         </ManagementListContainer>
       </ManagementPageContainer>
+      <MainFooter/>
     </>
   );
 }

@@ -114,7 +114,7 @@ const Type = styled.span`
 const Details = styled.p`
   font-size: 12px;
   color: #b7b7b7;
-  margin: 5px 0;
+  margin: 10px 0;
 
   @media screen and (max-width: 960px) {
     font-size: 11px;

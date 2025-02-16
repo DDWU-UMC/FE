@@ -165,7 +165,9 @@ function MainHeader() {
           <img className="logo" src={logo} alt="Logo" />
           <img className="symbol" src={symbol} alt="Logo" />
         </div>
+        <a href="https://forms.gle/4c356ToYRBTctdUH7" style={{ all: "unset" }}>
         <div className="apply-mobile">지원하기</div>
+        </a>
       </div>
       <ul className="header__menulist">
         <li
@@ -192,7 +194,9 @@ function MainHeader() {
         >
           FAQ
         </li>
+        <a href="https://forms.gle/4c356ToYRBTctdUH7" style={{ all: "unset" }}>
         <li className="apply">지원하기</li>
+        </a>
       </ul>
     </Header>
     </StyledHeader>
