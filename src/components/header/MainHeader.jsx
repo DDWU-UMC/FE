@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../assets/logo.svg";
 import symbol from '../../assets/symbol.svg';
-import Colors from "../../constanst/colors";
+import Colors from "../../constanst/colors.mjs";
 
 const StyledHeader = styled.div`
   position: fixed;

@@ -5,7 +5,7 @@ import instargram from "../../assets/instargram.svg";
 import kako from "../../assets/kakao.svg";
 import mail from "../../assets/mail.svg";
 import symbol from "../../../public/symbol.svg";
-import Colors from "../../constanst/colors";
+import Colors from "../../constanst/colors.mjs";
 
 const StyledFooter = styled.div`
   top: 0;
