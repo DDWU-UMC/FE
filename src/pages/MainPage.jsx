@@ -653,7 +653,9 @@ const PartIcons = () => {
 
 const MainPage= () => {
   
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 return (
   <>
