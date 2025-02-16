@@ -7,7 +7,7 @@ import ProjectList from "../components/project/ProjectList";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const ProjectPageContainer = styled.div`
-  width:80%;
+  width: 80%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -19,51 +19,43 @@ const ProjectPageContainer = styled.div`
   align-items: center;
   margin-bottom: 50px;
 
- .sub-tile-container {
- 
-  margin: 9rem 0rem 2rem 0rem;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
+  .sub-tile-container {
+    margin: 9rem 0rem 2rem 0rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
-.sub-tile-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -30%); 
-  width: 100%; 
-  height: auto;
-  z-index: -1;
+  .sub-tile-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 100%;
+    height: auto;
+    z-index: -1;
   }
 
-.sub-tile {
-  position: relative; 
-  font-size: 23px;
-  font-weight: bold;
-  z-index: 1;
+  .sub-tile {
+    position: relative;
+    font-size: 23px;
+    font-weight: bold;
+    z-index: 1;
   }
 
- 
   @media screen and (max-width: 690px) {
     font-size: 15px;
 
-  .sub-tile-container {
- 
-  margin: 8.5rem 0rem 0rem 0rem;
-
-}
-  @media screen and (max-width: 500px) {
-  
-  .sub-tile {
-  font-size: 18px;
-  }
-  
-  }
-
+    .sub-tile-container {
+      margin: 8.5rem 0rem 0rem 0rem;
+    }
+    @media screen and (max-width: 500px) {
+      .sub-tile {
+        font-size: 18px;
+      }
+    }
   }
   @media screen and (max-width: 430px) {
     gap: 30px;
@@ -85,21 +77,21 @@ const SubTitle = styled.div`
 `;
 
 const SearchFilterContainer = styled.div`
-  width: 45%;
+  width: 55%;
   display: flex;
   align-items: center;
   gap: 10px;
 
   @media screen and (max-width: 960px) {
-    width: 60%;
-  }
-
-  @media screen and (max-width: 690px) {
     width: 70%;
   }
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 690px) {
     width: 80%;
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 90%;
   }
 
   @media screen and (max-width: 430px) {
@@ -120,7 +112,11 @@ const SearchInput = styled.input`
   }
 
   @media screen and (max-width: 550px) {
-    font-size: 12px;
+    font-size: 11px;
+  }
+
+  @media screen and (max-width: 430px) {
+    font-size: 10px;
   }
 `;
 

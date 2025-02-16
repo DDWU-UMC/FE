@@ -88,7 +88,7 @@ const ProjectIntro = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
 
@@ -98,7 +98,7 @@ const Title = styled.h2`
 `;
 
 const Type = styled.span`
-  font-size: 18px;
+  font-size: 16px;
   color: #ba224d;
 
   @media screen and (max-width: 960px) {
@@ -229,7 +229,7 @@ const ProjectDetailPage = () => {
         <Project>
           <ProjectIntro>
             <Title>
-              {projectDetailData.title}{" "}
+              {projectDetailData.title}&nbsp;&nbsp;
               <Type>{projectDetailData.serviceType}</Type>
             </Title>
             <Details>{projectDetailData.introduction}</Details>

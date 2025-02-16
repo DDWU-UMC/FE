@@ -13,7 +13,7 @@ const ProjectListContainer = styled.div`
   gap: 40px;
 
   @media screen and (max-width: 430px) {
-    gap: 35px;
+    gap: 25px;
   }
 `;
 
@@ -37,21 +37,13 @@ const ProjectList = ({ projectData, gen }) => {
 
   return (
     <ProjectListContainer>
-      {projectData.map((project, index) =>
-        isMobile ? (
-          <ProjectPreviewCard
-            key={index}
-            {...project}
-            onClick={() => handleProjectClick(project.projectId)}
-          />
-        ) : (
-          <ProjectCard
-            key={index}
-            {...project}
-            onClick={() => handleProjectClick(project.projectId)}
-          />
-        )
-      )}
+      {projectData.map((project, index) => (
+        <ProjectCard
+          key={index}
+          {...project}
+          onClick={() => handleProjectClick(project.projectId)}
+        />
+      ))}
     </ProjectListContainer>
   );
 };
