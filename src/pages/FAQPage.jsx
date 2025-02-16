@@ -76,30 +76,36 @@ const FAQPageContainer = styled.div`
 
 const ButtonContainer = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 14px;
   margin-bottom: 20px;
 
   @media screen and (max-width: 430px) {
-    gap: 10px;
+  margin-top:20px;
+    gap: 12px;
   }
 `;
 
 const CateButton = styled.button`
-  background-color: ${(props) => (props.active ? "#ba224d" : "#4a0d1e")};
-  color: ${(props) => (props.active ? "#ffffff" : "#B7B7B7")};
-  border: 2px solid ${(props) => (props.active ? "#ba224d" : "#370a17")};
-  padding: 3px 20px;
-  border-radius: 4px;
-  font-size: 16px;
+    background-color: ${(props) =>
+    props.$active === "true" ? Colors.primary : Colors.btn};
+  color: ${(props) =>
+    props.$active === "true" ? "white" : Colors.secondary50};
+  border: 1px solid
+    ${(props) =>
+      props.$active === "true" ? Colors.primary : Colors.primary900};
+
+  padding: 5px 17px;
+  border-radius: 5px;
+  font-size: 15px;
   cursor: pointer;
 
   @media screen and (max-width: 768px) {
-    padding: 3px 15px;
-    font-size: 12px;
+   padding: 6px 8px;
+    font-size: 13px;
   }
 
   @media screen and (max-width: 430px) {
-    padding: 3px 14px;
+     padding: 7px 7px;
     font-size: 10px;
   }
 `;
@@ -124,7 +130,7 @@ const FAQPage = () => {
           {categories.map((category) => (
             <CateButton
               key={category}
-              active={selectedCategory === category}
+              $active={selectedCategory === category ? "true" : "false"}
               onClick={() => setSelectedCategory(category)}
             >
               {category}
