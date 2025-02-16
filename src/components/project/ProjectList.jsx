@@ -5,7 +5,7 @@ import ProjectPreviewCard from "./ProjectPreviewCard";
 import styled from "styled-components";
 
 const ProjectListContainer = styled.div`
-  width: 85%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@ const ProjectListContainer = styled.div`
   gap: 40px;
 
   @media screen and (max-width: 430px) {
-    gap: 35px;
+    gap: 25px;
   }
 `;
 
@@ -37,21 +37,13 @@ const ProjectList = ({ projectData, gen }) => {
 
   return (
     <ProjectListContainer>
-      {projectData.map((project, index) =>
-        isMobile ? (
-          <ProjectPreviewCard
-            key={index}
-            {...project}
-            onClick={() => handleProjectClick(project.projectId)}
-          />
-        ) : (
-          <ProjectCard
-            key={index}
-            {...project}
-            onClick={() => handleProjectClick(project.projectId)}
-          />
-        )
-      )}
+      {projectData.map((project, index) => (
+        <ProjectCard
+          key={index}
+          {...project}
+          onClick={() => handleProjectClick(project.projectId)}
+        />
+      ))}
     </ProjectListContainer>
   );
 };

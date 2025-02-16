@@ -13,7 +13,7 @@ import MainFooter from "./components/footer/MainFooter";
 function App() {
   return (
     <Router>
-      <MainHeader/>
+      <MainHeader />
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -22,8 +22,7 @@ function App() {
         <Route path="/management" element={<ManagementPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/project/:id" element={<ProjectDetailPage />} />
-      </Routes>    
-      <MainFooter/>
+      </Routes>
     </Router>
   );
 }
