@@ -631,19 +631,19 @@ const PartIcons = () => {
 
       <div className="partcontainer-mobile">
       <div className="linefirst-container">
-      <PartContainerMibile className="plan-mobile" onClick={() => handlePartClick("PLAN")}>
+      <PartContainerMibile className="plan-mobile" onClick={() => handlePartClick("plan")}>
         <IconContainerMobile>
           <img src={planIcon} alt="planIcon" />
         </IconContainerMobile>
         <div className="partBtn">Plan</div>
       </PartContainerMibile>
-      <PartContainerMibile className="and-mobile" onClick={() => handlePartClick("ANDROID")}>
+      <PartContainerMibile className="and-mobile" onClick={() => handlePartClick("android")}>
         <IconContainerMobile>
           <img src={androidIcon} alt="androidIcon"/>
         </IconContainerMobile>
         <div className="partBtn">Android</div>
       </PartContainerMibile>
-      <PartContainerMibile className="spring-mobile" onClick={() => handlePartClick("SPRING_BOOT")}>
+      <PartContainerMibile className="spring-mobile" onClick={() => handlePartClick("springboot")}>
         <IconContainerMobile>
           <img src={springIcon} alt="springIcon"/>
         </IconContainerMobile>
@@ -651,13 +651,13 @@ const PartIcons = () => {
       </PartContainerMibile>
       </div>
       <div className="linesecond-container">
-      <PartContainerMibile className="design-mobile" onClick={() => handlePartClick("DESIGN")}>
+      <PartContainerMibile className="design-mobile" onClick={() => handlePartClick("design")}>
         <IconContainerMobile>
           <img src={designIcon} alt="designIcon"/>
         </IconContainerMobile>
         <div className="partBtn">Design</div>
       </PartContainerMibile>
-      <PartContainerMibile className="web-mobile" onClick={() => handlePartClick("WEB")}>
+      <PartContainerMibile className="web-mobile" onClick={() => handlePartClick("web")}>
         <IconContainerMobile>
           <img src={webIcon} alt="webIcon" />
         </IconContainerMobile>
