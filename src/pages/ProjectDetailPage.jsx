@@ -29,35 +29,45 @@ const ProjectDetailPageContainer = styled.div`
     width: 100%;
   }
 
+  
+  .sub-tile-container {
+    margin: 9rem 0rem 0rem 0rem;
+    position: relative; /* 부모 요소 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
   .sub-tile-bg {
-    position: absolute;
+    position: absolute; /* 절대 위치 */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -30%);
-    width: 100%;
+    transform: translate(-50%, -30%); /* 정중앙 배치 */
+    width: 100%; /* 원하는 크기로 조정 */
     height: auto;
     z-index: -1;
   }
 
   .sub-tile {
     position: relative;
-    font-size: 23px;
+    font-size: 30px;
     font-weight: bold;
     z-index: 1;
   }
 
   @media screen and (max-width: 690px) {
+
+   .sub-tile {
+      font-size: 25px;
+    }
     .sub-tile-container {
       margin: 8.5rem 0rem 0rem 0rem;
     }
   }
-
   @media screen and (max-width: 500px) {
     .sub-tile {
       font-size: 18px;
-    }
-    @media screen and (max-width: 430px) {
-      gap: 30px;
     }
   }
 `;
@@ -83,9 +93,13 @@ const Project = styled.div`
 `;
 
 const ProjectIntro = styled.div`
-  padding: 15px 40px;
+  padding: 25px 50px;
   border-radius: 8px;
   background-color: #191919;
+
+   @media screen and (max-width: 600px) {
+    padding: 20px 35px;
+  }
 
   @media screen and (max-width: 430px) {
     padding: 15px 20px;
@@ -93,42 +107,72 @@ const ProjectIntro = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
   margin: 5px 0;
 
   @media screen and (max-width: 960px) {
     font-size: 20px;
   }
+  @media screen and (max-width: 600px) {
+    font-size: 18px;
+  }
 `;
 
 const Type = styled.span`
-  font-size: 16px;
+  font-size: 24px;
+   font-weight: bold;
   color: #ba224d;
 
   @media screen and (max-width: 960px) {
     font-size: 18px;
   }
+
+    @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
+`;
+
+
+const Info = styled.p`
+  font-size: 24px;
+  color: #b7b7b7;
+  ont-weight: bold;
+  margin: 8px 0;
+
+  @media screen and (max-width: 960px) {
+    font-size: 18px;
+  }
+     @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 const Details = styled.p`
-  font-size: 12px;
+  font-size: 18px;
   color: #b7b7b7;
-  margin: 10px 0;
+  margin: 8px 0;
 
   @media screen and (max-width: 960px) {
-    font-size: 11px;
+    font-size: 15px;
+  }
+    @media screen and (max-width: 600px) {
+    font-size: 12px;
   }
 `;
+
+
 
 const ProjectDetail = styled.div`
   flex: 1;
   padding: 15px 40px;
   border-radius: 8px;
   background-color: #191919;
+  padding-bottom: 50px;
 
   @media screen and (max-width: 430px) {
     padding: 15px 20px;
+     padding-bottom: 30px;
   }
 `;
 const ImageDiv = styled.div`
@@ -160,8 +204,15 @@ const ProjectImage = styled.div`
 
 const ProjectSubTitle = styled.p`
   margin-top: 30px;
-  font-size: 15px;
+  font-size: 24px;
   font-weight: bold;
+
+    @media screen and (max-width: 960px) {
+    font-size: 18px;
+  }
+   @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 const Line = styled.div`
@@ -171,14 +222,15 @@ const Line = styled.div`
 
 const SubTitle2 = styled.div`
   margin-top: 20px;
-  font-size: 23px;
+  font-size: 25px;
+  font-weight: bold;
 
   @media screen and (max-width: 430px) {
     font-size: 20px;
   }
 
   @media screen and (max-width: 690px) {
-    margin-top: 130px;
+    margin-top: 50px;
     font-size: 20px;
   }
 `;
@@ -238,7 +290,7 @@ const ProjectDetailPage = () => {
               {projectDetailData.title}&nbsp;&nbsp;
               <Type>{projectDetailData.serviceType}</Type>
             </Title>
-            <Details>{projectDetailData.introduction}</Details>
+            <Info>{projectDetailData.introduction}</Info>
           </ProjectIntro>
           <ProjectDetail>
             <ImageDiv>

@@ -95,14 +95,13 @@ const InfoContainer = styled.div`
 
   gap:8px;
   .umc{
-  font-size: 5vw;
+  font-size: 4vw;
     font-family: 'Pretendard-ExtraBold';
     color: #FFFFFF;
     margin-bottom: 5px;
   }
     .umc-info{
-      font-size: 3.0vw;
-       font-family: 'Pretendard-Bold';
+      font-size: 2.5vw;
       color: ${Colors.secondary25};
     }
 
@@ -334,7 +333,7 @@ text-align: center;
 
  @media screen and (max-width: 500px) {
  display:block;
- font-size: 4.5vw;
+ font-size: 4vw;
     font-family: 'Pretendard-Bold';
     color: #FFFFFF;
     margin-bottom: 25px;
@@ -544,7 +543,7 @@ margin-bottom: 150px;
 
 .recruiting-text{
   font-family: 'Pretendard-Bold';
-font-size: 50px;
+font-size: 4vw;
 color:white;
 font-weight: 900;
 }
@@ -552,8 +551,7 @@ font-weight: 900;
 .active-button{
 display:flex;
 padding: 10px 25px;
-font-size: 20px;
-font-weight: 600;
+font-size: 1.5vw;
 color: ${Colors.primary};
 border: 2.5px solid ${Colors.primary};
 border-radius: 30px;
@@ -563,8 +561,7 @@ margin: 2rem;
 .disabled-button{
 display:none;
 padding: 10px 25px;
-font-size: 20px;
-font-weight: 600;
+font-size: 2vw;
 color: white;
 border: 2.5px solid ${Colors.secondary200};
 border-radius: 30px;
@@ -573,22 +570,50 @@ background-color:${Colors.secondary200};
 }
 
 
+
+@media screen and (max-width: 900px) {
+  
+.active-button{
+padding: 8px 18px;
+font-size: 2vw;
+border: 2px solid ${Colors.primary};
+border-radius: 30px;
+margin: 1rem;
+
+}
+
+.disabled-button{
+display:none;
+padding: 8px 18px;
+font-size: 2vw;
+color: white;
+border: 2px solid ${Colors.secondary200};
+border-radius: 30px;
+margin: 1rem;
+}
+
+
+}
   @media screen and (max-width: 500px) {
   
-.recruiting-text{
-font-size: 30px;
-
-}
-
 .active-button{
-font-size: 15px;
+padding: 5px 10px;
+font-family: 'Pretendard-Bold';
+border: 1.5px solid ${Colors.primary};
+border-radius: 30px;
+margin: 1rem;
 
 }
+
 .disabled-button{
-font-size: 15px;
-
+display:none;
+padding: 5px 10px;
+font-family: 'Pretendard-Bold';
+color: white;
+border: 1.5px solid ${Colors.secondary200};
+border-radius: 30px;
+margin: 1rem;
 }
-    
 }
   
 `;
