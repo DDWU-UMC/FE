@@ -20,7 +20,7 @@ const FAQPageContainer = styled.div`
 
   .sub-tile-container {
     margin: 9rem 0rem 0rem 0rem;
-    position: relative;
+    position: relative; /* 부모 요소 설정 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,18 +28,18 @@ const FAQPageContainer = styled.div`
   }
 
   .sub-tile-bg {
-    position: absolute;
+    position: absolute; /* 절대 위치 */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -30%);
-    width: 100%;
+    transform: translate(-50%, -30%); /* 정중앙 배치 */
+    width: 100%; /* 원하는 크기로 조정 */
     height: auto;
     z-index: -1;
   }
 
   .sub-tile {
     position: relative;
-    font-size: 23px;
+    font-size: 30px;
     font-weight: bold;
     z-index: 1;
   }
@@ -57,7 +57,10 @@ const FAQPageContainer = styled.div`
   }
 
   @media screen and (max-width: 690px) {
-    font-size: 15px;
+
+   .sub-tile {
+      font-size: 25px;
+    }
     .sub-tile-container {
       margin: 8.5rem 0rem 0rem 0rem;
     }
@@ -86,27 +89,36 @@ const ButtonContainer = styled.div`
 `;
 
 const CateButton = styled.button`
-    background-color: ${(props) =>
+  background-color: ${(props) =>
     props.$active === "true" ? Colors.primary : Colors.btn};
   color: ${(props) =>
     props.$active === "true" ? "white" : Colors.secondary50};
   border: 1px solid
     ${(props) =>
       props.$active === "true" ? Colors.primary : Colors.primary900};
-
-  padding: 5px 17px;
-  border-radius: 5px;
-  font-size: 15px;
+  padding: 6px 20px;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 18px;
 
-  @media screen and (max-width: 768px) {
-   padding: 6px 8px;
-    font-size: 13px;
+  @media screen and (max-width: 690px) {
+    padding: 6px 16px;
+    font-size: 14px;
   }
 
-  @media screen and (max-width: 430px) {
-     padding: 7px 7px;
+   @media screen and (max-width: 560px) {
+    padding: 6px 13px;
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 470px) {
+    padding: 6px 9px;
     font-size: 10px;
+  }
+
+   @media screen and (max-width: 360px) {
+    padding: 6px 7px;
+    font-size: 8px;
   }
 `;
 

@@ -16,7 +16,6 @@ const CurriculumsPageContainer = styled.div`
   padding: 0 20px;
   gap: 40px;
   color: white;
-  font-size: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,19 +42,20 @@ const CurriculumsPageContainer = styled.div`
 
   .sub-tile {
     position: relative;
-    font-size: 23px;
+    font-size: 30px;
     font-weight: bold;
     z-index: 1;
   }
 
   @media screen and (max-width: 690px) {
-    font-size: 15px;
 
+   .sub-tile {
+      font-size: 25px;
+    }
     .sub-tile-container {
       margin: 8.5rem 0rem 0rem 0rem;
     }
   }
-
   @media screen and (max-width: 500px) {
     .sub-tile {
       font-size: 18px;
@@ -75,46 +75,47 @@ const PartInfo = styled.div`
 
   .name-english {
     width: fit-content;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 4px 12px;
+    font-size: 18px;
+    font-family: 'Pretendard-SemiBold';
+    padding: 4px 15px;
     display: inline-block;
-    border-radius: 5px;
+    border-radius: 4px;
     background-color: ${Colors.primary};
   }
   .name-korean {
+   font-family: 'Pretendard-Bold';
     margin-left: 3px;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 500;
   }
   .part-icon {
     margin-left: 5px;
-    padding-top: 1.5px;
-    width: 23px;
-    height: 23px;
+    margin-top:5.5px;
+    width: 24px;
+    height: 24px;
   }
   .part-info {
     margin-left: 3px;
-    font-size: 15px;
+    font-size: 18px;
     margin-top: 3px;
   }
 
-  @media screen and (max-width: 430px) {
+  @media screen and (max-width: 500px) {
     .name-english {
-      font-size: 11px;
+      font-size: 12px;
       padding: 3px 8px;
     }
     .name-korean {
-      font-size: 22px;
+      font-size: 23px;
     }
     .part-icon {
       margin-left: 5px;
-      margin-top: 2.5px;
+      margin-top: 4.3px;
       width: 18px;
       height: 18px;
     }
     .part-info {
-      font-size: 13px;
+      font-size: 12px;
     }
   }
 `;
@@ -188,17 +189,30 @@ margin-top:0;
   margin-bottom: 0;
 }
  .week{
- font-weight: 600;
- font-size: 16px;
+ font-family: 'Pretendard-SemiBold';
+ font-size: 24px;
 margin-left: 8px;
  }
  .content{
  font-weight: 300;
- font-size: 13px;
+ font-size: 18px;
  margin-left: 8px;
  margin-top: 8px;
 
  }
+
+ @media screen and (max-width: 500px) {
+   .week{
+ font-size: 18px;
+
+ }
+ .content{
+ font-weight: 300;
+ font-size: 12px;
+
+
+ }
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -219,19 +233,29 @@ const PartButton = styled.button`
   border: 1px solid
     ${(props) =>
       props.$active === "true" ? Colors.primary : Colors.primary900};
-  padding: 5px 17px;
-  border-radius: 5px;
+  padding: 6px 20px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 18px;
 
-  @media screen and (max-width: 600px) {
-    padding: 6px 8px;
-    font-size: 13px;
+  @media screen and (max-width: 690px) {
+    padding: 6px 16px;
+    font-size: 14px;
   }
 
-  @media screen and (max-width: 430px) {
-    padding: 7px 7px;
+   @media screen and (max-width: 560px) {
+    padding: 6px 13px;
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 470px) {
+    padding: 6px 9px;
     font-size: 10px;
+  }
+
+   @media screen and (max-width: 360px) {
+    padding: 6px 7px;
+    font-size: 8px;
   }
 `;
 
