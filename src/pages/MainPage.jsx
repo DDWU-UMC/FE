@@ -4,7 +4,6 @@ import styled from "styled-components";
 import backGroundImg from "../assets/main-background.svg";
 import backGroundImgMobile from "../assets/background-mobile.svg";
 import btrImg from "../assets/BreakTheRules.svg";
-import infoImg from "../assets/info.svg";
 import coreDayImg from "../assets/coreday.jpg";
 import otImg from "../assets/ot.jpeg";
 import netWorkingImg from "../assets/networking.jpeg"
@@ -313,7 +312,7 @@ const PartIconsContainer = styled.div`
 width: 100%;
 
   margin: 25rem 0rem 12rem 0rem; /* PartIconsContainer에 마진을 바로 적용 */
-
+ 
  
 .partcontainer-web{
 
@@ -324,6 +323,25 @@ width: 100%;
 
  
 }
+  .partcontainer-mobile{
+
+text-align: center;
+
+ 
+}
+   .partInfo-mobile{
+    display: none;
+
+ @media screen and (max-width: 500px) {
+ display:block;
+ font-size: 4.5vw;
+    font-family: 'Pretendard-Bold';
+    color: #FFFFFF;
+    margin-bottom: 25px;
+  color:white;
+ }
+ }
+
   .linesecond {
   margin-top: 90px;
   align-self: flex-start; 
@@ -442,7 +460,7 @@ const PartContainer = styled.div`
   
 `;
 
-const PartContainerMibile = styled.div`
+const PartContainerMobile = styled.div`
   display: none;
   
   .partBtn{
@@ -645,39 +663,40 @@ const PartIcons = () => {
       </div>
 
       <div className="partcontainer-mobile">
+        <div className="partInfo-mobile">💡 어떤 파트가 있나요? 💡</div>
       <div className="linefirst-container">
-      <PartContainerMibile className="plan-mobile" onClick={() => handlePartClick("plan")}>
+      <PartContainerMobile className="plan-mobile" onClick={() => handlePartClick("plan")}>
         <IconContainerMobile>
           <img src={planIcon} alt="planIcon" />
         </IconContainerMobile>
         <div className="partBtn">Plan</div>
-      </PartContainerMibile>
-      <PartContainerMibile className="and-mobile" onClick={() => handlePartClick("android")}>
+      </PartContainerMobile>
+      <PartContainerMobile className="and-mobile" onClick={() => handlePartClick("android")}>
         <IconContainerMobile>
           <img src={androidIcon} alt="androidIcon"/>
         </IconContainerMobile>
         <div className="partBtn">Android</div>
-      </PartContainerMibile>
-      <PartContainerMibile className="spring-mobile" onClick={() => handlePartClick("springboot")}>
+      </PartContainerMobile>
+      <PartContainerMobile className="spring-mobile" onClick={() => handlePartClick("springboot")}>
         <IconContainerMobile>
           <img src={springIcon} alt="springIcon"/>
         </IconContainerMobile>
         <div className="partBtn">SpringBoot</div>
-      </PartContainerMibile>
+      </PartContainerMobile>
       </div>
       <div className="linesecond-container">
-      <PartContainerMibile className="design-mobile" onClick={() => handlePartClick("design")}>
+      <PartContainerMobile className="design-mobile" onClick={() => handlePartClick("design")}>
         <IconContainerMobile>
           <img src={designIcon} alt="designIcon"/>
         </IconContainerMobile>
         <div className="partBtn">Design</div>
-      </PartContainerMibile>
-      <PartContainerMibile className="web-mobile" onClick={() => handlePartClick("web")}>
+      </PartContainerMobile>
+      <PartContainerMobile className="web-mobile" onClick={() => handlePartClick("web")}>
         <IconContainerMobile>
           <img src={webIcon} alt="webIcon" />
         </IconContainerMobile>
         <div className="partBtn">Web</div>
-      </PartContainerMibile>
+      </PartContainerMobile>
       </div>
       </div>
     </PartIconsContainer>
