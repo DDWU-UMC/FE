@@ -89,7 +89,7 @@ const ButtonContainer = styled.div`
   margin-bottom: 20px;
 
   @media screen and (max-width: 430px) {
-  margin-top:20px;
+  
     gap: 12px;
   }
 `;
