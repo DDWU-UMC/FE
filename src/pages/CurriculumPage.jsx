@@ -249,12 +249,12 @@ const PartButton = styled.button`
   }
 
   @media screen and (max-width: 470px) {
-    padding: 6px 9px;
+    padding: 5px 8px;
     font-size: 10px;
   }
 
-   @media screen and (max-width: 360px) {
-    padding: 6px 7px;
+   @media screen and (max-width: 370px) {
+    padding: 5px 7px;
     font-size: 8px;
   }
 `;

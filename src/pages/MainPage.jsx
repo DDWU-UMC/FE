@@ -105,10 +105,34 @@ const InfoContainer = styled.div`
       color: ${Colors.secondary25};
     }
 
+    @media screen and (max-width: 900px) {
   
-   @media screen and (max-width: 430px) {
+
+.recruiting-text{
+  font-family: 'Pretendard-Bold';
+font-size: 6vw;
+color:white;
+font-weight: 900;
+}
+
+.umc{
+font-size: 6vw;
+    font-family: 'Pretendard-ExtraBold';
+    color: #FFFFFF;
+    margin-bottom: 5px;
+  }
+    .umc-info{
+      font-size: 3vw;
+      color: ${Colors.secondary25};
+    }
+
+
+}
+  
+   @media screen and (max-width: 500px) {
    gap:5px;
      margin: 10rem 0rem;
+     
   }
 
 
@@ -333,7 +357,7 @@ text-align: center;
 
  @media screen and (max-width: 500px) {
  display:block;
- font-size: 4vw;
+ font-size: 5vw;
     font-family: 'Pretendard-Bold';
     color: #FFFFFF;
     margin-bottom: 25px;
@@ -573,9 +597,17 @@ background-color:${Colors.secondary200};
 
 @media screen and (max-width: 900px) {
   
+
+.recruiting-text{
+  font-family: 'Pretendard-Bold';
+font-size: 6vw;
+color:white;
+font-weight: 900;
+}
+
 .active-button{
-padding: 8px 18px;
-font-size: 2vw;
+padding: 8px 22px;
+font-size: 3.5vw;
 border: 2px solid ${Colors.primary};
 border-radius: 30px;
 margin: 1rem;
@@ -597,8 +629,8 @@ margin: 1rem;
   @media screen and (max-width: 500px) {
   
 .active-button{
-padding: 5px 10px;
-font-family: 'Pretendard-Bold';
+padding: 5px 12px;
+font-size: 3.5vw;
 border: 1.5px solid ${Colors.primary};
 border-radius: 30px;
 margin: 1rem;
@@ -608,7 +640,7 @@ margin: 1rem;
 .disabled-button{
 display:none;
 padding: 5px 10px;
-font-family: 'Pretendard-Bold';
+font-family: 'Pretendard-SemiBold';
 color: white;
 border: 1.5px solid ${Colors.secondary200};
 border-radius: 30px;
