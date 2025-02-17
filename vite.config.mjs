@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react-swc'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "./", // 또는 base: "/"
+  base: "/", // 또는 base: "/"
   plugins: [react()],
 });
