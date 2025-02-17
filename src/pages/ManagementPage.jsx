@@ -21,46 +21,46 @@ const ManagementPageContainer = styled.div`
   margin-bottom: 50px;
 
   .sub-tile-container {
- 
-  margin: 9rem 0rem 2rem 0rem;
-  position: relative; /* 부모 요소 설정 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.sub-tile-bg {
-  position: absolute; /* 절대 위치 */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -30%); /* 정중앙 배치 */
-  width: 100%; /* 원하는 크기로 조정 */
-  height: auto;
-  z-index: -1;
-}
-
-.sub-tile {
-  position: relative; 
-  font-size: 23px;
-  font-weight: bold;
-  z-index: 1;
-}
- 
-  @media screen and (max-width: 690px) {
-  
-
-  .sub-tile-container {
-  margin: 8.5rem 0rem 0rem 0rem;
-
-}
-  .sub-tile {
-  font-size: 18px;
-  font-weight: bold;
-
-}
+    margin: 9rem 0rem 0rem 0rem;
+    position: relative; /* 부모 요소 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
+  .sub-tile-bg {
+    position: absolute; /* 절대 위치 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%); /* 정중앙 배치 */
+    width: 100%; /* 원하는 크기로 조정 */
+    height: auto;
+    z-index: -1;
+  }
+
+  .sub-tile {
+    position: relative;
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 690px) {
+
+   .sub-tile {
+      font-size: 25px;
+    }
+    .sub-tile-container {
+      margin: 8.5rem 0rem 0rem 0rem;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .sub-tile {
+      font-size: 18px;
+
+    }
+  }
 `;
 
 const ManagementListContainer = styled.div`
@@ -97,14 +97,54 @@ const ManagementContainer = styled.div`
   }
 
   .profileImg {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     background-color: #575757;
     border-radius: 100px;
     box-shadow: inset 0px 4px 3px rgba(0, 0, 0, 0.25);
   }
   
   .position {
+    font-size: 18px;
+    margin: 8px 10px;
+    margin-top: 15px;
+    font-weight: 500;
+    color: ${Colors.primary400};
+  }
+  
+  .name {
+    font-size: 20px;
+    font-weight:600;
+    margin: 10px 10px;
+    color: white;
+  }
+  
+  .management-intro {
+    font-size: 16px;
+    margin: 12px 10px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .career {
+    font-size: 16px;
+    margin: 15px 10px 15px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+ul {
+  list-style-type: none; /* 기본 점 제거 */
+  padding-left: 0; /* 기본 들여쓰기 제거 */
+}
+
+ul li::before {
+  content: " - "; /* 항목 앞에 대시 추가 */
+  margin-right: 8px; /* 대시와 텍스트 간격 조정 */
+}
+ul li {
+  margin-bottom: 3px; /* 항목들 사이 간격 추가 */
+}
+
+@media (max-width: 500px) {
+  position {
     font-size: 15px;
     margin: 8px 10px;
     margin-top: 15px;
@@ -130,18 +170,9 @@ const ManagementContainer = styled.div`
     margin: 15px 10px 15px;
     color: rgba(255, 255, 255, 0.6);
   }
-ul {
-  list-style-type: none; /* 기본 점 제거 */
-  padding-left: 0; /* 기본 들여쓰기 제거 */
-}
 
-ul li::before {
-  content: " - "; /* 항목 앞에 대시 추가 */
-  margin-right: 8px; /* 대시와 텍스트 간격 조정 */
-}
-ul li {
-  margin-bottom: 3px; /* 항목들 사이 간격 추가 */
-}
+   
+  }
 
 `;
 const Managements = ({ admin }) => {

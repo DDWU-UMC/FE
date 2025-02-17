@@ -3,13 +3,11 @@ import axios from "axios";
 import headerImg from "../assets/underheaderImg.svg";
 import styled from "styled-components";
 import ProjectList from "../components/project/ProjectList";
-import MainFooter from "../components/footer/MainFooter";
-import Colors from "../constanst/colors";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const ProjectPageContainer = styled.div`
-  width: 80%;
+  width:80%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -20,11 +18,10 @@ const ProjectPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
-  min-height: 65vh;
 
   .sub-tile-container {
-    margin: 9rem 0rem 2rem 0rem;
-    position: relative;
+    margin: 9rem 0rem 0rem 0rem;
+    position: relative; /* 부모 요소 설정 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,42 +29,39 @@ const ProjectPageContainer = styled.div`
   }
 
   .sub-tile-bg {
-    position: absolute;
+    position: absolute; /* 절대 위치 */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -30%);
-    width: 100%;
+    transform: translate(-50%, -30%); /* 정중앙 배치 */
+    width: 100%; /* 원하는 크기로 조정 */
     height: auto;
     z-index: -1;
   }
 
   .sub-tile {
     position: relative;
-    font-size: 23px;
+    font-size: 30px;
     font-weight: bold;
     z-index: 1;
   }
 
-  @media screen and (max-width: 530px) {
-    min-height: 73vh;
-  }
-
-  @media screen and (max-width: 430px) {
-    min-height: 76vh;
-  }
-
   @media screen and (max-width: 690px) {
-    font-size: 15px;
 
+   .sub-tile {
+      font-size: 25px;
+    }
     .sub-tile-container {
       margin: 8.5rem 0rem 0rem 0rem;
     }
-    @media screen and (max-width: 500px) {
-      .sub-tile {
-        font-size: 18px;
-      }
+  }
+  @media screen and (max-width: 500px) {
+    .sub-tile {
+      font-size: 18px;
     }
   }
+
+  }
+
   @media screen and (max-width: 430px) {
     gap: 30px;
   }
@@ -88,21 +82,21 @@ const SubTitle = styled.div`
 `;
 
 const SearchFilterContainer = styled.div`
-  width: 55%;
+  width: 45%;
   display: flex;
   align-items: center;
   gap: 10px;
 
   @media screen and (max-width: 960px) {
-    width: 70%;
+    width: 60%;
   }
 
   @media screen and (max-width: 690px) {
-    width: 80%;
+    width: 70%;
   }
 
   @media screen and (max-width: 550px) {
-    width: 90%;
+    width: 80%;
   }
 
   @media screen and (max-width: 430px) {
@@ -116,18 +110,14 @@ const SearchInput = styled.input`
   background-color: #282828;
   border: 1px solid #585858;
   color: white;
-  width: 90%;
+  width: 100%;
 
   &:focus::placeholder {
     color: transparent;
   }
 
   @media screen and (max-width: 550px) {
-    font-size: 11px;
-  }
-
-  @media screen and (max-width: 430px) {
-    font-size: 10px;
+    font-size: 12px;
   }
 `;
 
@@ -151,11 +141,6 @@ const Dropdown = styled.select`
   @media screen and (max-width: 430px) {
     font-size: 11px;
   }
-`;
-
-const FooterContainer = styled.div`
-  width: 100%;
-  background-color: ${Colors.secondary400};
 `;
 
 function ProjectPage() {
@@ -267,9 +252,6 @@ function ProjectPage() {
         </SearchFilterContainer>
         <ProjectList projectData={projectData} gen={selectedParseIntGen} />
       </ProjectPageContainer>
-      <FooterContainer>
-        <MainFooter />
-      </FooterContainer>
     </>
   );
 }
