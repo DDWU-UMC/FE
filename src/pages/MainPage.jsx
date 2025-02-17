@@ -82,22 +82,35 @@ const IntroContaioner = styled.div`
 
 const BTRContainer = styled.div`
   width: 100%;
-    margin: 7rem 0rem;
+    margin: 5rem 0rem;
 
 `;
 
 const InfoContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
+  margin: 12rem 0rem;
 
-    margin: 8rem 0rem;
+  gap:8px;
+  .umc{
+  font-size: 5vw;
+    font-family: 'Pretendard-ExtraBold';
+    color: #FFFFFF;
+    margin-bottom: 5px;
+  }
+    .umc-info{
+      font-size: 3.0vw;
+       font-family: 'Pretendard-Bold';
+      color: ${Colors.secondary25};
+    }
+
   
-  img{
-    width: 70%;}
-
    @media screen and (max-width: 430px) {
-     margin: 8rem 0rem;
+   gap:5px;
+     margin: 10rem 0rem;
   }
 
 
@@ -299,7 +312,7 @@ const FixedImgHackathon = styled(FixedImgOT)`
 const PartIconsContainer = styled.div`
 width: 100%;
 
-  margin: 17rem 0rem 12rem 0rem; /* PartIconsContainer에 마진을 바로 적용 */
+  margin: 25rem 0rem 12rem 0rem; /* PartIconsContainer에 마진을 바로 적용 */
 
  
 .partcontainer-web{
@@ -581,7 +594,9 @@ const BreakTheRules = () => {
 const Info = () => {
   return (
     <InfoContainer>
-      <Img src={infoImg} alt="background" />
+      <div className="umc">UMC란?</div>
+      <div className="umc-info">대학생 IT 연합 사이드 프로젝트 동아리로 </div>
+      <div className="umc-info">동덕여대 UMC는 2기부터 시작하여 현재까지 함께하고 있습니다</div>
     </InfoContainer>
   );
 };
@@ -631,19 +646,19 @@ const PartIcons = () => {
 
       <div className="partcontainer-mobile">
       <div className="linefirst-container">
-      <PartContainerMibile className="plan-mobile" onClick={() => handlePartClick("PLAN")}>
+      <PartContainerMibile className="plan-mobile" onClick={() => handlePartClick("plan")}>
         <IconContainerMobile>
           <img src={planIcon} alt="planIcon" />
         </IconContainerMobile>
         <div className="partBtn">Plan</div>
       </PartContainerMibile>
-      <PartContainerMibile className="and-mobile" onClick={() => handlePartClick("ANDROID")}>
+      <PartContainerMibile className="and-mobile" onClick={() => handlePartClick("android")}>
         <IconContainerMobile>
           <img src={androidIcon} alt="androidIcon"/>
         </IconContainerMobile>
         <div className="partBtn">Android</div>
       </PartContainerMibile>
-      <PartContainerMibile className="spring-mobile" onClick={() => handlePartClick("SPRING_BOOT")}>
+      <PartContainerMibile className="spring-mobile" onClick={() => handlePartClick("springboot")}>
         <IconContainerMobile>
           <img src={springIcon} alt="springIcon"/>
         </IconContainerMobile>
@@ -651,13 +666,13 @@ const PartIcons = () => {
       </PartContainerMibile>
       </div>
       <div className="linesecond-container">
-      <PartContainerMibile className="design-mobile" onClick={() => handlePartClick("DESIGN")}>
+      <PartContainerMibile className="design-mobile" onClick={() => handlePartClick("design")}>
         <IconContainerMobile>
           <img src={designIcon} alt="designIcon"/>
         </IconContainerMobile>
         <div className="partBtn">Design</div>
       </PartContainerMibile>
-      <PartContainerMibile className="web-mobile" onClick={() => handlePartClick("WEB")}>
+      <PartContainerMibile className="web-mobile" onClick={() => handlePartClick("web")}>
         <IconContainerMobile>
           <img src={webIcon} alt="webIcon" />
         </IconContainerMobile>
