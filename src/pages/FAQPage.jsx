@@ -6,17 +6,16 @@ import MainFooter from "../components/footer/MainFooter";
 import Colors from "../constanst/colors.mjs";
 
 const FAQPageContainer = styled.div`
-  width: 80%;
+   width: 80%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   gap: 40px;
-  font-size: 20px;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 85vh; /* 페이지 최소 높이 100% 설정 */
+  margin-bottom: 50px;
 
   .sub-tile-container {
     margin: 9rem 0rem 0rem 0rem;
@@ -44,18 +43,6 @@ const FAQPageContainer = styled.div`
     z-index: 1;
   }
 
-  @media screen and (max-width: 1440px) {
-    min-height: 80vh;
-  }
-
-  @media screen and (max-width: 530px) {
-    min-height: 77vh;
-  }
-
-  @media screen and (max-width: 430px) {
-    min-height: 80vh;
-  }
-
   @media screen and (max-width: 690px) {
 
    .sub-tile {
@@ -65,21 +52,10 @@ const FAQPageContainer = styled.div`
       margin: 8.5rem 0rem 0rem 0rem;
     }
   }
-
   @media screen and (max-width: 500px) {
     .sub-tile {
       font-size: 18px;
     }
-  }
-
-   @media screen and (max-width: 470px) {
-    padding: 5px 8px;
-    font-size: 10px;
-  }
-
-   @media screen and (max-width: 370px) {
-    padding: 5px 7px;
-    font-size: 8px;
   }
 `;
 
@@ -89,7 +65,6 @@ const ButtonContainer = styled.div`
   margin-bottom: 20px;
 
   @media screen and (max-width: 430px) {
-  
     gap: 12px;
   }
 `;
