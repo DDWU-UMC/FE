@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
-import ProjectPreviewCard from "./ProjectPreviewCard";
 import styled from "styled-components";
 
 const ProjectListContainer = styled.div`
@@ -17,31 +16,16 @@ const ProjectListContainer = styled.div`
   }
 `;
 
-const ProjectList = ({ projectData, gen }) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 430);
+const ProjectList = ({ projectData }) => {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 430);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const handleProjectClick = (projectId) => {
-    navigate(`/project/${projectId}`);
-  };
 
   return (
     <ProjectListContainer>
-      {projectData.map((project, index) => (
+      {projectData.map((project) => (
         <ProjectCard
-          key={index}
+          key={project.projectId}
           {...project}
-          onClick={() => handleProjectClick(project.projectId)}
+          onClick={() => navigate(`/project/${project.projectId}`)}
         />
       ))}
     </ProjectListContainer>

@@ -5,10 +5,6 @@ const CardContainer = styled.div`
   background-color: #191919;
   border-radius: 8px;
   cursor: pointer;
-
-  &:hover {
-    background-color: rgba(50, 50, 50, 0.8);
-  }
 `;
 
 const CardInnerContainer = styled.div`
@@ -46,7 +42,7 @@ const Type = styled.span`
   font-weight: bold;
 `;
 
-const ProjectCard = ({ title, serviceType, image, onClick }) => {
+const ProjectPreviewCard = ({ title, serviceType, image, onClick }) => {
   return (
     <CardContainer onClick={onClick}>
       <CardInnerContainer>
@@ -60,4 +56,4 @@ const ProjectCard = ({ title, serviceType, image, onClick }) => {
   );
 };
 
-export default ProjectCard;
+export default ProjectPreviewCard;

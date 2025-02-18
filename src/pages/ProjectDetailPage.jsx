@@ -20,55 +20,51 @@ const ProjectDetailPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
-  .sub-tile-container {
-    margin: 9rem 0rem 2rem 0rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  
-  .sub-tile-container {
-    margin: 9rem 0rem 0rem 0rem;
-    position: relative; /* 부모 요소 설정 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  .sub-tile-bg {
-    position: absolute; /* 절대 위치 */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -30%); /* 정중앙 배치 */
-    width: 100%; /* 원하는 크기로 조정 */
-    height: auto;
-    z-index: -1;
-  }
-
-  .sub-tile {
-    position: relative;
-    font-size: 30px;
-    font-weight: bold;
-    z-index: 1;
-  }
 
   @media screen and (max-width: 690px) {
-
-   .sub-tile {
-      font-size: 25px;
-    }
-    .sub-tile-container {
-      margin: 8.5rem 0rem 0rem 0rem;
-    }
+    gap: 30px;
   }
+
   @media screen and (max-width: 500px) {
-    .sub-tile {
-      font-size: 18px;
-    }
+    gap: 10px;
+  }
+`;
+
+const SubTitleContainer = styled.div`
+  margin: 9rem 0rem 0rem 0rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @media screen and (max-width: 690px) {
+    margin: 8.5rem 0rem 0rem 0rem;
+  }
+`;
+
+const SubTitleBG = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 100%;
+  height: auto;
+  z-index: -1;
+`;
+
+const SubTitle = styled.div`
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  z-index: 1;
+
+  @media screen and (max-width: 690px) {
+    font-size: 25px;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
   }
 `;
 
@@ -97,7 +93,7 @@ const ProjectIntro = styled.div`
   border-radius: 8px;
   background-color: #191919;
 
-   @media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) {
     padding: 20px 35px;
   }
 
@@ -121,29 +117,29 @@ const Title = styled.h2`
 
 const Type = styled.span`
   font-size: 24px;
-   font-weight: bold;
+  font-weight: bold;
   color: #ba224d;
 
   @media screen and (max-width: 960px) {
     font-size: 18px;
   }
 
-    @media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) {
     font-size: 14px;
   }
 `;
 
-
 const Info = styled.p`
   font-size: 24px;
   color: #b7b7b7;
-  ont-weight: bold;
+  font-weight: bold;
   margin: 8px 0;
+  word-break: keep-all;
 
   @media screen and (max-width: 960px) {
     font-size: 18px;
   }
-     @media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) {
     font-size: 14px;
   }
 `;
@@ -152,16 +148,15 @@ const Details = styled.p`
   font-size: 18px;
   color: #b7b7b7;
   margin: 8px 0;
+  word-break: keep-all;
 
   @media screen and (max-width: 960px) {
     font-size: 15px;
   }
-    @media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) {
     font-size: 12px;
   }
 `;
-
-
 
 const ProjectDetail = styled.div`
   flex: 1;
@@ -172,9 +167,10 @@ const ProjectDetail = styled.div`
 
   @media screen and (max-width: 430px) {
     padding: 15px 20px;
-     padding-bottom: 30px;
+    padding-bottom: 30px;
   }
 `;
+
 const ImageDiv = styled.div`
   width: 100%;
   display: flex;
@@ -207,10 +203,10 @@ const ProjectSubTitle = styled.p`
   font-size: 24px;
   font-weight: bold;
 
-    @media screen and (max-width: 960px) {
+  @media screen and (max-width: 960px) {
     font-size: 18px;
   }
-   @media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) {
     font-size: 14px;
   }
 `;
@@ -280,10 +276,10 @@ const ProjectDetailPage = () => {
   return (
     <>
       <ProjectDetailPageContainer>
-        <div className="sub-tile-container">
-          <img className="sub-tile-bg" src={headerImg} alt="배경 이미지" />
-          <div className="sub-tile">프로젝트 살펴보기</div>
-        </div>
+        <SubTitleContainer>
+          <SubTitleBG src={headerImg} alt="배경 이미지" />
+          <SubTitle>프로젝트 살펴보기</SubTitle>
+        </SubTitleContainer>
         <Project>
           <ProjectIntro>
             <Title>
