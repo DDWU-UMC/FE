@@ -67,40 +67,35 @@ const ProjectPageContainer = styled.div`
   }
 `;
 
-const SubTitle = styled.div`
-  margin-top: 100px;
-  font-size: 23px;
-
-  @media screen and (max-width: 430px) {
-    font-size: 20px;
-  }
-
-  @media screen and (max-width: 690px) {
-    margin-top: 130px;
-    font-size: 20px;
-  }
-`;
 
 const SearchFilterContainer = styled.div`
-  width: 45%;
+  width: 65%;
   display: flex;
   align-items: center;
   gap: 10px;
 
   @media screen and (max-width: 960px) {
-    width: 60%;
-  }
-
-  @media screen and (max-width: 690px) {
     width: 70%;
   }
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 690px) {
     width: 80%;
   }
 
+  @media screen and (max-width: 550px) {
+   width: 90%;
+   display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* 자식 요소가 넘치면 자동으로 줄 바꿈 */
+  justify-content: flex-start;
+  align-items: flex-start; /* 왼쪽 정렬 */
+
+
+    
+  }
+
   @media screen and (max-width: 430px) {
-    width: 100%;
+    width: 90%;
   }
 `;
 
@@ -136,6 +131,7 @@ const Dropdown = styled.select`
 
   @media screen and (max-width: 550px) {
     font-size: 12px;
+      width: 60px;
   }
 
   @media screen and (max-width: 430px) {
