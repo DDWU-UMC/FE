@@ -21,15 +21,15 @@ const CardContainer = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    width: 80%;
+    width: 90%;
     flex-direction: column;
     align-items: baseline;
-    padding: 35px;
+    padding: 20px;
     gap: 30px;
   }
 
   @media screen and (max-width: 430px) {
-    padding: 25px;
+    padding: 15px;
     gap: 10px;
   }
 `;
@@ -47,21 +47,43 @@ const ProjectImage = styled.div`
   @media screen and (max-width: 960px) {
     width: 270px;
     height: 150px;
+    
   }
 
   @media screen and (max-width: 768px) {
-    width: 320px;
-    height: 180px;
+     width: 100%;
+     height: 280px;
+     object-fit: contain; 
+
+  }
+     @media screen and (max-width: 620px) {
+ 
+
+ height: 240px;
+
+
   }
 
   @media screen and (max-width: 585px) {
-    width: 250px;
-    height: 140px;
+ 
+
+ height: 200px;
+
+
   }
 
   @media screen and (max-width: 450px) {
-    width: 200px;
-    height: 115px;
+ 
+ height: 180px;
+   
+
+  }
+
+   @media screen and (max-width: 390px) {
+
+ height: 150px;
+
+
   }
 `;
 
