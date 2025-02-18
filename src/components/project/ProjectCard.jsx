@@ -11,10 +11,6 @@ const CardContainer = styled.div`
   gap: 50px;
   cursor: pointer;
 
-  &:hover {
-    background-color: rgba(50, 50, 50, 0.8);
-  }
-
   @media screen and (max-width: 960px) {
     padding: 25px;
     gap: 45px;
@@ -42,48 +38,32 @@ const ProjectImage = styled.div`
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; /* 이미지를 반복하지 않도록 설정 */
+  background-repeat: no-repeat;
 
   @media screen and (max-width: 960px) {
     width: 270px;
     height: 150px;
-    
   }
 
   @media screen and (max-width: 768px) {
-     width: 100%;
-     height: 280px;
-     object-fit: contain; 
-
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
   }
-     @media screen and (max-width: 620px) {
- 
-
- height: 240px;
-
-
+  @media screen and (max-width: 620px) {
+    height: 240px;
   }
 
   @media screen and (max-width: 585px) {
- 
-
- height: 200px;
-
-
+    height: 200px;
   }
 
   @media screen and (max-width: 450px) {
- 
- height: 180px;
-   
-
+    height: 180px;
   }
 
-   @media screen and (max-width: 390px) {
-
- height: 150px;
-
-
+  @media screen and (max-width: 390px) {
+    height: 150px;
   }
 `;
 
@@ -123,6 +103,7 @@ const Type = styled.span`
 const Details = styled.p`
   font-size: 13px;
   color: #b7b7b7;
+  word-break: keep-all;
 
   @media screen and (max-width: 960px) {
     font-size: 11px;
