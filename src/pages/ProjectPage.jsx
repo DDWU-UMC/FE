@@ -3,11 +3,13 @@ import axios from "axios";
 import headerImg from "../assets/underheaderImg.svg";
 import styled from "styled-components";
 import ProjectList from "../components/project/ProjectList";
+import MainFooter from "../components/footer/MainFooter";
+import Colors from "../constanst/colors.mjs";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const ProjectPageContainer = styled.div`
-  width:80%;
+  width: 80%;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -18,55 +20,54 @@ const ProjectPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  min-height: 65vh;
 
-  .sub-tile-container {
-    margin: 9rem 0rem 0rem 0rem;
-    position: relative; /* 부모 요소 설정 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  .sub-tile-bg {
-    position: absolute; /* 절대 위치 */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -30%); /* 정중앙 배치 */
-    width: 100%; /* 원하는 크기로 조정 */
-    height: auto;
-    z-index: -1;
-  }
-
-  .sub-tile {
-    position: relative;
-    font-size: 30px;
-    font-weight: bold;
-    z-index: 1;
-  }
-
-  @media screen and (max-width: 690px) {
-
-   .sub-tile {
-      font-size: 25px;
-    }
-    .sub-tile-container {
-      margin: 8.5rem 0rem 0rem 0rem;
-    }
-  }
-  @media screen and (max-width: 500px) {
-    .sub-tile {
-      font-size: 18px;
-    }
-  }
-
+  @media screen and (max-width: 530px) {
+    min-height: 72vh;
   }
 
   @media screen and (max-width: 430px) {
-    gap: 30px;
+    min-height: 74vh;
   }
 `;
 
+const SubTitleContainer = styled.div`
+  margin: 9rem 0rem 0rem 0rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @media screen and (max-width: 690px) {
+    margin: 8.5rem 0rem 0rem 0rem;
+  }
+`;
+
+const SubTitleBG = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 100%;
+  height: auto;
+  z-index: -1;
+`;
+
+const SubTitle = styled.div`
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  z-index: 1;
+
+  @media screen and (max-width: 690px) {
+    font-size: 25px;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
+  }
+`;
 
 const SearchFilterContainer = styled.div`
   width: 65%;
@@ -83,15 +84,12 @@ const SearchFilterContainer = styled.div`
   }
 
   @media screen and (max-width: 550px) {
-   width: 90%;
-   display: flex;
-  gap: 15px;
-  flex-wrap: wrap; /* 자식 요소가 넘치면 자동으로 줄 바꿈 */
-  justify-content: flex-start;
-  align-items: flex-start; /* 왼쪽 정렬 */
-
-
-    
+    width: 90%;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   @media screen and (max-width: 430px) {
@@ -131,7 +129,7 @@ const Dropdown = styled.select`
 
   @media screen and (max-width: 550px) {
     font-size: 12px;
-      width: 60px;
+    width: 60px;
   }
 
   @media screen and (max-width: 430px) {
@@ -139,99 +137,76 @@ const Dropdown = styled.select`
   }
 `;
 
+const FooterContainer = styled.div`
+  width: 100%;
+  background-color: ${Colors.secondary400};
+`;
+
 function ProjectPage() {
   const [projectData, setProjectData] = useState([]);
   const [selectedPlatform, setSelectedPlatform] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const [cohortId, setCohortId] = useState([]);
+  const [cohortId, setCohortId] = useState({});
   const [selectedGen, setSelectedGen] = useState("");
-  const [selectedParseIntGen, setSelectedParseIntGen] = useState();
-  const platforms = { 전체: "ALL", iOS: "IOS", Android: "ANDROID", Web: "WEB" };
 
-  // 필터링된 프로젝트 데이터를 가져오는 api 호출 함수
   const fetchProjects = () => {
     axios
       .get(`${apiUrl}/projects`, {
         params: {
-          cohortId: selectedParseIntGen ? selectedParseIntGen : undefined,
-          type:
-            selectedPlatform && selectedPlatform !== "전체"
-              ? selectedPlatform
-              : undefined,
-          keyword: searchTerm ? searchTerm : undefined,
+          cohortId: cohortId[selectedGen] || undefined,
+          type: selectedPlatform !== "전체" ? selectedPlatform : undefined,
+          keyword: searchTerm || undefined,
         },
       })
       .then((response) => {
         setProjectData(response.data.result);
       })
-      .catch((error) => {
-        console.error("Error fetching projects:", error);
-      });
+      .catch(console.error);
   };
 
   useEffect(() => {
-    const cohort = axios.get(`${apiUrl}/projects/cohort`);
-    const projects = axios.get(`${apiUrl}/projects`);
-
     axios
-      .all([cohort, projects])
-      .then(
-        axios.spread((responseOne, responseTwo) => {
-          const cohortData = responseOne.data.result;
-
-          const cohortMap = cohortData.reduce((acc, item) => {
-            acc[item.name] = item.cohortId;
-            return acc;
-          }, {});
-          setCohortId(cohortMap);
-
-          setProjectData(responseTwo.data.result);
-        })
-      )
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+      .get(`${apiUrl}/projects/cohort`)
+      .then(({ data }) => {
+        const cohortMap = data.result.reduce((acc, item) => {
+          acc[item.name] = item.cohortId;
+          return acc;
+        }, {});
+        setCohortId(cohortMap);
+      })
+      .catch(console.error);
   }, []);
 
-  useEffect(() => {
-    fetchProjects();
-  }, [selectedParseIntGen, selectedPlatform, searchTerm]);
+  useEffect(fetchProjects, [selectedGen, selectedPlatform, searchTerm]);
 
   return (
     <>
       <ProjectPageContainer>
-        <div className="sub-tile-container">
-          <img className="sub-tile-bg" src={headerImg} alt="배경 이미지" />
-          <div className="sub-tile">DDWU UMC 이전 기수 프로젝트</div>
-        </div>
+        <SubTitleContainer>
+          <SubTitleBG src={headerImg} alt="배경 이미지" />
+          <SubTitle>DDWU UMC 이전 기수 프로젝트</SubTitle>
+        </SubTitleContainer>
         <SearchFilterContainer>
           <SearchInput
             type="text"
-            placeholder="🔍&nbsp;프로젝트명을 검색하세요." //🔍&nbsp;
+            placeholder="🔍 프로젝트명을 검색하세요."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <Dropdown
             value={selectedGen}
-            onChange={(e) => {
-              const selectedValue = e.target.value;
-              setSelectedGen(selectedValue);
-              setSelectedParseIntGen(cohortId[selectedValue]);
-            }}
+            onChange={(e) => setSelectedGen(e.target.value)}
           >
             <option value="" disabled hidden>
               기수
             </option>
-            <option key="All" value="All">
-              전체
-            </option>
-            {Object.entries(cohortId).map(([key, value]) => (
+            <option value="All">전체</option>
+            {Object.keys(cohortId).map((key) => (
               <option key={key} value={key}>
-                {key} {/* 기수 이름 표시 */}
+                {key}
               </option>
             ))}
           </Dropdown>
-
           <Dropdown
             value={selectedPlatform}
             onChange={(e) => setSelectedPlatform(e.target.value)}
@@ -239,15 +214,17 @@ function ProjectPage() {
             <option value="" disabled hidden>
               플랫폼
             </option>
-            {Object.entries(platforms).map(([key, value]) => (
-              <option key={key} value={value}>
-                {key}
-              </option>
-            ))}
+            <option value="ALL">전체</option>
+            <option value="IOS">iOS</option>
+            <option value="ANDROID">Android</option>
+            <option value="WEB">Web</option>
           </Dropdown>
         </SearchFilterContainer>
-        <ProjectList projectData={projectData} gen={selectedParseIntGen} />
+        <ProjectList projectData={projectData} />
       </ProjectPageContainer>
+      <FooterContainer>
+        <MainFooter />
+      </FooterContainer>
     </>
   );
 }
