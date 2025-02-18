@@ -147,6 +147,7 @@ const PartCurriculum = styled.div`
   left: 5px;
   top: 0;
   width: 1px;
+  margin-top:2.5px;
   background-color: ${Colors.secondary200};
 }
 
@@ -168,6 +169,7 @@ const PartCurriculum = styled.div`
   border: 3px solid white;
   border-radius: 50%;
   transform: translateY(-50%);
+   margin-top:2.5px;
   box-shadow: 
     0px 6px 15px rgba(255, 255, 255, 0.25), 
     0px -6px 15px rgba(255, 255, 255, 0.12), 
@@ -189,13 +191,14 @@ margin-top:0;
   margin-bottom: 0;
 }
  .week{
+ padding-top:0px;
  font-family: 'Pretendard-SemiBold';
- font-size: 24px;
+ font-size: 22px;
 margin-left: 8px;
  }
  .content{
  font-weight: 300;
- font-size: 18px;
+ font-size: 16px;
  margin-left: 8px;
  margin-top: 8px;
 
