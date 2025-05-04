@@ -65,7 +65,15 @@ const Header = styled.div`
     border-radius: 3px;
     border: 1px solid #ba224d;
     color: white;
+    display:none
   }
+  .disapply{
+   background-color: ${Colors.secondary200};
+    border-radius: 3px;
+    border: 1px solid ${Colors.secondary200};
+    color: white;
+  }
+
 
   .apply:hover {
     transform: none;
@@ -74,6 +82,9 @@ const Header = styled.div`
     color: white;
   }
   .apply-mobile {
+    display: none;
+  }
+  .disapply-mobile {
     display: none;
   }
 
@@ -140,10 +151,13 @@ const Header = styled.div`
     .apply {
       display: none;
     }
+    .disapply {
+      display: none;
+    }
 
     .apply-mobile {
       padding: 7px;
-      display: block;
+      display: none;
       margin-right: 10px;
       margin-top: 20px;
       background-color: #941b3d;
@@ -196,6 +210,7 @@ function MainHeader() {
         </li>
         <a href="https://forms.gle/4c356ToYRBTctdUH7" style={{ all: "unset" }}>
         <li className="apply">지원하기</li>
+        <li className="disapply">지원 마감</li>
         </a>
       </ul>
     </Header>
