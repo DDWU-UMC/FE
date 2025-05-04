@@ -7,8 +7,6 @@ import axios from "axios";
 import CurriculumData from "../database/curriculumData.json";
 import MainFooter from "../components/footer/MainFooter";
 
-const apiUrl = import.meta.env.VITE_API_URL;
-
 const CurriculumsPageContainer = styled.div`
   width: 80%;
   max-width: 100%;
@@ -19,7 +17,9 @@ const CurriculumsPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  height: auto;
+  min-height: 90vh;
+  padding-bottom: 50px;
 
   .sub-tile-container {
     margin: 9rem 0rem 0rem 0rem;
@@ -263,82 +263,36 @@ const PartButton = styled.button`
 `;
 
 const Parts = ({ selectedPart }) => {
-  const filteredData = CurriculumData.filter(
-    (part) => part.part === selectedPart
-  );
-  const [curriculumData, setCurriculumData] = useState([]);
-  const [error, setError] = useState(null);
+  const filteredData = CurriculumData.filter((part) => part.part === selectedPart);
 
-  const formatPartName = (part) => {
-    const specialCases = {
-      springboot: "Spring Boot",
-      web: "Web",
-      android: "Android",
-      design: "Design",
-      plan: "Plan",
-    };
-
-    const lowerPart = part.toLowerCase();
-    return (
-      specialCases[lowerPart] ||
-      lowerPart.charAt(0).toUpperCase() + lowerPart.slice(1)
-    );
-  };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`${apiUrl}/curriculums`, {
-          params: { partType: selectedPart },
-        });
-
-        if (response.data.isSuccess) {
-          setCurriculumData(response.data.result);
-        } else {
-          throw new Error(response.data.message);
-        }
-      } catch (error) {
-        console.error("API 호출 오류:", error.message);
-        setError(error.message);
-      }
-    };
-
-    fetchData();
-  }, [selectedPart]);
 
   return (
     <>
       {filteredData.map((part) => (
-        <div key={part.part}>
+        <div key={part.part}> 
           <PartInfo>
-            <div className="name-english">{formatPartName(part.part)}</div>
-
-            <div style={{ display: "flex" }}>
-              <div className="name-korean">{part.partKorean}</div>
-              <div>
-                <img className="part-icon" src={part.icon} alt="icon" />
-              </div>
+            <div className="name-english">{part.part}</div>
+            <div>
+              <span className="name-korean">{part.partKorean}</span>
+              <span>
+                <img className="part-icon" src={part.icon} alt="icon" /> {/* icon을 part에서 가져오도록 수정 */}
+              </span>
             </div>
-
-            <div className="part-info">{part.info}</div>
+            <div className="part-info">
+              {part.info}
+            </div>
           </PartInfo>
 
           <PartCurriculum>
-            <ol className="ordered-nav">
-              {curriculumData
-                .sort((a, b) => a.week - b.week) // 주차 순서대로 정렬
-                .map((week) => (
-                  <li key={week.curriculumId} className="ordered-nav--link">
-                    <div className="week">{week.week}주차</div>
-                    <div className="content">{week.content}</div>
+          <ol className="ordered-nav">
+              {part.curriculum.map((item) => (
+                  <li key={item.week}className="ordered-nav--link">
+                    <div className="week">{item.week}주차</div>
+                    <div className="content">{item.content}</div>
                   </li>
                 ))}
             </ol>
-          </PartCurriculum>
+        </PartCurriculum>
         </div>
       ))}
     </>
@@ -346,24 +300,13 @@ const Parts = ({ selectedPart }) => {
 };
 
 const CurriculumPage = () => {
-  const { part } = useParams();
-  const [selectedPart, setSelectedPart] = useState(part || "PLAN");
+  const [selectedPart, setSelectedPart] = useState("Plan");
+  const parts = ["Plan", "Design", "Spring Boot", "Web", "Android"];
 
-  const parts = ["plan", "design", "android", "web", "springboot"];
+   useEffect(() => {
+        window.scrollTo(0, 0); 
+      }, []);  
 
-  const partNamesInBTN = {
-    plan: "Plan",
-    design: "Design",
-    android: "Android",
-    web: "Web",
-    springboot: "Spring Boot",
-  };
-
-  useEffect(() => {
-    if (part) {
-      setSelectedPart(part);
-    }
-  }, [part]);
 
   return (
     <>
@@ -379,11 +322,10 @@ const CurriculumPage = () => {
               $active={selectedPart === part ? "true" : "false"}
               onClick={() => setSelectedPart(part)}
             >
-              {partNamesInBTN[part]}
+              {part}
             </PartButton>
           ))}
         </ButtonContainer>
-
         <Parts selectedPart={selectedPart} />
       </CurriculumsPageContainer>
       <MainFooter/>
