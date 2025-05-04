@@ -81,6 +81,12 @@ const Header = styled.div`
     transform: none;
     color: white;
   }
+    .disapply:hover {
+    transform: none;
+    cursor: pointer;
+    transform: none;
+    color: white;
+  }
   .apply-mobile {
     display: none;
   }
@@ -208,10 +214,10 @@ function MainHeader() {
         >
           FAQ
         </li>
-        <a href="https://forms.gle/4c356ToYRBTctdUH7" style={{ all: "unset" }}>
+       
         <li className="apply">지원하기</li>
         <li className="disapply">지원 마감</li>
-        </a>
+        
       </ul>
     </Header>
     </StyledHeader>
