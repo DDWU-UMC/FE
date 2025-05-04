@@ -528,11 +528,12 @@ const RecruitingContainer = styled.div`
     border: 2.5px solid ${Colors.primary};
     border-radius: 30px;
     margin: 2rem;
+    display: none;
   }
   .disabled-button {
-    display: none;
+
     padding: 10px 25px;
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: white;
     border: 2.5px solid ${Colors.secondary200};
     border-radius: 30px;
@@ -554,10 +555,11 @@ const RecruitingContainer = styled.div`
       border: 2px solid ${Colors.primary};
       border-radius: 30px;
       margin: 1rem;
+       display: none;
     }
 
     .disabled-button {
-      display: none;
+     
       padding: 8px 18px;
       font-size: 2vw;
       color: white;
@@ -573,10 +575,11 @@ const RecruitingContainer = styled.div`
       border: 1.5px solid ${Colors.primary};
       border-radius: 30px;
       margin: 1rem;
+      display: none;
     }
 
     .disabled-button {
-      display: none;
+
       padding: 5px 10px;
       font-family: "Pretendard-SemiBold";
       color: white;
