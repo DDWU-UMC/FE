@@ -11,6 +11,7 @@ import mtImg from "../assets/MT.png";
 import pmdayImg from "../assets/Pmday.jpg";
 import studyImg from "../assets/study.jpg";
 import hackathonImg from "../assets/hackathon.png";
+import demoImg from "../assets/demoday.jpeg";
 import Colors from "../constanst/colors.mjs";
 import planIcon from "../assets/plan-icon.svg";
 import designIcon from "../assets/design-icon.svg";
@@ -301,6 +302,22 @@ const FixedImgHackathon = styled(FixedImgOT)`
     }
   }
 `;
+
+const FixedImgDemo = styled(FixedImgOT)`
+  transform: translate(-160%, 230%);
+
+  &:hover {
+      transform: translate(-160%, 230%) scale(1.08);
+  }
+  @media screen and (max-width: 500px) {
+    transform: translate(40%, 320%);
+
+    &:hover {
+      transform: translate(40%, 320%);
+    }
+  }
+`;
+
 
 const PartIconsContainer = styled.div`
   width: 100%;
@@ -801,6 +818,13 @@ const MainPage = () => {
             style={{ width: "100%", height: "auto", objectFit: "contain" }}
           />
         </FixedImgHackathon>
+        <FixedImgDemo>
+          <img
+            src={demoImg}
+            alt=" Image"
+            style={{ width: "100%", height: "auto", objectFit: "contain" }}
+          />
+        </FixedImgDemo>
       </ImageContainer>
       <RecruitingContainer>
         <div className="recruiting-text">RECRUITING</div>
