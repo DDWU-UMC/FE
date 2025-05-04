@@ -201,6 +201,11 @@ const Managements = ({ admin }) => {
 function ManagementPage() {
   const [admins, setAdmins] = useState([]);
 
+ useEffect(() => {
+      window.scrollTo(0, 0); 
+    }, []);  
+
+
   useEffect(() => {
     setAdmins(managementData.result);
   }, []);

@@ -7,8 +7,6 @@ import axios from "axios";
 import CurriculumData from "../database/curriculumData.json";
 import MainFooter from "../components/footer/MainFooter";
 
-const apiUrl = import.meta.env.VITE_API_URL;
-
 const CurriculumsPageContainer = styled.div`
   width: 80%;
   max-width: 100%;
@@ -19,7 +17,9 @@ const CurriculumsPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  height: auto;
+  min-height: 90vh;
+  padding-bottom: 50px;
 
   .sub-tile-container {
     margin: 9rem 0rem 0rem 0rem;
@@ -265,20 +265,19 @@ const PartButton = styled.button`
 const Parts = ({ selectedPart }) => {
   const filteredData = CurriculumData.filter((part) => part.part === selectedPart);
 
+
   return (
     <>
       {filteredData.map((part) => (
         <div key={part.part}> 
           <PartInfo>
             <div className="name-english">{part.part}</div>
-
             <div>
               <span className="name-korean">{part.partKorean}</span>
               <span>
                 <img className="part-icon" src={part.icon} alt="icon" /> {/* icon을 part에서 가져오도록 수정 */}
               </span>
             </div>
-
             <div className="part-info">
               {part.info}
             </div>
@@ -304,6 +303,10 @@ const CurriculumPage = () => {
   const [selectedPart, setSelectedPart] = useState("Plan");
   const parts = ["Plan", "Design", "Spring Boot", "Web", "Android"];
 
+   useEffect(() => {
+        window.scrollTo(0, 0); 
+      }, []);  
+
 
   return (
     <>
@@ -323,7 +326,6 @@ const CurriculumPage = () => {
             </PartButton>
           ))}
         </ButtonContainer>
-
         <Parts selectedPart={selectedPart} />
       </CurriculumsPageContainer>
       <MainFooter/>
