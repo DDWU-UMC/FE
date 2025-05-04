@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import headerImg from "../assets/underheaderImg.svg";
 import ProjectPreviewCard from "../components/project/ProjectPreviewCard";
 import styled from "styled-components";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import MainFooter from "../components/footer/MainFooter";
+import projectsData from "../database/projectsData.json";
 
-const apiUrl = import.meta.env.VITE_API_URL;
 
 const ProjectDetailPageContainer = styled.div`
   width: 80%;
@@ -20,6 +19,7 @@ const ProjectDetailPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  min-height: 90vh;
 
   @media screen and (max-width: 690px) {
     gap: 30px;
@@ -242,36 +242,44 @@ const OtherProjects = styled.div`
 
 const ProjectDetailPage = () => {
   const navigate = useNavigate();
-  const [projectDetailData, setProjectDetailData] = useState([]);
+  const location = useLocation();  
+  const { id } = useParams();
+  const [projectDetailData, setProjectDetailData] = useState(null);
   const [projectData, setProjectData] = useState([]);
-  const projectId = useParams();
-
-  // 새로고침 후 맨 위로 스크롤
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   useEffect(() => {
-    const projectDetailData = axios.get(`${apiUrl}/projects/${projectId.id}`);
-    const projects = axios.get(`${apiUrl}/projects/${projectId.id}/others`);
+    window.scrollTo(0, 0); 
+  }, [location]);  
 
-    axios
-      .all([projectDetailData, projects])
-      .then(
-        axios.spread((responseOne, responseTwo) => {
-          setProjectDetailData(responseOne.data.result);
-          setProjectData(responseTwo.data.result);
-        })
-      )
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+  useEffect(() => {
+
+    const data = projectsData.result; 
+
+    const detailProject = data.find(
+      (project) => project.projectId === parseInt(id) 
+    );
+
+  
+    if (!detailProject) {
+      console.error("해당 프로젝트를 찾을 수 없습니다.");
+      return;
+    }
+
+    const otherProjects = data
+    .filter((project) => project.cohort === detailProject.cohort && project.projectId !== parseInt(id))  // 같은 cohort 찾기
+    .slice(0, 6);  
+
+    setProjectDetailData(detailProject);
+    setProjectData(otherProjects);
+  }, [id]);
 
   const handleProjectClick = (projectId) => {
     navigate(`/project/${projectId}`);
-    window.location.reload();
   };
+
+  if (!projectDetailData) {
+    return <div>로딩 중...</div>;
+  }
 
   return (
     <>

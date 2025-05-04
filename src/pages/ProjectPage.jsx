@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import headerImg from "../assets/underheaderImg.svg";
 import styled from "styled-components";
+import headerImg from "../assets/underheaderImg.svg";
 import ProjectList from "../components/project/ProjectList";
 import MainFooter from "../components/footer/MainFooter";
 import Colors from "../constanst/colors.mjs";
-
-const apiUrl = import.meta.env.VITE_API_URL;
+import projectsData from "../database/projectsData.json";
 
 const ProjectPageContainer = styled.div`
   width: 80%;
@@ -20,7 +18,8 @@ const ProjectPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
-  min-height: 65vh;
+  min-height: 90vh;
+  
 
   @media screen and (max-width: 530px) {
     min-height: 72vh;
@@ -146,38 +145,23 @@ function ProjectPage() {
   const [projectData, setProjectData] = useState([]);
   const [selectedPlatform, setSelectedPlatform] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const [cohortId, setCohortId] = useState({});
-  const [selectedGen, setSelectedGen] = useState("");
+  const [selectedCohort, setSelectCohort] = useState("");
 
-  const fetchProjects = () => {
-    axios
-      .get(`${apiUrl}/projects`, {
-        params: {
-          cohortId: cohortId[selectedGen] || undefined,
-          type: selectedPlatform !== "전체" ? selectedPlatform : undefined,
-          keyword: searchTerm || undefined,
-        },
-      })
-      .then((response) => {
-        setProjectData(response.data.result);
-      })
-      .catch(console.error);
-  };
+    useEffect(() => {
+      window.scrollTo(0, 0); 
+    }, []);  
+
 
   useEffect(() => {
-    axios
-      .get(`${apiUrl}/projects/cohort`)
-      .then(({ data }) => {
-        const cohortMap = data.result.reduce((acc, item) => {
-          acc[item.name] = item.cohortId;
-          return acc;
-        }, {});
-        setCohortId(cohortMap);
-      })
-      .catch(console.error);
-  }, []);
+    const filteredProjects = projectsData.result.filter((project) => {
+      const matchesPlatform = selectedPlatform && selectedPlatform !== "ALL" ? project.serviceType === selectedPlatform : true;
+      const matchesSearch = searchTerm ? project.title.toLowerCase().includes(searchTerm.toLowerCase()) : true;
+      const matchesCohort = selectedCohort && selectedCohort !== "ALL" ? project.cohort === selectedCohort: true;
 
-  useEffect(fetchProjects, [selectedGen, selectedPlatform, searchTerm]);
+      return matchesPlatform && matchesSearch && matchesCohort;
+    });
+    setProjectData(filteredProjects);
+  }, [ selectedPlatform, searchTerm, selectedCohort]);
 
   return (
     <>
@@ -194,18 +178,18 @@ function ProjectPage() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <Dropdown
-            value={selectedGen}
-            onChange={(e) => setSelectedGen(e.target.value)}
+            value={selectedCohort}
+            onChange={(e) => setSelectCohort(e.target.value)}
           >
             <option value="" disabled hidden>
               기수
             </option>
-            <option value="All">전체</option>
-            {Object.keys(cohortId).map((key) => (
-              <option key={key} value={key}>
-                {key}
-              </option>
-            ))}
+            <option value="ALL">전체</option>
+            <option value="7기">7기</option>
+            <option value="6기">6기</option>
+            <option value="5기">5기</option>
+            <option value="4기">4기</option>
+            
           </Dropdown>
           <Dropdown
             value={selectedPlatform}

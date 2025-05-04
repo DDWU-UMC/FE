@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import FAQList from "../components/FAQ/FAQList";
 import headerImg from "../assets/underheaderImg.svg";
@@ -15,7 +15,7 @@ const FAQPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  min-height: 90vh;
 
   .sub-tile-container {
     margin: 9rem 0rem 0rem 0rem;
@@ -106,12 +106,18 @@ const CateButton = styled.button`
 const FooterContainer = styled.div`
   width: 100%;
   background-color: ${Colors.secondary400};
+  position : relative;
+
 `;
 
 const FAQPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("Plan");
   const categories = ["Plan", "Design", "Develop", "동아리 활동"];
 
+   useEffect(() => {
+        window.scrollTo(0, 0); 
+      }, []);  
+  
   return (
     <>
       <FAQPageContainer>

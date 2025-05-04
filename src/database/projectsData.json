@@ -1,0 +1,1195 @@
+{
+    "result": [
+      {
+        "projectId": 24,
+        "cohort": "7기",
+        "title": "어디약",
+        "serviceType": "WEB",
+        "pm": "벨 / 안수연",
+        "frontEnd": "지니 / 김현진 외 Pyxis 지부 챌린저 3명",
+        "backEnd": "써니 / 김희선, 조이 / 김수현 외 Pyxis 지부 챌린저 3명",
+        "design": "맹쏘 / 맹소현",
+        "description": null,
+        "introduction": "해외에서 당황하지 말고 현지 상비약과 약국 정보는 딱 어디약 에서!",
+        "features": [
+          {
+            "content": "해외별 상비약 정보 제공 / \"배가 아픈데.. 그래서 미국 배탈 약이 어떤건데...\" 혼란스러움을 멈추는 상비약 정보 간편 제공"
+          },
+          {
+            "content": "내 주변의 약국 정보 제공 / 해외 상비약은 꼭 약국이 아니더라도 드럭스토어에서 판매하는 경우도 많기에 약국 및 드럭스토어 위치 둘 다 제공"
+          },
+          {
+            "content": "커뮤니티 공간 / 집단 지성 효과로 웹에서 얻지 못한 정보를 여기서 GET !"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/pharmquest.png"
+        }
+        
+      },
+      {
+        "projectId": 25,
+        "cohort": "7기",
+        "title": "partNerd",
+        "serviceType": "WEB",
+        "pm": "노브 / 노하영",
+        "frontEnd": "유니 / 조서윤 외 Pyxis 지부 챌린저 3명",
+        "backEnd": "도도 / 강도경, 곤 / 장고은, 율무 / 홍유리 외 Pyxis 지부 챌린저 2명",
+        "design": "Pyxis 지부 챌린저 1명",
+        "description": "IT 동아리와의 적극적인 소통을 통해 기회와 경험을 확장할 수 있는 플랫폼, 파트너드에서 다양하게 활동해보세요!",
+        "introduction": "경험을 더하고, 기회를 넓히다",
+        "features": [
+          {
+            "content": "✅ 파트너드 찾기 – IT 동아리를 등록하고, 다른 동아리의 활동을 확인할 수 있습니다."
+          },
+          {
+            "content": "✅ 콜라보레이션 – 동아리 간 협업 요청을 올리고, 함께 프로젝트를 진행할 수 있습니다."
+          },
+          {
+            "content": "✅ 프로젝트 모집 & 홍보 – 데모데이 이후 프로젝트를 홍보하거나, 팀원을 모집할 수 있습니다."
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/partNerd.jpeg"
+        }
+      },
+      {
+        "projectId": 26,
+        "cohort": "7기",
+        "title": "여행별",
+        "serviceType": "WEB",
+        "pm": "벨라 / 김윤수",
+        "frontEnd": "토토로 / 가유빈 외 Pyxis 지부 챌린저 3명",
+        "backEnd": "Pyxis 지부 챌린저 4명",
+        "design": "Pyxis 지부 챌린저 1명",
+        "description": "여행 일지를 간편하게 작성하며 추억과 감정을 기억하고 공유하는 서비스",
+        "introduction": "별자리가 되어가는 여행, 당신의 이야기를 써내려가세요",
+        "features": [
+          {
+            "content": "나만의 일지 작성"
+          },
+          {
+            "content": "내 행성에 작성된 일지 열람"
+          },
+          {
+            "content": "별자리 랭킹 / 작성한 별들을 모은 별자리 등록"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/travelstar.png"
+        }
+      },
+      {
+        "projectId": 27,
+        "cohort": "7기",
+        "title": "오타쿠맵",
+        "serviceType": "WEB",
+        "pm": "돌핀 / 문지민",
+        "frontEnd": "죠 / 선지오, 러츠 / 김민서, 희 / 천희정 외 Pyxis 지부 챌린저 1명",
+        "backEnd": "엠마 / 신윤지 , 미키 / 김민경, 루카 / 김도연, 세니 / 박세은 외 Pyxis 지부 챌린저 1명",
+        "design": "이오 / 장효원",
+        "description": "#오타쿠_투어를 계획하고 계시는 오타쿠 여러분\n\"좋아하는 장르의 이벤트를 지속적으로 확인하는 게 번거롭다\"\n\"여러 플랫폼을 찾아가며 후기나 꿀팁을 찾아야하는 게 힘들다\"\n\"성지순례 장소를 하나하나 검색하며 여행 계획을 세우는 게 어렵다\"\n이런 고민, 한 번쯤은 해본 오타쿠를 여러분을 위한 맞춤형 여행 플래너 서비스 *오타쿠 맵*이 있습니다 지금 실행하시겠습니까?",
+        "introduction": "애니메이션 팬들을 위한 맞춤형 여행플래너 서비스",
+        "features": [
+          {
+            "content": "애니메이션 관련 이벤트 정보 확인"
+          },
+          {
+            "content": "여행 후기를 공유하며 설계하는 나만의 오타쿠 투어"
+          },
+          {
+            "content": "느좋 여행 루트 따라가며 애니 속 성지순례까지!"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/otakumap.png"
+        }
+      },
+      {
+        "projectId": 28,
+        "cohort": "7기",
+        "title": "댕냥스퀘어",
+        "serviceType": "ANDROID",
+        "pm": "제이 / 장지안",
+        "frontEnd": "뿡야 / 이소연, 커비 / 공선영 외 Pyxis 지부 챌린저 2명",
+        "backEnd": "Pyxis 지부 챌린저 4명",
+        "design": "나리 / 박세이",
+        "description": "‘내 반려동물에게 좋은 것만 주고 싶은데….’ 쉽지 않은 현실,\n보상 리워드 리뷰 체험단, 중구난방 퍼져있는 다양한 정보 홍수에서 벗어나고자\n<한눈에 접하는 우리 동네 반려동물 지도, 댕냥스퀘어> 등장 !\n반려동물 육아도 스마트하게 시작해요.",
+        "introduction": "한 눈에 접하는 우리동네 반려동물 지도",
+        "features": [
+          {
+            "content": "날씨, 디데이, 내 주변 핫플 등 사용자에게 필요한 정보 제공"
+          },
+          {
+            "content": "반려동물을 위한 병원, 산책로, 음식/카페, 호텔 정보 제공"
+          },
+          {
+            "content": "견주들을 위해 산책코스 추천"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/dangnyang.png"
+        }
+      },
+      {
+        "projectId": 29,
+        "cohort": "7기",
+        "title": "FarmOn",
+        "serviceType": "WEB",
+        "pm": "Pyxis 지부 챌린저 1명",
+        "frontEnd": "Pyxis 지부 챌린저 4명",
+        "backEnd": "로컬 / 김현지, 데이 / 이연 외 Pyxis 지부 챌린저 2명",
+        "design": "주니 / 강주언",
+        "description": "농업인과 전문가를 연결해 초보 농업인의 효율적인 성장을 돕는 플랫폼 서비스",
+        "introduction": "농업의 새로운 연결고리",
+        "features": [
+          {
+            "content": "농업 데이터 기반 컨설팅\n(맞춤형 컨설팅 요청을 위한 컨설팅 종류, 분야, 지역, 예산 설정 신청서 제공)"
+          },
+          {
+            "content": "전문가 - 농업인 매칭 시스템\n(전문가 프로필, 전문가 찾기, 추천 기능\nPaymant 및 리뷰 시스템)"
+          },
+          {
+            "content": "디지털 커뮤니티\n(Q&A, 전문가 칼럼, 자유게시판 활용\n성공사례, 실시간 농업 트렌드 공유)"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/FarmOn.png"
+        }
+      },
+      {
+        "projectId": 30,
+        "cohort": "7기",
+        "title": "공각심",
+        "serviceType": "ANDROID",
+        "pm": "Pyxis 지부 챌린저 1명",
+        "frontEnd": "예디 / 예나경 외 Pyxis 지부 챌린저 3명",
+        "backEnd": "Pyxis 지부 챌린저 4명",
+        "design": "Pyxis 지부 챌린저 1명",
+        "description": null,
+        "introduction": "당신의 학습에 경각심을 불러일으키다",
+        "features": [
+          {
+            "content": "경각심 리마인드 / 다양한 유형의 랜덤 알림 및 퀴즈로 학습 경각심 리마인드"
+          },
+          {
+            "content": "사용자 맞춤형 / 사용자 정보 및 AI 기반 맞춤 일정 추천"
+          },
+          {
+            "content": "정보 제공 및 이동 지원 / 70여가지 자격증 정보 제공 및 접수 페이지 이동 지원"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/gonggaksim.png"
+        }
+      },
+      {
+        "projectId": 31,
+        "cohort": "7기",
+        "title": "Ttt.",
+        "serviceType": "ANDROID",
+        "pm": "파도 / 김지민",
+        "frontEnd": "토리 / 오혜인, 하론 / 조하은 외 Pyxis 지부 챌린저 2명",
+        "backEnd": "지나 / 김은진, 조아 / 조은향, 로이 / 이승연 외 Pyxis 지부 챌린저 1명",
+        "design": "주디 / 김가영",
+        "description": "꾸준히 독서하는 건 너무 어려운 것 같아..!   독서를 하고 싶지만 꾸준히 하기 어려운 MZ세대 현대인들을 위해, 책&장소 큐레이션, 북클럽과 다양한 위젯 기능을 제공하는 앱 서비스입니다. Ttt.를 통해 독서하고 싶은 마음이 자연스럽게 생기고, 계속해서 책을 읽는 습관을 기를 수 있도록 도와줄 거예요.",
+        "introduction": "오늘도 가볍게 한 페이지, Readingmate Ttt.",
+        "features": [
+          {
+            "content": "Ttt. 북레터 / 책 큐레이션 콘텐츠를 담고 있는 '북레터'를 유저의 취향에 맞게 확인할 수 있어요."
+          },
+          {
+            "content": "책마다 북클럽 / 현재 가입한 북클럽과 진행사항을 확인할 수 있어요."
+          },
+          {
+            "content": "큐레이션 도서 / 큐레이션 멘트와 함께 책에 대한 간단한 정보를 확인할 수 있어요."
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/Ttt.png"
+        }
+      },
+      {
+        "projectId": 32,
+        "cohort": "5기",
+        "title": "아이레시피",
+        "serviceType": "ANDROID",
+        "pm": "SQUARE 지부 챌린저 1명",
+        "frontEnd": "뉴아 / 이다윤 외 SQUARE 지부 챌린저 2명",
+        "backEnd": "SQUARE 지부 챌린저 4명",
+        "design": "쑤 / 김수민",
+        "description": "#친환경 #레시피 #간편함",
+        "introduction": "AI 챗봇 기반 맞춤형 레시피 서비스",
+        "features": [
+          {
+            "content": "AI 맞춤형 레시피 (ChatGPT 활용)"
+          },
+          {
+            "content": "냉장고 관리"
+          },
+          {
+            "content": "커뮤니티"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/eyerecipe.png"
+        }
+      },
+      {
+        "projectId": 33,
+        "cohort": "5기",
+        "title": "FORGRAD",
+        "serviceType": "ANDROID",
+        "pm": "SQUARE 지부 챌린저 1명",
+        "frontEnd": "맨디 / 박규민, 코코 / 김유진 SQUARE 지부 챌린저 1명",
+        "backEnd": "SQUARE 지부 챌린저 4명",
+        "design": "SQUARE 지부 챌린저 1명",
+        "description": " #졸업 #소통 #편리함",
+        "introduction": "당신의 졸업을 위한 모든 것! 졸업정보서비스           ",
+        "features": [
+          {
+            "content": "개인별 교육과정 이수 현황 확인 가능"
+          },
+          {
+            "content": "전공별 졸업요건 매학기 업로드"
+          },
+          {
+            "content": "교과 외의 커리어 (ex. 비교과 프로그램, 수상 경력, 자격증, 공모전 등) 한 곳에 정리"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/Forgrad.jpeg"
+        }
+      },
+      {
+        "projectId": 34,
+        "cohort": "5기",
+        "title": "안뜰",
+        "serviceType": "ANDROID",
+        "pm": "아티 / 이지연",
+        "frontEnd": "도도 / 강도경, 율 / 김미현 외  SQUARE 지부 챌린저 1명",
+        "backEnd": "SQUARE 지부 챌린저 3명",
+        "design": "도라 / 우다영",
+        "description": "# 따듯함 #일상공유 #마음전하기",
+        "introduction": "가족 간의 단단한 네트워킹을 위한 소규모 SNS",
+        "features": [
+          {
+            "content": "우리 가족만을 위한 SNS"
+          },
+          {
+            "content": "우리 가족 우체통"
+          },
+          {
+            "content": "안뜰 정원 꾸미기: 마음을 나눌수록 성장하는 정원"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/anddel.jpeg"
+        }
+      },
+      {
+        "projectId": 35,
+        "cohort": "5기",
+        "title": "주인장",
+        "serviceType": "IOS",
+        "pm": "젠 / 여민경",
+        "frontEnd": "SQUARE 지부 챌린저 3명",
+        "backEnd": "여니 / 유승연, 코난 / 장현아, 진 / 박서진, 시니 / 신이현",
+        "design": "SQUARE 지부 챌린저 1명",
+        "description": "#생산성 #임장 #체크리스트",
+        "introduction": "내 손안의 완벽한 부동산 임장",
+        "features": [
+          {
+            "content": "주인장의 체크리스트 / 체크리스트를 완성하고 나면 일조권, 조망권, 편의시설, 유해시설 등등 점수를 매기면 주인장이 점수를 평균값으로 변환해줍니다.\n점수순으로 나열된 부동산을 통해 주인장의 선호도를 알아보아요!"
+          },
+          {
+            "content": "주인장의 기록 /임장을 가서 일일이 집중해서 적기는 어려운 일입니다.\n주인장이 제공하는 녹음 기능을 통해 편리하게 기록해보세요.\n녹음은 보안의 측면에서 문제가 될 수 있으니 녹음을 하기 전 경고문구를 통해 주의사항을 알려줘요!"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/juinjang.jpeg"
+        }
+      },
+      {
+        "projectId": 36,
+        "cohort": "5기",
+        "title": "Ticket-taka",
+        "serviceType": "IOS",
+        "pm": "SQUARE 지부 챌린저 1명",
+        "frontEnd": "SQUARE 지부 챌린저 3명",
+        "backEnd": "짐니 / 김지민 외 SQUARE 지부 챌린저 3명",
+        "design": "SQUARE 지부 챌린저 1명",
+        "description": "#티켓 #프로젝트 #관리",
+        "introduction": "우리 티켓으로 소통하자! 불필요한 소통은 줄이고 프로젝트에 집중할 수 있는 환경을 만들어주는 서비스",
+        "features": [
+          {
+            "content": "티켓(수행해야 할 하나의  task를 지칭하는 단위)"
+          },
+          {
+            "content": "캘린더"
+          },
+          {
+            "content": "커뮤니티"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/Tickettaka.png"
+        }
+      },
+      {
+        "projectId": 37,
+        "cohort": "5기",
+        "title": "Homeat",
+        "serviceType": "IOS",
+        "pm": "아리 / 우예진",
+        "frontEnd": "SQUARE 지부 챌린저 3명",
+        "backEnd": "SQUARE 지부 챌린저 4명",
+        "design": "제리 / 김규리",
+        "description": "#1인가구 #식비관리 #정보공유",
+        "introduction": "자취의 식비 부담, 챌린지형 식비 관리 서비스로 해결하세요",
+        "features": [
+          {
+            "content": "가계부 기능 (캘린더 + 그래프)"
+          },
+          {
+            "content": "월별 챌린지 기능"
+          },
+          {
+            "content": "커뮤니티 기능"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/Homeat.png"
+        }
+      },
+      {
+        "projectId": 38,
+        "cohort": "5기",
+        "title": "bid",
+        "serviceType": "WEB",
+        "pm": "SQUARE 지부 챌린저 1명",
+        "frontEnd": "메이 / 지민선 외 SQUARE 지부 챌린저 3명",
+        "backEnd": "지니 / 이어진 외 SQUARE 지부 챌린저 2명",
+        "design": "SQUARE 지부 챌린저 1명",
+        "description": "#경매 형 #기댓값 #중고 거래",
+        "introduction": "판매자 구매자의 경매 형 중고 거래 플랫폼!",
+        "features": [
+          {
+            "content": "판매자 경매"
+          },
+          {
+            "content": "구매자 경매"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/BID.png"
+        }
+      },
+      {
+        "projectId": 39,
+        "cohort": "5기",
+        "title": "낭만 고양이",
+        "serviceType": "WEB",
+        "pm": "이음새 / 한유라",
+        "frontEnd": "SQUARE 지부 챌린저 4명",
+        "backEnd": "비비 / 배은경, 유즈 / 이예림 외 SQUARE 지부 챌린저 2명",
+        "design": "지우 / 김지우",
+        "description": "#느린_우체통 #개성 #소통",
+        "introduction": "마음을 전달하는 모바일 편지 서비스",
+        "features": [
+          {
+            "content": "편지 보내고 받기"
+          },
+          {
+            "content": "편지지 꾸미기"
+          },
+          {
+            "content": "낭만 우편함(펜팔 서비스)"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/nangmancat.png"
+        }
+      },
+      {
+        "projectId": 40,
+        "cohort": "5기",
+        "title": "Career Festival",
+        "serviceType": "WEB",
+        "pm": "클레이 / 이지영",
+        "frontEnd": "SQUARE 지부 챌린저 4명",
+        "backEnd": "SQUARE 지부 챌린저 4명",
+        "design": "SQUARE 지부 챌린저 1명",
+        "description": "#커리어 #자기개발 #행사",
+        "introduction": "내 커리어에 맞는 오프라인 행사 매칭 및 기록 서비스😊",
+        "features": [
+          {
+            "content": "내 커리어와 관련된 행사 방문 후 얻은 정보들을 바로바로 기록할 수 있어요!"
+          },
+          {
+            "content": "다양한 분야의 행사들을 보기 쉽게 정리한 목록을 제공하고, 참가 신청도 할 수 있어요!"
+          },
+          {
+            "content": "비슷한 방향의 진로를 가지고, 신원이 보장된 친구들을 모아 함께 행사에 참여할 수 있어요!"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/CareerFestival.png"
+        }
+      },
+      {
+        "projectId": 41,
+        "cohort": "5기",
+        "title": "동네형",
+        "serviceType": "WEB",
+        "pm": "SQUARE 지부 챌린저 1명",
+        "frontEnd": "써니 / 김희선 외 SQUARE 지부 챌린저 3명",
+        "backEnd": "SQUARE 지부 챌린저 3명",
+        "design": "SQUARE 지부 챌린저 1명",
+        "description": "#운동 #자기관리 #일상",
+        "introduction": "자연스럽게 운동을 할 수 있는 능력도 가치 있는 자산입니다.",
+        "features": [
+          {
+            "content": "헬창을 찾는 헬린이 / 헬린이를 찾는 헬창"
+          },
+          {
+            "content": "헬린이들이 pt를 받은 헬창들에게 리뷰를 작성할 수 있음, 이를 통해 매너지수, 만족도 등의 수치로 트레이너 평가 가능"
+          },
+          {
+            "content": "그 지역의 헬창들의 리뷰 순위를 매김 ( 배달의 민족처럼 리뷰 수, 평점 순, 헬창지수 등등 여러가지 지표로 순위를 매길 수 있는 시스템 책정)"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/fitnessbro.png"
+        }
+      },
+      {
+        "projectId": 42,
+        "cohort": "5기",
+        "title": "ARTORY",
+        "serviceType": "WEB",
+        "pm": "SQUARE 지부 챌린저 1명",
+        "frontEnd": "조아 / 조은향 외 SQUARE 지부 챌린저 2명",
+        "backEnd": "SQUARE 지부 챌린저 4명",
+        "design": "SQUARE 지부 챌린저 1명",
+        "description": "#문화 생활  #기록  #커뮤니티",
+        "introduction": "“문화가 가진 스토리를 나만의 문화로 이야기하다”",
+        "features": [
+          {
+            "content": "Artory가 정한 문화 범위 / 전시&행사"
+          },
+          {
+            "content": "Artory가 이야기하는 ‘스토리’ 정의 / 기록된 글을 ‘스토리’ 라는 대명사로 지칭."
+          },
+          {
+            "content": "전시 기록 / 문화를 보고 느낀 감상평이나 생각을 정리하고 경험한 문화에 대한 일기를 기록합니다.\n캘린더를 통해 사용자가 다녀 온 문화생활에 대해 기입하고 그에 대한 생각을 정리합니다."
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/ARTORY.png"
+        }
+      },
+      {
+        "projectId": 43,
+        "cohort": "5기",
+        "title": "인터폰",
+        "serviceType": "WEB",
+        "pm": "SQUARE 지부 챌린저 1명",
+        "frontEnd": "나롱 / 김나희 외 SQUARE 지부 챌린저 3명",
+        "backEnd": "로이 / 이승연 외 SQUARE 지부 챌린저 3명",
+        "design": "SQUARE 지부 챌린저 1명",
+        "description": "#인턴 #대학생 #스펙쌓기",
+        "introduction": "인턴십을 하고자 하는 사람들과 기업간의 정보 불균형이 해결되는 그날까지 !!",
+        "features": [
+          {
+            "content": "한눈에 인턴 모집 공고 제공"
+          },
+          {
+            "content": "현업자나 전문가의 교육을 무료로 수강 가능"
+          },
+          {
+            "content": "정보 불균형의 해결"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/interphone.png"
+        }
+      },
+      {
+        "projectId": 44,
+        "cohort": "5기",
+        "title": "BloodTrail",
+        "serviceType": "WEB",
+        "pm": "SQUARE 지부 챌린저 1명",
+        "frontEnd": "SQUARE 지부 챌린저 4명",
+        "backEnd": "제이 / 정채원, 쟌 / 김지은 외 SQUARE 지부 챌린저 1명",
+        "design": "옐 / 김예리",
+        "description": "#헌혈 #커뮤니티",
+        "introduction": "헌혈과 커뮤니티를 한번에, 헌혈을 대표할 앱 그 자체가 되자",
+        "features": [
+          {
+            "content": "헌혈 크루 만들기"
+          },
+          {
+            "content": "헌혈 커뮤니티"
+          },
+          {
+            "content": "지정헌혈 홍보"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/BloodTrail.jpeg"
+        }
+      },
+      {
+        "projectId": 45,
+        "cohort": "5기",
+        "title": "우주 정거장",
+        "serviceType": "WEB",
+        "pm": "SQUARE 지부 챌린저 1명",
+        "frontEnd": "요니 / 강승연 외 SQUARE 지부 챌린저 3명",
+        "backEnd": "다다 / 이다솔 외 SQUARE 지부 챌린저 3명",
+        "design": "SQUARE 지부 챌린저 1명",
+        "description": "#글쓰기 #몰입 #자기개발",
+        "introduction": "나만의 생각이 정착할 우주 정거장",
+        "features": [
+          {
+            "content": "오늘의 질문 및 글감 제공"
+          },
+          {
+            "content": "나의 우주선 관리 "
+          },
+          {
+            "content": "우주 정거장 속에서 만드는 책"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/spacestation.jpeg"
+        }
+      },
+      {
+        "projectId": 46,
+        "cohort": "5기",
+        "title": "Travel Compass",
+        "serviceType": "WEB",
+        "pm": "SQUARE 지부 챌린저 1명",
+        "frontEnd": "두부 / 손다현 외 SQUARE 지부 챌린저 3명",
+        "backEnd": "SQUARE 지부 챌린저 3명",
+        "design": "SQUARE 지부 챌린저 1명",
+        "description": "#간편함 #여행계획 #한큐에딱",
+        "introduction": "당신의 여행 계획! 간편하게 이 웹사이트 사용해서 계획하시는건 어떠신가요~",
+        "features": [
+          {
+            "content": "가고 싶은 장소들을 클릭하면 오늘 하루 계획표를 짜주는 AI Travel 기능!"
+          },
+          {
+            "content": "다른 사람의 여행계획서를 보고 즐겨찾기도 하고 내 마음대로 수정할 수 있는 기능!"
+          },
+          {
+            "content": "같이 수정할 수 있는 여행계획표를 만들어 실시간 공유 기능!"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/TravelCompass.png"
+        }
+      },
+      {
+        "projectId": 47,
+        "cohort": "6기",
+        "title": "브위더",
+        "serviceType": "WEB",
+        "pm": "Tree 지부 챌린저 1명",
+        "frontEnd": "토토로 / 가유빈, 로컬 / 김현지 외 Tree 지부 챌린저 2명",
+        "backEnd": "Tree 지부 챌린저 5명",
+        "design": "Tree 지부 챌린저 1명",
+        "description": "브리더와 함께하는 올바른 반려동물 분양 서비스",
+        "introduction": "올바른 반려동물 분양 문화를 선도하는 BWITHER",
+        "features": [
+          {
+            "content": "브리더 찾기"
+          },
+          {
+            "content": "분양 대기 동물"
+          },
+          {
+            "content": "커뮤니티"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/BWithHer.png"
+        }
+      },
+      {
+        "projectId": 48,
+        "cohort": "6기",
+        "title": "위트",
+        "serviceType": "ANDROID",
+        "pm": "Tree 지부 챌린저 1명",
+        "frontEnd": "조아 / 조은향, 미니 / 진채민 외 Tree 지부 챌린저 2명",
+        "backEnd": "Tree 지부 챌린저 5명",
+        "design": "주디 / 김가영",
+        "description": "여기저기 흩어져 있는 해외 기념품 정보, 위트에서 한눈에 비교하고 모아보자!",
+        "introduction": "해외여행 기념품 후기 비교 서비스",
+        "features": [
+          {
+            "content": "해외 기념품 상품 정보와 후기 한눈에 비교하기!"
+          },
+          {
+            "content": "다른 사람들은 뭐 사지? 한국인 여행객들이 많이 사는 기념품 보기!"
+          },
+          {
+            "content": "구매 희망하는 품목을 하나의 리스트로 정리해 현지에서 편하게 쇼핑하기!"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/wit.jpeg"
+        }
+      },
+      {
+        "projectId": 49,
+        "cohort": "6기",
+        "title": "SERVnow",
+        "serviceType": "WEB",
+        "pm": "아리 / 우예진",
+        "frontEnd": "곤 / 장고은, 데이 / 이연, 엠미 / 신윤지 외 Tree 지부 챌린저 2명",
+        "backEnd": "맨디 / 박규민, 쟌 / 김지은, 진 / 박서진 외 Tree 지부 챌린저 2명",
+        "design": "리리 / 김예리",
+        "description": "사용자들이 실시간으로 자신에게 맞는 설문조사를 찾고 응답할 수 있는 서비스를 직관적으로 나타내며, 사용자 친화적이고 개인화된 설문조사 서비스를 제공하는 것이 목표입니다.",
+        "introduction": "온라인 설문지 제작 공유 서비스 서브나우",
+        "features": [
+          {
+            "content": "간편하고 다양하게 제작한 설문지를 배포"
+          },
+          {
+            "content": "실시간으로 참여 현황이 가능한 설문지로 더욱 재미있게"
+          },
+          {
+            "content": "설문지 테마는 꾸미기 기능으로 간단하게"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/ServNow.jpeg"
+        }
+      },
+      {
+        "projectId": 50,
+        "cohort": "6기",
+        "title": "힘전소",
+        "serviceType": "ANDROID",
+        "pm": "제리 / 김규리",
+        "frontEnd": "Tree 지부 챌린저 3명",
+        "backEnd": "시니 / 신이현, 로이 / 이승연 외 Tree 지부 챌린저 3명",
+        "design": "쑤 / 김수민",
+        "description": "이동 약자를 위한 전동보장구 충전소 안내와 커뮤니티 소통 서비스, 힘전소. 힘전소는 휠체어와 전동 스쿠터 사용자들이 쉽게 전동보장구 충전소를 찾고, 커뮤니티에서 경험을 공유할 수 있도록 돕는 서비스입니다.\n지도 기능과 리뷰를 통해 신뢰할 수 있는 충전소 정보를 제공하며, 사용자들이 서로 소통하고 지원할 수 있는 공간을 제공합니다.\n힘전소로 보다 편리하고 안전한 이동을 경험하세요.",
+        "introduction": "당신의 에너지를 채우다. 전동보장구 충전소 안내 서비스",
+        "features": [
+          {
+            "content": "지도 / 사용자들이 전동보장구 충전소의 위치를 쉽게 찾을 수 있도록 도와 줍니다."
+          },
+          {
+            "content": "리스트 / 거리순과 별점순으로 충전소 리스트를 확인할 수 있으며, 정보를 쉽게 비교할 수 있습니다."
+          },
+          {
+            "content": "채팅 / 사용자 간의 실시간 소통을 지원하며 채팅을 통해 인적 네트워크를 형성하고 도움을 주고 받을 수 있습니다."
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/himjeonso.jpeg"
+        }
+      },
+      {
+        "projectId": 51,
+        "cohort": "6기",
+        "title": "책모아",
+        "serviceType": "ANDROID",
+        "pm": "이음새 / 한유라",
+        "frontEnd": "써니 / 김희선, 경로그 / 이도경 외 Tree 지부 챌린저 2명",
+        "backEnd": "다다 / 이다솔, 뉴아 / 이다윤 외 Tree 지부 챌린저 2명",
+        "design": "Tree 지부 챌린저 1명",
+        "description": "여기저기 흩어져있는 독서 기록을 한데 모아 내가 지금까지 읽은 책과 독서 메모를 한 눈에 볼 수 있어요.\n책모아 다른 유저들이 재미있게 읽은 책과 독서 리스트를 공유받고 독서모임에서 모임원들과 이야기를 나누며 소통해요!",
+        "introduction": "기록과 소통의 공간.",
+        "features": [
+          {
+            "content": "독서 기록 / 독서 집중모드 해제 시 읽은 페이지 수, 읽은 기간, 메모까지 기록할 수 있어요"
+          },
+          {
+            "content": "리서재 / '플레이 리스트' 처럼 장르, 지은이, 무드에 따라 나만의 독서 리스트를 만들어보세요"
+          },
+          {
+            "content": "독서 모임 / 내가 원하는 독서모임을 찾아서 가입하고, 모임원들과 감상을 나누고 챌린지에 참여하는 등 다양한 독서 활동에 참여할 수 있어요!"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/bookmoa.jpeg"
+        }
+      },
+      {
+        "projectId": 52,
+        "cohort": "6기",
+        "title": "majorLink",
+        "serviceType": "WEB",
+        "pm": "노브 / 노하영",
+        "frontEnd": "토리 / 오혜인 외 Tree 지부 챌린저 3명",
+        "backEnd": "개미 / 최서현 외 Tree 지부 챌린저 3명",
+        "design": "노브 / 노하영",
+        "description": "#온라인교육플랫폼 #화상강의 #멘토링 #전공강의 #융합 #연결",
+        "introduction": "대학생 전공 상호 멘토링 플랫폼",
+        "features": [
+          {
+            "content": "멘토링 매칭"
+          },
+          {
+            "content": "수업 관리"
+          },
+          {
+            "content": "프로필 카드"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/MajorLink.png"
+        }
+      },
+      {
+        "projectId": 53,
+        "cohort": "6기",
+        "title": "요리어터",
+        "serviceType": "ANDROID",
+        "pm": "Tree 지부 챌린저 1명",
+        "frontEnd": "뿡야 / 이소연, 밍슬 / 김민수 외 Tree 지부 챌린저 1명",
+        "backEnd": "두두 / 오수연, 짐니 / 김지민 외 Tree 지부 챌린저 2명",
+        "design": "Tree 지부 챌린저 1명",
+        "description": null,
+        "introduction": "다이어트 식단 계획 및 레시피 제공 커뮤니티",
+        "features": [
+          {
+            "content": "추천 레시피"
+          },
+          {
+            "content": "식재료를 키워드로 검색"
+          },
+          {
+            "content": "나만의 레시피 작성"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/yorieter.png"
+        }
+      },
+      {
+        "projectId": 54,
+        "cohort": "6기",
+        "title": "LOCAL MARK",
+        "serviceType": "WEB",
+        "pm": "Tree 지부 챌린저 1명",
+        "frontEnd": "Tree 지부 챌린저 5명",
+        "backEnd": "도도 / 강도경, 미키 / 김민경, 율무 / 홍유리 외 Tree 지부 챌린저 2명",
+        "design": "지우 / 김지수",
+        "description": "로컬 크리에이터 산업의 발전 과정에 하나의 흔적을 남길 수 있도록.\n차별화된 상품을 찾는 소비자의 마음에도 흔적을 남길 수 있도록.",
+        "introduction": "로컬 크리에이터를 위한 마켓 & 플랫폼",
+        "features": [
+          {
+            "content": "로컬 마켓  #다양한_로컬을_한눈에"
+          },
+          {
+            "content": "More Local  #로컬레터 #크리에이터들의_인터뷰 "
+          },
+          {
+            "content": "크리에이터 커뮤니티  #크리에이터끼리_잡담_정보공유"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/LocalMark.png"
+        }
+      },
+      {
+        "projectId": 55,
+        "cohort": "4기",
+        "title": "러브키퍼",
+        "serviceType": "WEB",
+        "pm": "Neo지부 챌린저 1명",
+        "frontEnd": "나롱 / 김나희 외 Neo지부 챌린저 2명",
+        "backEnd": "Neo지부 챌린저 5명",
+        "design": "Neo지부 챌린저 1명",
+        "description": "소중한 연인과의 관계를 유지하고 싸움을 방지하는 어플리케이션",
+        "introduction": "연인과의 싸움 방지 서비스",
+        "features": [
+          {
+            "content": "화해 요청"
+          },
+          {
+            "content": "편지 작성 / 양식 작성, 자율 작성 가능"
+          },
+          {
+            "content": "편지 전송 / 편지 전달"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/lovekeeper.png"
+        }
+      },
+      {
+        "projectId": 56,
+        "cohort": "4기",
+        "title": "Tri Tri",
+        "serviceType": "WEB",
+        "pm": "Neo지부 챌린저 1명",
+        "frontEnd": "샐리 / 한민주 외 Neo지부 챌린저 2명",
+        "backEnd": "지니 / 이어진, 청 / 손수연 외 Neo지부 챌린저 3명",
+        "design": "나루 / 박소민",
+        "description": "내성적인 사람들, 남녀노소 상관 없이, 취미/최애를 부담 없이 자유롭게 공유하여 유저들의 풍요로운여가를 제공하는 플랫폼을 만들어보자!",
+        "introduction": "풍요로운 여가 만들기",
+        "features": [
+          {
+            "content": "Anytime, Anywhere - 언제 어디서든 간편하게 사용할 수 있게 "
+          },
+          {
+            "content": "What rather than where - 온라인으로 취미 여가를 더욱 풍요롭게"
+          },
+          {
+            "content": "Tri, Tri - 자신의 취미/최애를 다른 유저에게 소개하여 유입시키기"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/TriTri.png"
+        }
+      },
+      {
+        "projectId": 57,
+        "cohort": "4기",
+        "title": "Family Moments",
+        "serviceType": "WEB",
+        "pm": "Neo지부 챌린저 1명",
+        "frontEnd": "주디 / 이지우 Neo지부 챌린저 3명",
+        "backEnd": "융 / 정유영 Neo지부 챌린저 4명",
+        "design": "Neo지부 챌린저 1명",
+        "description": "가족 소중한 시간들을 공유구성원들이 더 가까워지고 할 수 있습니다. 사용자들은 앱을 통해 언제든지 가족 앨범을 열람하고 과거의 추억들을 회상할 수 있습니다.",
+        "introduction": "부모님과 자녀, 서로의 순간들을 사진으로 공유하고 소통할 수 있는 서비스",
+        "features": [
+          {
+            "content": " 가족 간의 소통과 연결성을 강화하고, 사진을 주기적으로 공유하며 소중한 순간들을 함께 나눌 수 있는 플랫폼 제공!"
+          },
+          {
+            "content": "사진을 업로드하고 댓글이나 좋아요를 남기며, 가족들과 소통 가능한 기능 설계"
+          },
+          {
+            "content": " 매주 모든 가족들이 업로드 완료했을 때 clear를 획득하게 하여 일정개수의 clear를 모으면 실제 가족앨범포토북을 주는 방식으로 사용자들에게 업로드 동기부여 "
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/FamilyMoments.png"
+        }
+      },
+      {
+        "projectId": 58,
+        "cohort": "4기",
+        "title": "Troth Cam",
+        "serviceType": "WEB/IOS",
+        "pm": "Neo지부 챌린저 1명",
+        "frontEnd": "WEB : 시니 / 신이현 Neo지부 챌린저 2명 IOS: Neo지부 챌린저 3명",
+        "backEnd": "제이 / 정채원, 에이치 / 한호정, 여니 / 유승연, 마에 / 김주희",
+        "design": "Neo지부 챌린저 2명",
+        "description": "사진의 실질 촬영 여부를 판단하여 딥페이크, AI 생성 이미지와 실제 촬영 사진을 구별하는 어플리케이션",
+        "introduction": "사진 인증 발급 및 인증 확인 서비스",
+        "features": [
+          {
+            "content": "사진 촬영시NFT 부여 후 사진에 임베드간단한 NFT 사진 생성"
+          },
+          {
+            "content": "사진 인증 확인해당 사진에 대해 신뢰성 인증인증시 사진앱에 저장 및 체크 표시"
+          },
+          {
+            "content": "사용자 담당 NFT 제공내가 찍은 사진에 대해 간단한 인증NFT 판매 및 구매"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/TrothCam.png"
+        }
+      },
+      {
+        "projectId": 59,
+        "cohort": "4기",
+        "title": "Teaming",
+        "serviceType": "WEB/ANDROID",
+        "pm": "젠 / 여민경",
+        "frontEnd": "Neo지부 챌린저 8명",
+        "backEnd": "제인 / 김지희 외 Neo지부 챌린저 3명",
+        "design": "Neo지부 챌린저 2명",
+        "description": "팀원 간의 소통을 더욱 원활하게 도와주는 팀 프로젝트 기록 웹/앱, 티밍(TEAMING)",
+        "introduction": "효율적인 팀 프로젝트를 기록하라!",
+        "features": [
+          {
+            "content": "효율적인 파일 및 피드백 관리하기"
+          },
+          {
+            "content": "자신만의 포트폴리오 관리하기"
+          },
+          {
+            "content": "참여 기록을 통한 동기부여"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/Teaming.png"
+        }
+      },
+      {
+        "projectId": 60,
+        "cohort": "4기",
+        "title": "FLAG",
+        "serviceType": "WEB/IOS",
+        "pm": "Neo지부 챌린저 1명",
+        "frontEnd": "제이피지 / 이미지, 다다 / 이다솔 외 Neo지부 챌린저 5명",
+        "backEnd": "비비 / 배은경, 호수 / 이지영 외 Neo지부 챌린저",
+        "design": "제리 / 김규리 외 Neo지부 챌린저 1명",
+        "description": "다같이 약속을 잡을 때 꼭 필요한, 간편한 일정 조율 서비스 플래그 FLAG",
+        "introduction": "간편한 일정 조율 서비스",
+        "features": [
+          {
+            "content": "Time Table 내 주간 일정표를 한 눈에 확인하고, 한 번에 관리할 수 있게 합니다."
+          },
+          {
+            "content": "FLAG 자동으로 사람들이 가능한 시간을 추려 간편하게 일정을 잡을 수 있게 합니다."
+          },
+          {
+            "content": "FLEX 빠르고 쉬운 방법으로 친구들과 재미있게 번개 약속을 잡을 수 있게 합니다."
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/FLAG.png"
+        }
+      },
+      {
+        "projectId": 61,
+        "cohort": "4기",
+        "title": "트레블러",
+        "serviceType": "WEB/ANDROID",
+        "pm": "Neo지부 챌린저 1명",
+        "frontEnd": "경로그 / 이도경, 서은 / 서예은 외 Neo지부 챌린저 5명",
+        "backEnd": "코난 / 장현아 외 Neo지부 챌린저 3명",
+        "design": "Neo지부 챌린저 2명",
+        "description": "힐링 하러 가는 여행🧳, 가기 전에도 쉽고 빠르게 계획하자!",
+        "introduction": "여행계획 스케줄링 서비스",
+        "features": [
+          {
+            "content": "내 취향에 맞게 여행계획을 추천!"
+          },
+          {
+            "content": "여행계획을 공유할 수 있는 공간!"
+          },
+          {
+            "content": "꼼꼼하게 여행을 준비하자!"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/traveler.png"
+        }
+      },
+      {
+        "projectId": 62,
+        "cohort": "4기",
+        "title": "마다",
+        "serviceType": "WEB/ANDROID",
+        "pm": "Neo지부 챌린저 1명",
+        "frontEnd": "Neo지부 챌린저 8명",
+        "backEnd": "줄리아 / 김진영 외 Neo지부 챌린저 3명",
+        "design": "Neo지부 챌린저 2명",
+        "description": "일정관리와 투두를 하며 캐릭터를 성장시키는 서비스",
+        "introduction": "매일마다 작성하는 일정관리 서비스",
+        "features": [
+          {
+            "content": "나만의 귀여운 캐릭터를 꾸미는 재미를 가진 어플"
+          },
+          {
+            "content": "일정과 todo를 한번에 관리 할수 있는 어플"
+          },
+          {
+            "content": "놓치는 일 없게 알려주는 매니저 같은 어플"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/mada.png"
+        }
+      },
+      {
+        "projectId": 63,
+        "cohort": "4기",
+        "title": "RE-FIT",
+        "serviceType": "ANDROID",
+        "pm": "Neo지부 챌린저 1명",
+        "frontEnd": "맨디 / 박규민, 나나 / 이현아 외 Neo지부 챌린저 2명",
+        "backEnd": "Neo지부 챌린저 3명",
+        "design": "으니 / 신해은",
+        "description": "패스트패션은 그만! 지속 가능한 슬로우패션을 지향하는 친환경 옷장 애플리케이션",
+        "introduction": "친환경 디지털 옷장 서비스",
+        "features": [
+          {
+            "content": "옷의 목표 착용 횟수 설정 및 달성 시 리워드 제공"
+          },
+          {
+            "content": "옷 장터 커뮤니티 기능 제공 "
+          },
+          {
+            "content": "패스트 패션이 아닌, 슬로우 패션 장려"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/RE-FIT.png"
+        }
+      },
+      {
+        "projectId": 64,
+        "cohort": "4기",
+        "title": "황금비율",
+        "serviceType": "ANDROID",
+        "pm": "로미 / 신유민",
+        "frontEnd": "Neo지부 챌린저 2명",
+        "backEnd": "품바/ 나현지 외 Neo지부 챌린저 3명",
+        "design": "Neo지부 챌린저 1명",
+        "description": "나만의 꿀조합 칵테일과 숙취해소법을 공유·추천하는 어플리케이션",
+        "introduction": "나만의 커스텀 칵테일&숙취해소법 공유·추천 서비스",
+        "features": [
+          {
+            "content": "술에 대한 지식이 없는 초보자라도 쉽게 폭탄주(칵테일)를 만들어 즐길 수 있는 서비스"
+          },
+          {
+            "content": "다른 사람의 꿀조합과 숙취해소법을 추천받고 공유할 수 있는 서비스"
+          },
+          {
+            "content": "우리 주변에서 친숙한, 구하기 쉬운 재료들로 창의적인 술을 만들고 공유할 수 있는 서비스"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/황금비율.jpeg"
+        }
+      },
+      {
+        "projectId": 65,
+        "cohort": "4기",
+        "title": "유어웨더",
+        "serviceType": "ANDROID",
+        "pm": "Neo지부 챌린저 1명",
+        "frontEnd": "진 / 박서진 외 Neo지부 챌린저 4명",
+        "backEnd": "Neo지부 챌린저 3명",
+        "design": "Neo지부 챌린저 1명",
+        "description": "하루 3번 감정과 컨디션을 기록하고, 간편하게 순간을 기록하는 어플리케이션",
+        "introduction": "오늘 당신의 감정 날씨",
+        "features": [
+          {
+            "content": "금세 귀찮아지는 일기는 그만, 잊혀지는 찰나의 감정을 놓치지 않고 간단하게 기록 가능"
+          },
+          {
+            "content": " 일주일마다 컨디션 수치 비교 가능 & 건강 습관 유도"
+          },
+          {
+            "content": "나의 감정에 따라 디자인 되는 홈화면 저장 & 인스타 공유"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/yourweather.png"
+        }
+      },
+      {
+        "projectId": 66,
+        "cohort": "4기",
+        "title": "my ADD",
+        "serviceType": "IOS",
+        "pm": "이로 / 류가언",
+        "frontEnd": "Neo지부 챌린저 3명",
+        "backEnd": "메이 / 지민선 외 Neo지부 챌린저 2명",
+        "design": "Neo지부 챌린저 1명",
+        "description": "기억하고 싶은 Animation/Documentary/Drama를 기록하는 어플리케이션",
+        "introduction": "나의 시청물 컬렉션 서비스",
+        "features": [
+          {
+            "content": "Animation / Documentary / Drama를 포토카드 형식으로 기록하자"
+          },
+          {
+            "content": "넘쳐나는 콘텐츠로 중구난방 흩어진 기억을 하나로 모아 기록하자"
+          },
+          {
+            "content": "간단하고 깔끔한 UI로 원하는 내용만 핵심적으로 담아 자유롭게 기록하자"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/myADD.png"
+        }
+      },
+      {
+        "projectId": 67,
+        "cohort": "4기",
+        "title": "낙낙",
+        "serviceType": "IOS",
+        "pm": "클레이 / 이지영",
+        "frontEnd": "Neo지부 챌린저 4명",
+        "backEnd": "Neo지부 챌린저 4명",
+        "design": "Neo지부 챌린저 1명",
+        "description": "똑똑한 인간관계를 만들어주는 연락 및 인맥관리 서비스!",
+        "introduction": "똑똑한 인간관계를 위한 연락&인맥관리 서비스",
+        "features": [
+          {
+            "content": "오랫동안 연락하지 못했던 사람과 자연스럽게 다시 연락할 수 있도록 돕고자 합니다."
+          },
+          {
+            "content": "오래 보고 싶은 친구들 혹은 지인들과의 원만한 관계 유지를 돕고자 합니다."
+          },
+          {
+            "content": "인간관계와 관 련된 글이나 책 추천, 한줄 명언 등의 정보를 제공해 사용자에게 정신적인 도움을 주고자 합니다."
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/nocknock.png"
+        }
+      },
+      {
+        "projectId": 68,
+        "cohort": "4기",
+        "title": "FA",
+        "serviceType": "ANDROID",
+        "pm": "Neo지부 챌린저 1명",
+        "frontEnd": "헤나 / 김연수, 두두 / 오수연 외 Neo지부 챌린저 1명",
+        "backEnd": "그린 / 김도희, 혜유 / 이혜연 외 Neo지부 챌린저 2명",
+        "design": "Neo지부 챌린저 1명",
+        "description": "독서와 필기를 사랑하는 모든 이를 위한 READ& NOTE 서비스🌳  FA는 독서와 필기 사용에 편리함을 제공하고, 습관 형성을 위한 추가적인 서비스를 보여주고자 합니다.",
+        "introduction": "공간 & 필기 서비스",
+        "features": [
+          {
+            "content": " 글 읽기 / 글 쓰기 습관에 도움"
+          },
+          {
+            "content": "편리한 메모 기능 제공"
+          },
+          {
+            "content": "사적 공간 형성"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/FA.jpeg"
+        }
+      },
+      {
+        "projectId": 69,
+        "cohort": "7기",
+        "title": "위그",
+        "serviceType": "IOS",
+        "pm": "소피 / 신소진",
+        "frontEnd": "Pyxis 지부 챌린저 4명",
+        "backEnd": "둘리 / 변서영 외 Pyxis 지부 챌린저 3명",
+        "design": "Pyxis 지부 챌린저 1명",
+        "description": "기존의 학문적이고 형식적인 공부 앱에서 벗어나 자유롭고 재미있게 공부와 습관 관리를 할 수 있는 서비스를 제공합니다.",
+        "introduction": "자유롭고 유쾌한 공부관리 서비스",
+        "features": [
+          {
+            "content": "장소 인증 기능: 혹시 계획했던 시간에 공부를 시작하기 어려웠던 적 있나요? 본인이 지정한 공부 장소를 인증하는 기능을 통해 계획한 시간에 공부를 시작해보세요!"
+          },
+          {
+            "content": "랜덤 인증 기능: 그 장소에서 진짜로 공부하고 있는지 실시간 관리를 해드립니다! 랜덤으로 오는 알림을 통해 내가 지금 공부하고 있는 모습을 사진으로 찍어 기록해보세요!"
+          },
+          {
+            "content": "Weggy’s 핫플레이스: 내 주변에 어떤 장소가 가장 공부를 많이 하는 장소일까요? 사람들의 공부 사진을 확인하고 좋은 장소를 저장해보세요!"
+          }
+        ],
+        "image": {
+          "fileUrl": "/images/wegg.png"
+        }
+      }
+    ]
+  }

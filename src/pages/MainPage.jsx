@@ -11,6 +11,7 @@ import mtImg from "../assets/MT.png";
 import pmdayImg from "../assets/Pmday.jpg";
 import studyImg from "../assets/study.jpg";
 import hackathonImg from "../assets/hackathon.png";
+import demoImg from "../assets/demoday.jpeg";
 import Colors from "../constanst/colors.mjs";
 import planIcon from "../assets/plan-icon.svg";
 import designIcon from "../assets/design-icon.svg";
@@ -302,6 +303,22 @@ const FixedImgHackathon = styled(FixedImgOT)`
   }
 `;
 
+const FixedImgDemo = styled(FixedImgOT)`
+  transform: translate(-160%, 230%);
+
+  &:hover {
+      transform: translate(-160%, 230%) scale(1.08);
+  }
+  @media screen and (max-width: 500px) {
+    transform: translate(40%, 320%);
+
+    &:hover {
+      transform: translate(40%, 320%);
+    }
+  }
+`;
+
+
 const PartIconsContainer = styled.div`
   width: 100%;
 
@@ -528,11 +545,12 @@ const RecruitingContainer = styled.div`
     border: 2.5px solid ${Colors.primary};
     border-radius: 30px;
     margin: 2rem;
+    display: none;
   }
   .disabled-button {
-    display: none;
+
     padding: 10px 25px;
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: white;
     border: 2.5px solid ${Colors.secondary200};
     border-radius: 30px;
@@ -554,10 +572,11 @@ const RecruitingContainer = styled.div`
       border: 2px solid ${Colors.primary};
       border-radius: 30px;
       margin: 1rem;
+       display: none;
     }
 
     .disabled-button {
-      display: none;
+     
       padding: 8px 18px;
       font-size: 2vw;
       color: white;
@@ -573,10 +592,11 @@ const RecruitingContainer = styled.div`
       border: 1.5px solid ${Colors.primary};
       border-radius: 30px;
       margin: 1rem;
+      display: none;
     }
 
     .disabled-button {
-      display: none;
+
       padding: 5px 10px;
       font-family: "Pretendard-SemiBold";
       color: white;
@@ -798,6 +818,13 @@ const MainPage = () => {
             style={{ width: "100%", height: "auto", objectFit: "contain" }}
           />
         </FixedImgHackathon>
+        <FixedImgDemo>
+          <img
+            src={demoImg}
+            alt=" Image"
+            style={{ width: "100%", height: "auto", objectFit: "contain" }}
+          />
+        </FixedImgDemo>
       </ImageContainer>
       <RecruitingContainer>
         <div className="recruiting-text">RECRUITING</div>

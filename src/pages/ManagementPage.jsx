@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import styled from "styled-components";
 import Colors from "../constanst/colors.mjs";
 import headerImg from "../assets/underheaderImg.svg";
 import MainFooter from "../components/footer/MainFooter";
+import managementData from "../database/managementData.json"
 
-const apiUrl = import.meta.env.VITE_API_URL;
 
 const ManagementPageContainer = styled.div`
   width:80%;
@@ -179,7 +178,7 @@ const Managements = ({ admin }) => {
   return (
     <ManagementContainer key={admin.clubAdminId}>
       <div className="profile-wrapper">
-        <img className="profileImg" src={admin.image.fileUrl} alt={admin.name} />
+      <img className="profileImg" src={admin.image.fileUrl} alt={admin.name} />
       </div>
       <div className="text-wrapper">
         <div className="position">{admin.role}</div>
@@ -199,34 +198,32 @@ const Managements = ({ admin }) => {
   );
 };
 
-
 function ManagementPage() {
   const [admins, setAdmins] = useState([]);
 
+ useEffect(() => {
+      window.scrollTo(0, 0); 
+    }, []);  
+
+
   useEffect(() => {
-    axios.get(`${apiUrl}/club-admins`)
-      .then((response) => {
-        setAdmins(response.data.result);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+    setAdmins(managementData.result);
   }, []);
 
   return (
     <>
-      <ManagementPageContainer >
-      <div className="sub-tile-container">
-  <img className="sub-tile-bg" src={headerImg} alt="배경 이미지" />
-  <div className="sub-tile">DDWU UMC 운영진</div>
-</div>
+      <ManagementPageContainer>
+        <div className="sub-tile-container">
+          <img className="sub-tile-bg" src={headerImg} alt="배경 이미지" />
+          <div className="sub-tile">DDWU UMC 운영진</div>
+        </div>
         <ManagementListContainer>
           {admins.map((admin) => (
             <Managements key={admin.clubAdminId} admin={admin} />
           ))}
         </ManagementListContainer>
       </ManagementPageContainer>
-      <MainFooter/>
+      <MainFooter />
     </>
   );
 }
