@@ -263,82 +263,37 @@ const PartButton = styled.button`
 `;
 
 const Parts = ({ selectedPart }) => {
-  const filteredData = CurriculumData.filter(
-    (part) => part.part === selectedPart
-  );
-  const [curriculumData, setCurriculumData] = useState([]);
-  const [error, setError] = useState(null);
-
-  const formatPartName = (part) => {
-    const specialCases = {
-      springboot: "Spring Boot",
-      web: "Web",
-      android: "Android",
-      design: "Design",
-      plan: "Plan",
-    };
-
-    const lowerPart = part.toLowerCase();
-    return (
-      specialCases[lowerPart] ||
-      lowerPart.charAt(0).toUpperCase() + lowerPart.slice(1)
-    );
-  };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`${apiUrl}/curriculums`, {
-          params: { partType: selectedPart },
-        });
-
-        if (response.data.isSuccess) {
-          setCurriculumData(response.data.result);
-        } else {
-          throw new Error(response.data.message);
-        }
-      } catch (error) {
-        console.error("API 호출 오류:", error.message);
-        setError(error.message);
-      }
-    };
-
-    fetchData();
-  }, [selectedPart]);
+  const filteredData = CurriculumData.filter((part) => part.part === selectedPart);
 
   return (
     <>
       {filteredData.map((part) => (
-        <div key={part.part}>
+        <div key={part.part}> 
           <PartInfo>
-            <div className="name-english">{formatPartName(part.part)}</div>
+            <div className="name-english">{part.part}</div>
 
-            <div style={{ display: "flex" }}>
-              <div className="name-korean">{part.partKorean}</div>
-              <div>
-                <img className="part-icon" src={part.icon} alt="icon" />
-              </div>
+            <div>
+              <span className="name-korean">{part.partKorean}</span>
+              <span>
+                <img className="part-icon" src={part.icon} alt="icon" /> {/* icon을 part에서 가져오도록 수정 */}
+              </span>
             </div>
 
-            <div className="part-info">{part.info}</div>
+            <div className="part-info">
+              {part.info}
+            </div>
           </PartInfo>
 
           <PartCurriculum>
-            <ol className="ordered-nav">
-              {curriculumData
-                .sort((a, b) => a.week - b.week) // 주차 순서대로 정렬
-                .map((week) => (
-                  <li key={week.curriculumId} className="ordered-nav--link">
-                    <div className="week">{week.week}주차</div>
-                    <div className="content">{week.content}</div>
+          <ol className="ordered-nav">
+              {part.curriculum.map((item) => (
+                  <li key={item.week}className="ordered-nav--link">
+                    <div className="week">{item.week}주차</div>
+                    <div className="content">{item.content}</div>
                   </li>
                 ))}
             </ol>
-          </PartCurriculum>
+        </PartCurriculum>
         </div>
       ))}
     </>
@@ -346,24 +301,9 @@ const Parts = ({ selectedPart }) => {
 };
 
 const CurriculumPage = () => {
-  const { part } = useParams();
-  const [selectedPart, setSelectedPart] = useState(part || "PLAN");
+  const [selectedPart, setSelectedPart] = useState("Plan");
+  const parts = ["Plan", "Design", "Spring Boot", "Web", "Android"];
 
-  const parts = ["plan", "design", "android", "web", "springboot"];
-
-  const partNamesInBTN = {
-    plan: "Plan",
-    design: "Design",
-    android: "Android",
-    web: "Web",
-    springboot: "Spring Boot",
-  };
-
-  useEffect(() => {
-    if (part) {
-      setSelectedPart(part);
-    }
-  }, [part]);
 
   return (
     <>
@@ -379,7 +319,7 @@ const CurriculumPage = () => {
               $active={selectedPart === part ? "true" : "false"}
               onClick={() => setSelectedPart(part)}
             >
-              {partNamesInBTN[part]}
+              {part}
             </PartButton>
           ))}
         </ButtonContainer>
