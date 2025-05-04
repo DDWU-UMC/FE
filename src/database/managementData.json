@@ -1,0 +1,180 @@
+{
+    "result": [
+      {
+        "clubAdminId": 1,
+        "name": "박세은",
+        "nickname": "세니",
+        "commitment": "🔥 UMC만의 매력을 책임지고 보여드리겠습니다! 🔥",
+        "role": "회장",
+        "image": {
+         "fileUrl": "/images/세은.jpeg"
+        },
+        "roleHistories": [
+          {
+            "id": 1,
+            "content": "DDWUMC 7th SPRINGBOOT 챌린저"
+          },
+          {
+            "id": 2,
+            "content": "DDWUMC 8th 회장"
+          }
+        ]
+      },
+      {
+        "clubAdminId": 2,
+        "name": "김희선",
+        "nickname": "써니",
+        "commitment": "💡 배우고, 상상 하고, 실현하는 공간",
+        "role": "부회장",
+        "image": {
+            "fileUrl": "/images/희선.jpeg"
+           },
+        "roleHistories": [
+          {
+            "id": 3,
+            "content": "DDWUMC 5th WEB 챌린저"
+          },
+          {
+            "id": 4,
+            "content": "DDWUMC 6th ANDROID 파트장"
+          },
+          {
+            "id": 5,
+            "content": "DDWUMC 7th 회장"
+          },
+          {
+            "id": 6,
+            "content": "DDWUMC 8th 부회장"
+          }
+        ]
+      },
+      {
+        "clubAdminId": 3,
+        "name": "강도경",
+        "nickname": "도도",
+        "commitment": "보이지 않는 곳에서 세상을 움직이는 매력적인 백엔드 🌱",
+        "role": "SpringBoot 파트장",
+        "image": {
+            "fileUrl": "/images/도경.jpeg"
+           },
+        "roleHistories": [
+          {
+            "id": 7,
+            "content": "DDWUMC 5th ANDROID 챌린저"
+          },
+          {
+            "id": 8,
+            "content": "DDWUMC 6th NODE.JS 챌린저"
+          },
+          {
+            "id": 9,
+            "content": "DDWUMC 7th SPRINGBOOT 파트장"
+          },
+          {
+            "id": 10,
+            "content": "DDWUMC 8th SPRINGBOOT 파트장"
+          }
+        ]
+      },
+      {
+        "clubAdminId": 4,
+        "name": "이소연",
+        "nickname": "뿡야",
+        "commitment": "손끝에서 펼쳐지는 세상, 안드로이드로 직접 만들어 보세요!",
+        "role": "Android 파트장",
+        "image": {
+            "fileUrl": "/images/소연.jpeg"
+           },
+        "roleHistories": [
+          {
+            "id": 11,
+            "content": "DDWUMC 6th ANDROID 챌린저"
+          },
+          {
+            "id": 12,
+            "content": "DDWUMC 7th ANDROID 파트장"
+          },
+          {
+            "id": 13,
+            "content": "DDWUMC 8th ANDROID 파트장"
+          }
+        ]
+      },
+      {
+        "clubAdminId": 5,
+        "name": "노하영",
+        "nickname": "노브",
+        "commitment": "상상을 현실로 만드는 경험, 같이하자 UMC!",
+        "role": "Plan 파트장",
+        "image": {
+            "fileUrl": "/images/하영.jpeg"
+           },
+        "roleHistories": [
+          {
+            "id": 14,
+            "content": "DDWUMC 6th PLAN 챌린저"
+          },
+          {
+            "id": 15,
+            "content": "DDWUMC 7th PLAN 파트장"
+          },
+          {
+            "id": 16,
+            "content": "DDWUMC 8th PLAN 파트장"
+          },
+          {
+            "id": 22,
+            "content": "UMC 8th 중앙 소통정책국 운영진관리국원"
+          }
+        ]
+      },
+      {
+        "clubAdminId": 6,
+        "name": "장고은",
+        "nickname": "곤",
+        "commitment": "안녕하세요~!! 6기부터 현재까지 활동중인 웹파트장 곤/장고은입니다! ",
+        "role": "Web 파트장",
+        "image": {
+            "fileUrl": "/images/고은.jpeg"
+           },
+        "roleHistories": [
+          {
+            "id": 17,
+            "content": "DDWUMC 6th WEB 챌린저"
+          },
+          {
+            "id": 18,
+            "content": "DDWUMC 7th 운영팀장"
+          },
+          {
+            "id": 19,
+            "content": "DDWUMC 8th WEB 파트장"
+          }
+        ]
+      },
+      {
+        "clubAdminId": 8,
+        "name": "김가영",
+        "nickname": "주디",
+        "commitment": "브랜드의 정체성을 만들어 나가는 디자이너 주디입니다.🎨",
+        "role": "Design 파트장",
+        "image": {
+            "fileUrl": "/images/가영.jpeg"
+           },
+        "roleHistories": [
+          {
+            "id": 23,
+            "content": "DDWUMC 6th DESIGN 챌린저"
+          },
+          {
+            "id": 24,
+            "content": "DDWUMC 7th DESIGN 파트장"
+          },
+          {
+            "id": 25,
+            "content": "DDWUMC 8th DESIGN 파트장"
+          }
+        ]
+      }
+    ]
+  }
